@@ -1,11 +1,12 @@
 import js from "@eslint/js";
 import globals from "globals";
+import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
+import unusedImports from "eslint-plugin-unused-imports";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
-  // Ignore build + dependencies + config files (Node-based)
   globalIgnores([
     "dist",
     "node_modules",
@@ -16,23 +17,52 @@ export default defineConfig([
 
   {
     files: ["**/*.{js,jsx}"],
-    extends: [
-      js.configs.recommended,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-    ],
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: "latest",
+      sourceType: "module",
       globals: globals.browser,
       parserOptions: {
-        ecmaVersion: "latest",
         ecmaFeatures: { jsx: true },
-        sourceType: "module",
+      },
+    },
+    plugins: {
+      react,
+      "react-hooks": reactHooks,
+      "react-refresh": reactRefresh,
+      "unused-imports": unusedImports,
+    },
+    settings: {
+      react: {
+        version: "detect",
       },
     },
     rules: {
-      //clean unused var rule (allows PascalCase components)
-      "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
+      ...js.configs.recommended.rules,
+      ...react.configs.recommended.rules,
+      ...reactHooks.configs.recommended.rules,
+
+      "react/react-in-jsx-scope": "off",
+
+      "no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        { vars: "all", varsIgnorePattern: "^[A-Z_]", argsIgnorePattern: "^_" },
+      ],
+
+      "react-refresh/only-export-components": [
+        "warn",
+        { allowConstantExport: true },
+      ],
+    },
+  },
+
+  // R3F canvas files override
+  {
+    files: ["src/components/canvas/**/*.{js,jsx}"],
+    rules: {
+      "react/no-unknown-property": "off",
+      "react/prop-types": "off",
     },
   },
 ]);
