@@ -1,8 +1,8 @@
 // src/components/canvas/Computer.jsx
-
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF, Environment } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF, Environment, ContactShadows,} from "@react-three/drei";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 import CanvasLoader from "../Loader";
 
@@ -11,8 +11,8 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      {/* soft overall ambient */}
-      <ambientLight intensity={0.6} />
+      {/* Ambient base */}
+      <ambientLight intensity={0.5} />
 
       {/*realistic sky/ground fill */}
       <hemisphereLight intensity={0.6} groundColor='black' />
@@ -36,6 +36,15 @@ const Computers = ({ isMobile }) => {
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
+
+      {/* Realistic soft shadow under desk */}
+      <ContactShadows
+        position={[0, -3.6, 0]}
+        opacity={0.45}
+        scale={10}
+        blur={2.5}
+        far={4}
+      />
     </mesh>
   );
 };
@@ -47,16 +56,10 @@ const ComputersCanvas = () => {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const handler = (e) => setIsMobile(e.matches);
 
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
   return (
@@ -65,17 +68,33 @@ const ComputersCanvas = () => {
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={{
+        preserveDrawingBuffer: true,
+        toneMappingExposure: 1.1,
+      }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        {/*HDR environment*/}
+        {/* HDR lighting */}
         <Environment preset='city' />
 
+        {/* Smooth cinematic camera */}
         <OrbitControls
           enableZoom={false}
+          enableDamping
+          dampingFactor={0.05}
+          rotateSpeed={0.4}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
+
+        {/* Bloom glow */}
+        <EffectComposer>
+          <Bloom
+            intensity={0.35}
+            luminanceThreshold={0.25}
+            luminanceSmoothing={0.9}
+          />
+        </EffectComposer>
 
         <Computers isMobile={isMobile} />
       </Suspense>
