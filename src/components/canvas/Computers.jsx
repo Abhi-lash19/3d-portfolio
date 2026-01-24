@@ -2,7 +2,7 @@
 
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import { OrbitControls, Preload, useGLTF, Environment } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
@@ -11,18 +11,24 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor='black' />
+      {/* soft overall ambient */}
+      <ambientLight intensity={0.6} />
 
+      {/*realistic sky/ground fill */}
+      <hemisphereLight intensity={0.6} groundColor='black' />
+
+      {/*main spotlight (strong key light) */}
       <spotLight
-        position={[-20, 50, 10]}
-        angle={0.12}
+        position={[10, 25, 10]}
+        angle={0.35}
         penumbra={1}
-        intensity={1}
+        intensity={2.5}
         castShadow
-        shadow-mapSize={[1024, 1024]}
+        shadow-mapSize={1024}
       />
 
-      <pointLight intensity={1} />
+      {/*front fill light */}
+      <pointLight position={[-10, 10, 10]} intensity={1.2} />
 
       <primitive
         object={computer.scene}
@@ -62,6 +68,9 @@ const ComputersCanvas = () => {
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
+        {/*HDR environment*/}
+        <Environment preset='city' />
+
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
