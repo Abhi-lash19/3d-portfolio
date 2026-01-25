@@ -13,7 +13,7 @@
     "@emailjs/browser": "^4.4.1",
     "@react-three/drei": "^9.120.4",
     "@react-three/fiber": "^8.17.12",
-    "@react-three/postprocessing": "^3.0.4",
+    "@react-three/postprocessing": "^2.16.2",
     "framer-motion": "^12.28.1",
     "maath": "^0.10.8",
     "react": "^18.3.1",
