@@ -129,7 +129,9 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop="demand"
+      className="r3f-canvas"
+      style={{ pointerEvents: isMobile ? "none" : "auto" }}
+      frameloop={isMobile ? "demand" : "always"}
       shadows
       dpr={isMobile ? 1 : [1, 2]} // reduce work on mobile
       camera={{ position: [20, 3, 5], fov: 25 }}
@@ -151,15 +153,17 @@ const ComputersCanvas = () => {
         <Rig isMobile={isMobile} />
 
         {/* Orbit controls: smooth + limited */}
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          enableDamping
-          dampingFactor={0.06}
-          rotateSpeed={0.35}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-        />
+        {!isMobile && (
+          <OrbitControls
+            enableZoom={false}
+            enablePan={false}
+            enableDamping
+            dampingFactor={0.06}
+            rotateSpeed={0.35}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+        )}
 
         {/* Bloom only on desktop (perf boost) */}
         {!isMobile && (
