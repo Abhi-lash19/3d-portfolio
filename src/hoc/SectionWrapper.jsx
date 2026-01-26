@@ -1,19 +1,33 @@
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { staggerContainer } from "../utils/motion";
+import { useEffect, useState } from "react";
 
-const StarWrapper = (Component, idName) =>
+const SectionWrapper = (Component, idName) =>
   function HOC() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+      const mq = window.matchMedia("(max-width: 640px)");
+      setIsMobile(mq.matches);
+
+      const onChange = (e) => setIsMobile(e.matches);
+      mq.addEventListener("change", onChange);
+
+      return () => mq.removeEventListener("change", onChange);
+    }, []);
+
     return (
       <motion.section
         variants={staggerContainer()}
-        initial='hidden'
-        whileInView='show'
-        viewport={{ once: true, amount: 0.25 }}
+        initial={isMobile ? "show" : "hidden"}     
+        whileInView={isMobile ? undefined : "show"} 
+        animate={isMobile ? "show" : undefined}   
+        viewport={isMobile ? undefined : { once: true, amount: 0.25 }}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
+        style={{ overflow: "visible" }} // 
       >
-        <span className='hash-span' id={idName}>
+        <span className="hash-span" id={idName}>
           &nbsp;
         </span>
 
@@ -22,4 +36,4 @@ const StarWrapper = (Component, idName) =>
     );
   };
 
-export default StarWrapper;
+export default SectionWrapper;

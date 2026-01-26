@@ -18,17 +18,29 @@ const containerVariants = {
 
 // Floating idle animation (subtle + continuous)
 const floatingAnimation = (i) => ({
-  y: [0, -7, 0],
+  y: [0, -12, 0], // more floating than before (-7)
   transition: {
-    duration: 2.8 + (i % 3) * 0.35,
+    duration: 2.4 + (i % 3) * 0.35, // slightly faster + dynamic
     repeat: Infinity,
     repeatType: "mirror",
     ease: "easeInOut",
-    delay: i * 0.06,
+    delay: i * 0.05,
   },
 });
 
-// Each card reveal animation (with floating included in "show")
+// Glow animation: starts bright, dims slightly but NEVER disappears
+const glowAnimation = (i) => ({
+  opacity: [1, 0.65, 1], // stays visible always
+  transition: {
+    duration: 2.6 + (i % 3) * 0.25,
+    repeat: Infinity,
+    repeatType: "mirror",
+    ease: "easeInOut",
+    delay: i * 0.08,
+  },
+});
+
+// Each card reveal animation (includes floating)
 const cardRevealVariants = (i) => ({
   hidden: { opacity: 0, y: 18, scale: 0.92 },
   show: {
@@ -70,8 +82,8 @@ const Tech = () => {
             key={technology.name}
             variants={cardRevealVariants(index)}
             whileHover={{
-              y: -12,
-              scale: 1.05,
+              y: -16, // hover feels more floaty
+              scale: 1.06,
               transition: { type: "spring", stiffness: 260, damping: 14 },
             }}
             whileTap={{
@@ -93,20 +105,27 @@ const Tech = () => {
                 "0 18px 60px rgba(145,94,255,0.18), 0 14px 45px rgba(255,255,255,0.06), 0 10px 35px rgba(0,0,0,0.25)",
             }}
           >
-            {/* brighter base light */}
-            <div className="absolute inset-0 bg-white/5 opacity-80" />
-
-            {/* Hover glow ring */}
+            {/* brighter base light (always visible) */}
             <motion.div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              className="absolute inset-0 bg-white/5"
+              animate={glowAnimation(index)} // glow starts ON and keeps pulsing
+            />
+
+            {/* glow ring - NOW visible by default (not only hover) */}
+            <motion.div
+              className="absolute inset-0"
               style={{
                 background:
                   "radial-gradient(circle at 30% 30%, rgba(145,94,255,0.45), transparent 60%)",
               }}
+              animate={glowAnimation(index)} // pulsing glow
             />
 
-            {/* glow border */}
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-[#915EFF]/35" />
+            {/* glow border - visible on load, dims slightly */}
+            <motion.div
+              className="absolute inset-0 rounded-2xl border border-[#915EFF]/35"
+              animate={glowAnimation(index)}
+            />
 
             {/* icon */}
             <img
@@ -122,10 +141,34 @@ const Tech = () => {
             />
 
             {/* shine */}
-            <div className="absolute -left-10 -top-10 w-28 h-28 bg-white/15 rotate-12 blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-300" />
+            <motion.div
+              className="absolute -left-10 -top-10 w-28 h-28 bg-white/15 rotate-12 blur-2xl opacity-50"
+              animate={{
+                opacity: [0.55, 0.25, 0.55], // ✅ never disappears
+                transition: {
+                  duration: 3.2 + (index % 3) * 0.35,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                  delay: index * 0.07,
+                },
+              }}
+            />
 
-            {/* hover shadow boost */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_14px_70px_rgba(145,94,255,0.28)] rounded-2xl" />
+            {/* shadow boost glow (visible always, slightly pulsing) */}
+            <motion.div
+              className="absolute inset-0 rounded-2xl shadow-[0_14px_70px_rgba(145,94,255,0.28)]"
+              animate={{
+                opacity: [0.75, 0.35, 0.75], // ✅ stays visible
+                transition: {
+                  duration: 2.8 + (index % 3) * 0.25,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                  ease: "easeInOut",
+                  delay: index * 0.06,
+                },
+              }}
+            />
           </motion.div>
         ))}
       </motion.div>
