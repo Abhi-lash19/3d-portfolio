@@ -1,6 +1,6 @@
 // src/components/index.js
 
-import { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas } from "./canvas";
+import { EarthCanvas, ComputersCanvas, StarsCanvas } from "./canvas";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -18,7 +18,6 @@ export {
   Works,
   Contact,
   EarthCanvas,
-  BallCanvas,
   ComputersCanvas,
   StarsCanvas,
 };
