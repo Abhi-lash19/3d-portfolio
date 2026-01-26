@@ -51,13 +51,10 @@ const Tech = () => {
         transition={{ type: "spring", stiffness: 180, damping: 18 }}
         className="text-center max-w-3xl"
       >
-        <p className={styles.sectionSubText}>Tools & Technologies</p>
-        <h2 className={styles.sectionHeadText}>Tech Stack.</h2>
-
-        <p className="mt-4 text-secondary text-[16px] leading-[28px]">
-          These are the technologies I’ve used to build backend systems, AWS
-          pipelines, CI/CD automation, and scalable cloud integrations.
-        </p>
+        <p className={styles.sectionSubText}>My daily toolkit</p>
+        <h2 className={styles.sectionHeadText}>
+          Technologies I build with.
+        </h2>
       </motion.div>
 
       {/* Cards Grid */}
@@ -84,20 +81,27 @@ const Tech = () => {
                        w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28
                        rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md
                        flex items-center justify-center overflow-hidden
-                       shadow-[0_8px_30px_rgba(0,0,0,0.25)]
                        transition-all duration-300"
+            style={{
+              // brighter soft white shadow so cards don’t look too dark
+              boxShadow:
+                "0 12px 40px rgba(255,255,255,0.06), 0 8px 30px rgba(0,0,0,0.25)",
+            }}
           >
+            {/* Soft white light overlay */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/5" />
+
             {/* Hover glow ring */}
             <motion.div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
                 background:
-                  "radial-gradient(circle at 30% 30%, rgba(145,94,255,0.35), transparent 60%)",
+                  "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.16), transparent 60%)",
               }}
             />
 
             {/* Outer glow border */}
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-[#915EFF]/30" />
+            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/20" />
 
             {/* Icon */}
             <img
@@ -111,8 +115,8 @@ const Tech = () => {
             {/* Shine sweep */}
             <div className="absolute -left-10 -top-10 w-24 h-24 bg-white/10 rotate-12 blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-300" />
 
-            {/* Hover shadow boost */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_10px_50px_rgba(145,94,255,0.25)] rounded-2xl" />
+            {/* Hover shadow boost (more white, less dark) */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_10px_55px_rgba(255,255,255,0.10)] rounded-2xl" />
           </motion.div>
         ))}
       </motion.div>
