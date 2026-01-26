@@ -19,9 +19,13 @@ import {
   python,
   terraform,
   go,
-  carrent,
-  jobit,
-  tripguide,
+  xoGame,
+  scribeai,
+  jenkinsAws,
+  pythonFastapiAws,
+  monitorpro,
+  infraDeployAws,
+  expressTypescript,
   absolutelabs,
   bel,
   arcesium,
@@ -132,7 +136,7 @@ const projects = [
       { name: "threejs", color: "green-text-gradient" },
       { name: "tailwind", color: "pink-text-gradient" },
     ],
-    image: carrent,
+    image: scribeai,
     source_code_link: "https://github.com/Abhi-lash19/3d-portfolio",
   },
   {
@@ -144,7 +148,7 @@ const projects = [
       { name: "openai", color: "green-text-gradient" },
       { name: "stream-chat", color: "pink-text-gradient" },
     ],
-    image: jobit,
+    image: scribeai,
     source_code_link: "https://github.com/Abhi-lash19/ScribeAI",
   },
   {
@@ -156,7 +160,7 @@ const projects = [
       { name: "express", color: "green-text-gradient" },
       { name: "typescript", color: "pink-text-gradient" },
     ],
-    image: tripguide,
+    image: expressTypescript,
     source_code_link: "https://github.com/Abhi-lash19/express-typescript-backend",
   },
   {
@@ -168,9 +172,23 @@ const projects = [
       { name: "docker", color: "green-text-gradient" },
       { name: "websockets", color: "pink-text-gradient" },
     ],
-    image: carrent,
+    image: monitorpro,
     source_code_link: "https://github.com/Abhi-lash19/MonitorPro",
   },
+
+  {
+    name: "XO Game (Tic-Tac-Toe)",
+    description:
+      "Classic XO (Tic-Tac-Toe) game with interactive UI, turn-based logic, winner detection, and reset functionality.",
+    tags: [
+      { name: "javascript", color: "blue-text-gradient" },
+      { name: "html", color: "green-text-gradient" },
+      { name: "css", color: "pink-text-gradient" },
+    ],
+    image: xoGame,
+    source_code_link: "https://github.com/Abhi-lash19/xo-game",
+  },
+
   {
     name: "infra-deploy-aws (Terraform CI/CD)",
     description:
@@ -180,7 +198,7 @@ const projects = [
       { name: "github-actions", color: "green-text-gradient" },
       { name: "aws", color: "pink-text-gradient" },
     ],
-    image: jobit,
+    image: infraDeployAws,
     source_code_link: "https://github.com/Abhi-lash19/infra-deploy-aws",
   },
   {
@@ -192,7 +210,7 @@ const projects = [
       { name: "eks", color: "green-text-gradient" },
       { name: "devops", color: "pink-text-gradient" },
     ],
-    image: tripguide,
+    image: jenkinsAws,
     source_code_link: "https://github.com/Abhi-lash19/jenkins-eks-automation",
   },
   {
@@ -204,7 +222,7 @@ const projects = [
       { name: "python", color: "green-text-gradient" },
       { name: "aws", color: "pink-text-gradient" },
     ],
-    image: carrent,
+    image: pythonFastapiAws,
     source_code_link: "https://github.com/Abhi-lash19/Python-FastApi-AWS",
   },
 ];

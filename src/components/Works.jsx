@@ -1,4 +1,6 @@
-import React from "react";
+// src/components/Works.jsx
+
+import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -8,6 +10,23 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
+//  Small wrapper: Tilt ON for desktop, OFF for mobile (performance fix)
+const TiltWrapper = ({ isMobile, children }) => {
+  if (isMobile) return <>{children}</>;
+
+  return (
+    <Tilt
+      tiltMaxAngleX={18}
+      tiltMaxAngleY={18}
+      scale={1.02}
+      transitionSpeed={450}
+      gyroscope={true}
+    >
+      {children}
+    </Tilt>
+  );
+};
+
 const ProjectCard = ({
   index,
   name,
@@ -15,58 +34,78 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  isMobile,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        tiltMaxAngleX={45}
-        tiltMaxAngleY={45}
-        scale={1}
-        transitionSpeed={450}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-      >
-        <div className="relative w-full h-[230px]">
-          <img
-            src={image}
-            alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
-          />
+    <motion.div variants={fadeIn("up", "spring", index * 0.15, 0.6)}>
+      <TiltWrapper isMobile={isMobile}>
+        <div className="bg-tertiary p-5 rounded-2xl w-full sm:w-[360px]">
+          <div className="relative w-full h-[200px] sm:h-[230px] overflow-hidden rounded-2xl">
+            <img
+              src={image}
+              alt={name}
+              loading="lazy"
+              className="w-full h-full object-cover rounded-2xl"
+            />
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-              />
+            {/* GitHub button stays clickable on mobile */}
+            <div className="absolute inset-0 flex justify-end m-3">
+              <button
+                type="button"
+                onClick={() => window.open(source_code_link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+                aria-label={`Open ${name} source code`}
+              >
+                <img
+                  src={github}
+                  alt="source code"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </button>
             </div>
           </div>
-        </div>
 
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
-        </div>
+          <div className="mt-5">
+            <h3 className="text-white font-bold text-[20px] sm:text-[24px]">
+              {name}
+            </h3>
 
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
+            <p className="mt-2 text-secondary text-[13px] sm:text-[14px] leading-relaxed">
+              {description}
             </p>
-          ))}
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((tag) => (
+              <p
+                key={`${name}-${tag.name}`}
+                className={`text-[13px] sm:text-[14px] ${tag.color}`}
+              >
+                #{tag.name}
+              </p>
+            ))}
+          </div>
         </div>
-      </Tilt>
+      </TiltWrapper>
     </motion.div>
   );
 };
 
 const Works = () => {
+  // Fix ESLint warning: no setState inside effect body
+  const [isMobile, setIsMobile] = useState(() =>
+    window.matchMedia("(max-width: 640px)").matches
+  );
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 640px)");
+
+    const onChange = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", onChange);
+
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -77,7 +116,7 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 text-secondary text-[16px] sm:text-[17px] max-w-3xl leading-[28px] sm:leading-[30px]"
         >
           These are some of my recent projects that reflect my work in backend
           systems, cloud automation, CI/CD pipelines, and modern web
@@ -86,9 +125,15 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      {/* Proper mobile layout */}
+      <div className="mt-14 sm:mt-20 grid grid-cols-1 sm:flex sm:flex-wrap gap-6 sm:gap-7">
         {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
+          <ProjectCard
+            key={`project-${index}`}
+            index={index}
+            isMobile={isMobile}
+            {...project}
+          />
         ))}
       </div>
     </>

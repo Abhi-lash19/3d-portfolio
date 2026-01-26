@@ -34,9 +34,14 @@ import bel from "./company/BEL.jpg";
 import arcesium from "./company/arcesium.png";
 
 // project images
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import xoGame from "./x-o-game.png";
+import scribeai from "./scribeai.png";
+import jenkinsAws from "./jenkins_aws.png";
+import pythonFastapiAws from "./python_fastapi_aws.png";
+import monitorpro from "./monitorpro.png";
+import infraDeployAws from "./infra-deploy-aws.png";
+import expressTypescript from "./express_typescript.png";
+
 
 export {
   // common
@@ -72,7 +77,11 @@ export {
   arcesium,
 
   // projects
-  carrent,
-  jobit,
-  tripguide,
+  xoGame,
+  scribeai,
+  jenkinsAws,
+  pythonFastapiAws,
+  monitorpro,
+  infraDeployAws,
+  expressTypescript,
 };
