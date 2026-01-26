@@ -77,46 +77,55 @@ const Tech = () => {
             whileTap={{
               scale: 0.96,
             }}
-            className="group relative
-                       w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28
-                       rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md
-                       flex items-center justify-center overflow-hidden
-                       transition-all duration-300"
+            className="
+              group relative
+              w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28
+              rounded-2xl
+              bg-white/10 border border-white/15
+              backdrop-blur-md
+              flex items-center justify-center
+              overflow-hidden
+              transition-all duration-300
+            "
             style={{
               // brighter soft white shadow so cards don’t look too dark
               boxShadow:
-                "0 12px 40px rgba(255,255,255,0.06), 0 8px 30px rgba(0,0,0,0.25)",
+                "0 18px 60px rgba(145,94,255,0.18), 0 14px 45px rgba(255,255,255,0.06), 0 10px 35px rgba(0,0,0,0.25)",
             }}
           >
-            {/* Soft white light overlay */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/5" />
+            {/* brighter base light */}
+            <div className="absolute inset-0 bg-white/5 opacity-80" />
 
             {/* Hover glow ring */}
             <motion.div
               className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               style={{
                 background:
-                  "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.16), transparent 60%)",
+                  "radial-gradient(circle at 30% 30%, rgba(145,94,255,0.45), transparent 60%)",
               }}
             />
 
-            {/* Outer glow border */}
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/20" />
+            {/* glow border */}
+            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-[#915EFF]/35" />
 
-            {/* Icon */}
+            {/* icon */}
             <img
               src={technology.icon}
               alt={technology.name}
               loading="lazy"
-              className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain z-10
-                         group-hover:scale-110 transition-transform duration-300"
+              className="
+                w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12
+                object-contain z-10
+                group-hover:scale-110 transition-transform duration-300
+                drop-shadow-[0_10px_30px_rgba(255,255,255,0.14)]
+              "
             />
 
-            {/* Shine sweep */}
-            <div className="absolute -left-10 -top-10 w-24 h-24 bg-white/10 rotate-12 blur-xl opacity-40 group-hover:opacity-70 transition-opacity duration-300" />
+            {/* shine */}
+            <div className="absolute -left-10 -top-10 w-28 h-28 bg-white/15 rotate-12 blur-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-300" />
 
-            {/* Hover shadow boost (more white, less dark) */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_10px_55px_rgba(255,255,255,0.10)] rounded-2xl" />
+            {/* hover shadow boost */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_14px_70px_rgba(145,94,255,0.28)] rounded-2xl" />
           </motion.div>
         ))}
       </motion.div>

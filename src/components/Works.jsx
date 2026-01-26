@@ -125,8 +125,8 @@ const Works = () => {
         </motion.p>
       </div>
 
-      {/* Proper mobile layout */}
-      <div className="mt-14 sm:mt-20 grid grid-cols-1 sm:flex sm:flex-wrap gap-6 sm:gap-7">
+      {/* Fixed: Always grid (Mobile visible + clean layout) */}
+      <div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 w-full">
         {projects.map((project, index) => (
           <ProjectCard
             key={`project-${index}`}
@@ -139,7 +139,6 @@ const Works = () => {
     </>
   );
 };
-
 
 const WrappedWorks = SectionWrapper(Works, "work");
 export default WrappedWorks;
