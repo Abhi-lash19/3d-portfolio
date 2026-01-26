@@ -26,7 +26,7 @@ jobs:
       - name: Setup Node (LTS)
         uses: actions/setup-node@v4
         with:
-          node-version: 22 
+          node-version: 22
           cache: npm
 
       - name: Install dependencies (clean)
@@ -37,6 +37,10 @@ jobs:
 
       - name: Build (Production)
         run: npm run build
+        env:
+          VITE_APP_EMAILJS_SERVICE_ID: ${{ secrets.VITE_APP_EMAILJS_SERVICE_ID }}
+          VITE_APP_EMAILJS_TEMPLATE_ID: ${{ secrets.VITE_APP_EMAILJS_TEMPLATE_ID }}
+          VITE_APP_EMAILJS_PUBLIC_KEY: ${{ secrets.VITE_APP_EMAILJS_PUBLIC_KEY }}
 
       - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
