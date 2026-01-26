@@ -1,8 +1,13 @@
 // src/components/Hero.jsx
 
+import { Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+
+// lazy import so 3D loads only when needed
+const LazyComputersCanvas = lazy(() =>
+  import("./canvas").then((m) => ({ default: m.ComputersCanvas }))
+);
 
 const Hero = () => {
   return (
@@ -26,7 +31,16 @@ const Hero = () => {
         </div>
       </div>
 
-      <ComputersCanvas />
+      {/* lazy load + fallback placeholder */}
+      <Suspense
+        fallback={
+          <div className='absolute inset-0 flex items-center justify-center'>
+            <div className='text-secondary text-sm'>Loading 3D...</div>
+          </div>
+        }
+      >
+        <LazyComputersCanvas />
+      </Suspense>
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
