@@ -14,6 +14,10 @@ import * as THREE from "three";
 
 import CanvasLoader from "../Loader";
 
+// Safe helpers (prevents NaN propagation)
+const safeNum = (v, fallback = 0) => (Number.isFinite(v) ? v : fallback);
+const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+
 // Parallax + micro rotation rig
 const Rig = ({ isMobile }) => {
   const vec = useMemo(() => new THREE.Vector3(), []);
@@ -24,9 +28,13 @@ const Rig = ({ isMobile }) => {
 
     const { mouse, camera } = state;
 
+    // mouse can be undefined / NaN sometimes during init
+    const mx = clamp(safeNum(mouse?.x, 0), -1, 1);
+    const my = clamp(safeNum(mouse?.y, 0), -1, 1);
+
     // Subtle mouse parallax camera
-    const parallaxX = mouse.x * 0.9; // left-right
-    const parallaxY = mouse.y * 0.35; // up-down
+    const parallaxX = mx * 0.9; // left-right
+    const parallaxY = my * 0.35; // up-down
 
     camera.position.lerp(
       vec.set(
@@ -51,11 +59,20 @@ const Computers = ({ isMobile }) => {
   useFrame((state) => {
     if (!groupRef.current || isMobile) return;
 
-    const t = state.clock.getElapsedTime();
+    const t = safeNum(state.clock.getElapsedTime(), 0);
 
     groupRef.current.rotation.x = -0.01 + Math.sin(t * 0.4) * 0.02;
     groupRef.current.rotation.y = -0.2 + Math.sin(t * 0.3) * 0.04;
     groupRef.current.rotation.z = -0.1 + Math.sin(t * 0.35) * 0.01;
+
+    // if anything ever turns invalid, reset instantly
+    if (
+      !Number.isFinite(groupRef.current.rotation.x) ||
+      !Number.isFinite(groupRef.current.rotation.y) ||
+      !Number.isFinite(groupRef.current.rotation.z)
+    ) {
+      groupRef.current.rotation.set(-0.01, -0.2, -0.1);
+    }
   });
 
   return (
@@ -120,6 +137,10 @@ const ComputersCanvas = () => {
         preserveDrawingBuffer: true,
         antialias: !isMobile, // reduce GPU cost on mobile
         powerPreference: "high-performance",
+      }}
+      onCreated={({ gl }) => {
+        // avoids some GPU/precision weirdness on some devices
+        gl.setPixelRatio(window.devicePixelRatio || 1);
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
