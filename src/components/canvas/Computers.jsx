@@ -11,6 +11,7 @@ import {
 } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
+import { isInteracting } from "../../utils/interaction";
 
 import CanvasLoader from "../Loader";
 
@@ -24,6 +25,8 @@ const Rig = ({ isMobile }) => {
   const baseCam = useRef([20, 3, 5]);
 
   useFrame((state) => {
+    // Step aside during scroll / touch
+    if (isInteracting()) return;
     if (isMobile) return;
 
     const { mouse, camera } = state;
@@ -57,6 +60,8 @@ const Computers = ({ isMobile }) => {
 
   // micro rotation on model
   useFrame((state) => {
+    // Step aside during scroll / touch
+    if (isInteracting()) return;
     if (!groupRef.current) return;
 
     const t = safeNum(state.clock.getElapsedTime(), 0);
