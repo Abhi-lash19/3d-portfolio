@@ -61,8 +61,16 @@ const Computers = ({ isMobile }) => {
 
     const t = safeNum(state.clock.getElapsedTime(), 0);
 
-    // Keep animation on mobile also (slightly slower on mobile)
-    const speed = isMobile ? 0.25 : 0.4;
+    if (isMobile) {
+      // Mobile: ambient slow rotation (keeps model alive without interaction)
+      groupRef.current.rotation.y += 0.002; // subtle continuous spin
+      groupRef.current.rotation.x = -0.01;
+      groupRef.current.rotation.z = -0.1;
+      return;
+    }
+
+    // Desktop: premium floating animation
+    const speed = 0.4;
 
     groupRef.current.rotation.x = -0.01 + Math.sin(t * speed) * 0.02;
     groupRef.current.rotation.y = -0.2 + Math.sin(t * (speed * 0.75)) * 0.04;
