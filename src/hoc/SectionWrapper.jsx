@@ -24,14 +24,13 @@ const SectionWrapper = (Component, idName) =>
     return (
       <motion.section
         variants={staggerContainer()}
-        initial={isMobile ? "show" : "hidden"}
-        whileInView={isMobile ? undefined : "show"}
-        animate={isMobile ? "show" : undefined}
-        viewport={isMobile ? undefined : { once: true, amount: 0.25 }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: isMobile ? 0.1 : 0.25 }}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
         style={{ overflow: "visible" }}
       >
-        <span className='hash-span' id={idName}>
+        <span className="hash-span" id={idName}>
           &nbsp;
         </span>
 

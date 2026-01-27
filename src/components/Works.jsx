@@ -1,5 +1,4 @@
 // src/components/Works.jsx
-
 import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
@@ -20,12 +19,32 @@ const TiltWrapper = ({ isMobile, children }) => {
       tiltMaxAngleY={18}
       scale={1.02}
       transitionSpeed={450}
-      gyroscope={true}
+      gyroscope
     >
       {children}
     </Tilt>
   );
 };
+
+/**
+ * Adaptive animation
+ * - Mobile: opacity + translate (cheap GPU)
+ * - Desktop: spring animation (premium)
+ */
+const getCardVariant = (isMobile, index) =>
+  isMobile
+    ? {
+        hidden: { opacity: 0, y: 20 },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.35,
+            ease: "easeOut",
+          },
+        },
+      }
+    : fadeIn("up", "spring", index * 0.12, 0.6);
 
 const ProjectCard = ({
   index,
@@ -37,7 +56,11 @@ const ProjectCard = ({
   isMobile,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.15, 0.6)}>
+    <motion.div
+      variants={getCardVariant(isMobile, index)}
+      initial="hidden"
+      animate="show"
+    >
       <TiltWrapper isMobile={isMobile}>
         <div className="bg-tertiary p-5 rounded-2xl w-full sm:w-[360px]">
           <div className="relative w-full h-[200px] sm:h-[230px] overflow-hidden rounded-2xl">
@@ -45,7 +68,8 @@ const ProjectCard = ({
               src={image}
               alt={name}
               loading="lazy"
-              className="w-full h-full object-cover rounded-2xl"
+              decoding="async"
+              className="w-full h-full object-cover rounded-2xl will-change-transform"
             />
 
             {/* GitHub button stays clickable on mobile */}
@@ -109,13 +133,21 @@ const Works = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText}`}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={styles.sectionSubText}>My work</p>
+        <h2 className={styles.sectionHeadText}>Projects.</h2>
       </motion.div>
 
       <div className="w-full flex">
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: { duration: 0.4, ease: "easeOut" },
+            },
+          }}
+          initial="hidden"
+          animate="show"
           className="mt-3 text-secondary text-[16px] sm:text-[17px] max-w-3xl leading-[28px] sm:leading-[30px]"
         >
           These are some of my recent projects that reflect my work in backend
