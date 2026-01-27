@@ -31,7 +31,7 @@ import go from "./tech/go.png";
 
 import absolutelabs from "./company/AbsoluteLabs.png";
 import arcesium from "./company/arcesium.jpg";
-import bel from "./company/BEL.webp";
+import bel from "./company/BEL.jpg";
 
 // project images
 import xoGame from "./x-o-game.png";

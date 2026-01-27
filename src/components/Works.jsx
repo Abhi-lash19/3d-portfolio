@@ -27,24 +27,11 @@ const TiltWrapper = ({ isMobile, children }) => {
 };
 
 /**
- * Adaptive animation
- * - Mobile: opacity + translate (cheap GPU)
- * - Desktop: spring animation (premium)
+ * Desktop only animation
+ * - Mobile: NO per-card animation (critical performance fix)
  */
-const getCardVariant = (isMobile, index) =>
-  isMobile
-    ? {
-        hidden: { opacity: 0, y: 20 },
-        show: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.35,
-            ease: "easeOut",
-          },
-        },
-      }
-    : fadeIn("up", "spring", index * 0.12, 0.6);
+const desktopCardVariant = (index) =>
+  fadeIn("up", "spring", index * 0.12, 0.6);
 
 const ProjectCard = ({
   index,
@@ -55,12 +42,18 @@ const ProjectCard = ({
   source_code_link,
   isMobile,
 }) => {
+  const Wrapper = isMobile ? "div" : motion.div;
+  const motionProps = isMobile
+    ? {}
+    : {
+        variants: desktopCardVariant(index),
+        initial: "hidden",
+        whileInView: "show",
+        viewport: { once: true, amount: 0.2 },
+      };
+
   return (
-    <motion.div
-      variants={getCardVariant(isMobile, index)}
-      initial="hidden"
-      animate="show"
-    >
+    <Wrapper {...motionProps}>
       <TiltWrapper isMobile={isMobile}>
         <div className="bg-tertiary p-5 rounded-2xl w-full sm:w-[360px]">
           <div className="relative w-full h-[200px] sm:h-[230px] overflow-hidden rounded-2xl">
@@ -69,7 +62,7 @@ const ProjectCard = ({
               alt={name}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover rounded-2xl will-change-transform"
+              className="w-full h-full object-cover rounded-2xl"
             />
 
             {/* GitHub button stays clickable on mobile */}
@@ -111,7 +104,7 @@ const ProjectCard = ({
           </div>
         </div>
       </TiltWrapper>
-    </motion.div>
+    </Wrapper>
   );
 };
 
@@ -139,15 +132,10 @@ const Works = () => {
 
       <div className="w-full flex">
         <motion.p
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-              transition: { duration: 0.4, ease: "easeOut" },
-            },
-          }}
-          initial="hidden"
-          animate="show"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           className="mt-3 text-secondary text-[16px] sm:text-[17px] max-w-3xl leading-[28px] sm:leading-[30px]"
         >
           These are some of my recent projects that reflect my work in backend
