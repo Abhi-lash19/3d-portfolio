@@ -18,6 +18,8 @@ import javascript from "./tech/javascript.png";
 import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import typescript from "./tech/typescript.png";
+import datadog from "./tech/datadog.jpg";
+import k8s from "./tech/k8s.png";
 
 
 import aws from "./tech/aws.png";
@@ -70,6 +72,8 @@ export {
   python,
   terraform,
   go,
+  datadog,
+  k8s,
 
   // company
   absolutelabs,

@@ -17,38 +17,35 @@ const containerVariants = {
 };
 
 // Floating idle animation (subtle + continuous)
-const floatingAnimation = (i) => ({
+const floatingAnimation = (_i) => ({
   y: [0, -12, 0], // more floating than before (-7)
   transition: {
-    duration: 2.4 + (i % 3) * 0.35, // slightly faster + dynamic
+    duration: 2.6,
     repeat: Infinity,
     repeatType: "mirror",
     ease: "easeInOut",
-    delay: i * 0.05,
   },
 });
 
 // Glow animation: starts bright, dims slightly but NEVER disappears
-const glowAnimation = (i) => ({
+const glowAnimation = (_i) => ({
   opacity: [1, 0.65, 1], // stays visible always
   transition: {
-    duration: 2.6 + (i % 3) * 0.25,
+    duration: 3,
     repeat: Infinity,
     repeatType: "mirror",
     ease: "easeInOut",
-    delay: i * 0.08,
   },
 });
 
 // Each card reveal animation (includes floating)
-const cardRevealVariants = (i) => ({
+const cardRevealVariants = (_i) => ({
   hidden: { opacity: 0, y: 18, scale: 0.92 },
   show: {
     opacity: 1,
     y: 0,
     scale: 1,
     transition: { type: "spring", stiffness: 220, damping: 18 },
-    ...floatingAnimation(i),
   },
 });
 
@@ -80,7 +77,7 @@ const Tech = () => {
         {technologies.map((technology, index) => (
           <motion.div
             key={technology.name}
-            variants={cardRevealVariants(index)}
+            variants={cardRevealVariants}
             whileHover={{
               y: -16, // hover feels more floaty
               scale: 1.06,
@@ -108,7 +105,7 @@ const Tech = () => {
             {/* brighter base light (always visible) */}
             <motion.div
               className="absolute inset-0 bg-white/5"
-              animate={glowAnimation(index)} // glow starts ON and keeps pulsing
+              animate={glowAnimation}
             />
 
             {/* glow ring - NOW visible by default (not only hover) */}
@@ -118,17 +115,17 @@ const Tech = () => {
                 background:
                   "radial-gradient(circle at 30% 30%, rgba(145,94,255,0.45), transparent 60%)",
               }}
-              animate={glowAnimation(index)} // pulsing glow
+              animate={glowAnimation}
             />
 
-            {/* glow border - visible on load, dims slightly */}
+            {/* glow border */}
             <motion.div
               className="absolute inset-0 rounded-2xl border border-[#915EFF]/35"
-              animate={glowAnimation(index)}
+              animate={glowAnimation}
             />
 
-            {/* icon */}
-            <img
+            {/* floating icon */}
+            <motion.img
               src={technology.icon}
               alt={technology.name}
               loading="lazy"
@@ -138,15 +135,22 @@ const Tech = () => {
                 group-hover:scale-110 transition-transform duration-300
                 drop-shadow-[0_10px_30px_rgba(255,255,255,0.14)]
               "
+              animate={{
+                ...floatingAnimation,
+                transition: {
+                  ...floatingAnimation.transition,
+                  delay: index * 0.05, // slight per-card offset
+                },
+              }}
             />
 
             {/* shine */}
             <motion.div
               className="absolute -left-10 -top-10 w-28 h-28 bg-white/15 rotate-12 blur-2xl opacity-50"
               animate={{
-                opacity: [0.55, 0.25, 0.55], // ✅ never disappears
+                opacity: [0.55, 0.25, 0.55], // never disappears
                 transition: {
-                  duration: 3.2 + (index % 3) * 0.35,
+                  duration: 3.2,
                   repeat: Infinity,
                   repeatType: "mirror",
                   ease: "easeInOut",
@@ -155,13 +159,13 @@ const Tech = () => {
               }}
             />
 
-            {/* shadow boost glow (visible always, slightly pulsing) */}
+            {/* shadow boost glow */}
             <motion.div
               className="absolute inset-0 rounded-2xl shadow-[0_14px_70px_rgba(145,94,255,0.28)]"
               animate={{
-                opacity: [0.75, 0.35, 0.75], // ✅ stays visible
+                opacity: [0.75, 0.35, 0.75], // stays visible
                 transition: {
-                  duration: 2.8 + (index % 3) * 0.25,
+                  duration: 2.8,
                   repeat: Infinity,
                   repeatType: "mirror",
                   ease: "easeInOut",

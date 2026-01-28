@@ -19,6 +19,8 @@ import {
   python,
   terraform,
   go,
+  datadog,
+  k8s,
   xoGame,
   scribeai,
   jenkinsAws,
@@ -70,6 +72,8 @@ const technologies = [
   { name: "Python", icon: python },
   { name: "Terraform", icon: terraform },
   { name: "Go", icon: go },
+  { name: "DataDog", icon : datadog },
+  { name: "k8s", icon: k8s },
 ];
 
 const experiences = [
