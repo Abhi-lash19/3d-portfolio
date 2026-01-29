@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 import { styles } from "../styles";
+import { useMemo } from "react";
 
 // Stagger reveal container
 const containerVariants = {
@@ -17,8 +18,8 @@ const containerVariants = {
 };
 
 // Floating idle animation (subtle + continuous)
-const floatingAnimation = (_i) => ({
-  y: [0, -12, 0], // more floating than before (-7)
+const floatingAnimation = () => ({
+  y: [0, -12, 0],
   transition: {
     duration: 2.6,
     repeat: Infinity,
@@ -27,9 +28,9 @@ const floatingAnimation = (_i) => ({
   },
 });
 
-// Glow animation: starts bright, dims slightly but NEVER disappears
-const glowAnimation = (_i) => ({
-  opacity: [1, 0.65, 1], // stays visible always
+// Glow animation
+const glowAnimation = () => ({
+  opacity: [1, 0.65, 1],
   transition: {
     duration: 3,
     repeat: Infinity,
@@ -38,8 +39,8 @@ const glowAnimation = (_i) => ({
   },
 });
 
-// Each card reveal animation (includes floating)
-const cardRevealVariants = (_i) => ({
+// Card reveal animation
+const cardRevealVariants = () => ({
   hidden: { opacity: 0, y: 18, scale: 0.92 },
   show: {
     opacity: 1,
@@ -50,6 +51,11 @@ const cardRevealVariants = (_i) => ({
 });
 
 const Tech = () => {
+  const canHover = useMemo(() => {
+    if (typeof window === "undefined") return false;
+    return !window.matchMedia("(hover: none)").matches;
+  }, []);
+
   return (
     <div className="flex flex-col items-center">
       {/* Heading + Subheading */}
@@ -62,7 +68,7 @@ const Tech = () => {
       >
         <p className={styles.sectionSubText}>My daily toolkit</p>
         <h2 className={styles.sectionHeadText}>
-          Technologies I build with.
+          Technologies I build with
         </h2>
       </motion.div>
 
@@ -74,17 +80,27 @@ const Tech = () => {
         viewport={{ once: true, amount: 0.2 }}
         className="mt-14 flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10"
       >
-        {technologies.map((technology, index) => (
+        {technologies.map((technology) => (
           <motion.div
             key={technology.name}
             variants={cardRevealVariants}
-            whileHover={{
-              y: -16, // hover feels more floaty
-              scale: 1.06,
-              transition: { type: "spring", stiffness: 260, damping: 14 },
-            }}
+            whileHover={
+              canHover
+                ? {
+                    y: -10,
+                    scale: 1.05,
+                    transition: {
+                      type: "spring",
+                      stiffness: 140,
+                      damping: 20,
+                      mass: 0.6,
+                    },
+                  }
+                : undefined
+            }
             whileTap={{
-              scale: 0.96,
+              scale: 0.97,
+              transition: { duration: 0.12, ease: "easeOut" },
             }}
             className="
               group relative
@@ -105,7 +121,7 @@ const Tech = () => {
             {/* brighter base light (always visible) */}
             <motion.div
               className="absolute inset-0 bg-white/5"
-              animate={glowAnimation}
+              animate={glowAnimation()}
             />
 
             {/* glow ring - NOW visible by default (not only hover) */}
@@ -115,13 +131,13 @@ const Tech = () => {
                 background:
                   "radial-gradient(circle at 30% 30%, rgba(145,94,255,0.45), transparent 60%)",
               }}
-              animate={glowAnimation}
+              animate={glowAnimation()}
             />
 
             {/* glow border */}
             <motion.div
               className="absolute inset-0 rounded-2xl border border-[#915EFF]/35"
-              animate={glowAnimation}
+              animate={glowAnimation()}
             />
 
             {/* floating icon */}
@@ -135,13 +151,7 @@ const Tech = () => {
                 group-hover:scale-110 transition-transform duration-300
                 drop-shadow-[0_10px_30px_rgba(255,255,255,0.14)]
               "
-              animate={{
-                ...floatingAnimation,
-                transition: {
-                  ...floatingAnimation.transition,
-                  delay: index * 0.05, // slight per-card offset
-                },
-              }}
+              animate={floatingAnimation()}
             />
 
             {/* shine */}
@@ -154,7 +164,6 @@ const Tech = () => {
                   repeat: Infinity,
                   repeatType: "mirror",
                   ease: "easeInOut",
-                  delay: index * 0.07,
                 },
               }}
             />
@@ -169,7 +178,6 @@ const Tech = () => {
                   repeat: Infinity,
                   repeatType: "mirror",
                   ease: "easeInOut",
-                  delay: index * 0.06,
                 },
               }}
             />

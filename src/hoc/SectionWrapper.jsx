@@ -26,7 +26,7 @@ const SectionWrapper = (Component, idName) =>
         variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: true, amount: isMobile ? 0.15 : 0.25 }}
+        viewport={{ once: true, amount: isMobile ? 0.2 : 0.3 }}
         className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
         style={{ overflow: "visible" }}
       >
