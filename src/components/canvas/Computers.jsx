@@ -1,7 +1,7 @@
 // src/components/canvas/Computer.jsx
 
 import { Suspense, useEffect, useMemo, useState, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   OrbitControls,
   Preload,
@@ -26,7 +26,6 @@ const Rig = ({ isMobile }) => {
 
   useFrame((state) => {
     // Step aside during scroll / touch
-    if (isInteracting()) return;
     if (isMobile) return;
 
     const { mouse, camera } = state;
@@ -57,29 +56,36 @@ const Rig = ({ isMobile }) => {
 const Computers = ({ isMobile }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
   const groupRef = useRef();
+  const { invalidate } = useThree();
 
-  // micro rotation on model
   useFrame((state) => {
-    // Step aside during scroll / touch
-    if (isInteracting()) return;
     if (!groupRef.current) return;
 
     const t = safeNum(state.clock.getElapsedTime(), 0);
 
+    // blend instead of hard-stop during interaction (feels more premium)
+    const interactionBlend = !isMobile && isInteracting() ? 0.15 : 1;
+
+    /* MOBILE — time-based motion (NO accumulation = no freeze) */
     if (isMobile) {
-      // Mobile: ambient slow rotation (keeps model alive without interaction)
-      groupRef.current.rotation.y += 0.002; // subtle continuous spin
-      groupRef.current.rotation.x = -0.01;
-      groupRef.current.rotation.z = -0.1;
+      groupRef.current.rotation.set(
+        -0.01,
+        Math.sin(t * 0.25) * 0.04,
+        -0.1
+      );
+      invalidate(); // REQUIRED for frameloop="demand"
       return;
     }
 
     // Desktop: premium floating animation
     const speed = 0.4;
 
-    groupRef.current.rotation.x = -0.01 + Math.sin(t * speed) * 0.02;
-    groupRef.current.rotation.y = -0.2 + Math.sin(t * (speed * 0.75)) * 0.04;
-    groupRef.current.rotation.z = -0.1 + Math.sin(t * (speed * 0.85)) * 0.01;
+    groupRef.current.rotation.x =
+      -0.01 + Math.sin(t * speed) * 0.02 * interactionBlend;
+    groupRef.current.rotation.y =
+      -0.2 + Math.sin(t * (speed * 0.75)) * 0.04 * interactionBlend;
+    groupRef.current.rotation.z =
+      -0.1 + Math.sin(t * (speed * 0.85)) * 0.01 * interactionBlend;
 
     // if anything ever turns invalid, reset instantly
     if (
@@ -114,8 +120,8 @@ const Computers = ({ isMobile }) => {
 
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
+        scale={isMobile ? 0.68 : 0.75}
+        position={isMobile ? [0, -3.4, -2.4] : [0, -3.25, -1.5]}
       />
 
       {/* Realistic soft shadow under desk */}
@@ -146,36 +152,35 @@ const ComputersCanvas = () => {
   return (
     <Canvas
       className="r3f-canvas"
-      style={{ pointerEvents: isMobile ? "none" : "auto" }}
-      frameloop="always"
+      style={{
+        pointerEvents: isMobile ? "none" : "auto",
+        cursor: isMobile ? "default" : "grab", // clearer interaction affordance
+      }}
+      frameloop={isMobile ? "demand" : "always"} // mobile freeze fix
       shadows
       dpr={isMobile ? 1 : [1, 2]} // reduce work on mobile
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{
-        preserveDrawingBuffer: true,
-        antialias: !isMobile, // reduce GPU cost on mobile
+        preserveDrawingBuffer: false, // huge perf win
+        antialias: !isMobile,
         powerPreference: "high-performance",
-      }}
-      onCreated={({ gl }) => {
-        // avoids some GPU/precision weirdness on some devices
-        gl.setPixelRatio(window.devicePixelRatio || 1);
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
         {/* HDR lighting */}
-        <Environment preset="city" />
+        <Environment preset="city" blur={0.6} /> {/*softer, more cinematic */}
 
         {/* Premium parallax */}
         <Rig isMobile={isMobile} />
 
-        {/* Orbit controls: smooth + limited */}
+        {/* Orbit controls: smoother, calmer, more premium */}
         {!isMobile && (
           <OrbitControls
             enableZoom={false}
             enablePan={false}
             enableDamping
-            dampingFactor={0.06}
-            rotateSpeed={0.35}
+            dampingFactor={0.08}
+            rotateSpeed={0.30}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
