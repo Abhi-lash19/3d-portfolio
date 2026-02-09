@@ -72,7 +72,7 @@ const technologies = [
   { name: "Python", icon: python },
   { name: "Terraform", icon: terraform },
   { name: "Go", icon: go },
-  { name: "DataDog", icon : datadog },
+  { name: "DataDog", icon: datadog },
   { name: "k8s", icon: k8s },
 ];
 
@@ -81,7 +81,7 @@ const experiences = [
     title: "Senior Software Developer",
     company_name: "AbsoluteLabs",
     icon: absolutelabs,
-    iconBg: "#383E56",
+    iconBg: "#E6DEDD",
     date: "Apr 2025 – Present",
     points: [
       "Built scalable AWS pipelines using API Gateway, Lambda, SQS, S3, DynamoDB for event-driven integrations.",
@@ -97,7 +97,7 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "Oct 2023 – Mar 2025",
     points: [
-      "Maintained AWS Lambda + S3 workflows and supported API integration projects.",
+      "Built AWS integration infrastructure using SAM templates, enabling scalable and repeatable deployments.",
       "Optimized SQL queries on production tables to improve performance and reduce execution time.",
       "Implemented observability using Datadog custom metrics and CloudWatch dashboards.",
       "Automated error reporting using Python scripts to export structured Excel reports.",
@@ -107,17 +107,17 @@ const experiences = [
     title: "SRE Intern",
     company_name: "Arcesium",
     icon: arcesium,
-    iconBg: "#383E56",
+    iconBg: "#E6DEDD",
     date: "Jan 2023 – May 2023",
     points: [
-      "Enabled monitoring and dashboards using Datadog integrations.",
-      "Decommissioned legacy orchestration and migrated workloads to modern platforms.",
-      "Optimized HTTP request flows to reduce service latency and improve response times.",
-      "Automated security + CI/CD workflows using AWS, Linux, Python, and GitLab pipelines.",
+      "Integrated Datadog for system monitoring, metrics collection, and dashboard visualization across multiple services.",
+      "Contributed to decommissioning a legacy orchestration system (Podmaster) and migrated Kubernetes workloads to Veritas and Veda platforms.",
+      "Analyzed HTTP request flows within Kubernetes pods to identify latency bottlenecks and debug performance issues.",
+      "Developed a feature to integrate the internal ticketing system with Slack, enabling automated responses and follow-ups on tickets.",
     ],
   },
   {
-    title: "Intern",
+    title: "Software Development Intern",
     company_name: "Bharat Electronics Limited (BEL)",
     icon: bel,
     iconBg: "#E6DEDD",
