@@ -87,11 +87,12 @@ const ExperienceCard = ({ experience, index, isMobile }) => {
 };
 
 const Experience = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() =>
+    window.matchMedia("(max-width: 768px)").matches
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
-    setIsMobile(mediaQuery.matches);
 
     const handler = (e) => setIsMobile(e.matches);
     mediaQuery.addEventListener("change", handler);
