@@ -11,7 +11,7 @@ import {
 } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
-import { isInteracting } from "../../utils/interaction";
+import { isInteracting, setInteracting } from "../../utils/interaction";
 
 import CanvasLoader from "../Loader";
 
@@ -26,7 +26,7 @@ const Rig = ({ isMobile }) => {
 
   useFrame((state) => {
     // Step aside during scroll / touch
-    if (isMobile) return;
+    if (isMobile || isInteracting()) return;
 
     const { mouse, camera } = state;
 
@@ -44,7 +44,7 @@ const Rig = ({ isMobile }) => {
         baseCam.current[1] + parallaxY,
         baseCam.current[2]
       ),
-      0.06
+      0.085
     );
 
     camera.lookAt(0, 0, 0);
@@ -58,13 +58,21 @@ const Computers = ({ isMobile }) => {
   const groupRef = useRef();
   const { invalidate } = useThree();
 
+  // MEMOIZED MODEL PROPS (ADDED)
+  const modelProps = useMemo(
+    () => ({
+      scale: isMobile ? 0.68 : 0.75,
+      position: isMobile ? [0, -3.4, -2.4] : [0, -3.25, -1.5],
+    }),
+    [isMobile]
+  );
+
   useFrame((state) => {
     if (!groupRef.current) return;
 
     const t = safeNum(state.clock.getElapsedTime(), 0);
-
-    // blend instead of hard-stop during interaction (feels more premium)
-    const interactionBlend = !isMobile && isInteracting() ? 0.15 : 1;
+    // blend instead of hard-stop during interaction
+    const interactionBlend = !isMobile && isInteracting() ? 0.4 : 1;
 
     /* MOBILE — time-based motion (NO accumulation = no freeze) */
     if (isMobile) {
@@ -78,7 +86,7 @@ const Computers = ({ isMobile }) => {
     }
 
     // Desktop: premium floating animation
-    const speed = 0.4;
+    const speed = 0.55;
 
     groupRef.current.rotation.x =
       -0.01 + Math.sin(t * speed) * 0.02 * interactionBlend;
@@ -120,8 +128,8 @@ const Computers = ({ isMobile }) => {
 
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.68 : 0.75}
-        position={isMobile ? [0, -3.4, -2.4] : [0, -3.25, -1.5]}
+        scale={modelProps.scale}
+        position={modelProps.position}
       />
 
       {/* Realistic soft shadow under desk */}
@@ -152,23 +160,27 @@ const ComputersCanvas = () => {
   return (
     <Canvas
       className="r3f-canvas"
+      onPointerEnter={() => setInteracting(true)}
+      onPointerLeave={() => setInteracting(false)}
+      onPointerDown={() => setInteracting(true)}
+      onPointerUp={() => setInteracting(false)}
       style={{
         pointerEvents: isMobile ? "none" : "auto",
-        cursor: isMobile ? "default" : "grab", // clearer interaction affordance
+        cursor: isMobile ? "default" : "grab",
       }}
-      frameloop={isMobile ? "demand" : "always"} // mobile freeze fix
-      shadows
-      dpr={isMobile ? 1 : [1, 2]} // reduce work on mobile
+      frameloop={isMobile ? "demand" : "always"}
+      shadows={!isMobile}
+      dpr={isMobile ? 1 : [1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{
-        preserveDrawingBuffer: false, // huge perf win
+        preserveDrawingBuffer: false,
         antialias: !isMobile,
         powerPreference: "high-performance",
       }}
     >
       <Suspense fallback={<CanvasLoader />}>
         {/* HDR lighting */}
-        <Environment preset="city" blur={0.6} /> {/*softer, more cinematic */}
+        <Environment preset="city" blur={0.4} /> {/*softer, more cinematic */}
 
         {/* Premium parallax */}
         <Rig isMobile={isMobile} />
@@ -180,7 +192,7 @@ const ComputersCanvas = () => {
             enablePan={false}
             enableDamping
             dampingFactor={0.08}
-            rotateSpeed={0.30}
+            rotateSpeed={0.3}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
