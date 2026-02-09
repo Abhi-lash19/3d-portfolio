@@ -43,6 +43,7 @@ import pythonFastapiAws from "./python_fastapi_aws.png";
 import monitorpro from "./monitorpro.png";
 import infraDeployAws from "./infra-deploy-aws.png";
 import expressTypescript from "./express_typescript.png";
+import portfolio from "./portfolio.png";
 
 
 export {
@@ -88,4 +89,5 @@ export {
   monitorpro,
   infraDeployAws,
   expressTypescript,
+  portfolio,
 };

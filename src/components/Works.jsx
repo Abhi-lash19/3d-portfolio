@@ -7,9 +7,11 @@ import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
+import { textVariant } from "../utils/motion";
 
-//  Small wrapper: Tilt ON for desktop, OFF for mobile (performance fix)
+/* ----------------------------------------
+   Tilt wrapper: desktop only (perf safe)
+----------------------------------------- */
 const TiltWrapper = ({ isMobile, children }) => {
   if (isMobile) return <>{children}</>;
 
@@ -18,7 +20,7 @@ const TiltWrapper = ({ isMobile, children }) => {
       tiltMaxAngleX={18}
       tiltMaxAngleY={18}
       scale={1.02}
-      transitionSpeed={450}
+      transitionSpeed={420}
       gyroscope
     >
       {children}
@@ -26,12 +28,24 @@ const TiltWrapper = ({ isMobile, children }) => {
   );
 };
 
-/**
- * Desktop only animation
- * - Mobile: NO per-card animation (critical performance fix)
- */
-const desktopCardVariant = (index) =>
-  fadeIn("up", "spring", index * 0.12, 0.6);
+/* ----------------------------------------
+   Desktop-only card animation (no spring)
+----------------------------------------- */
+const desktopCardVariant = (index) => ({
+  hidden: {
+    opacity: 0,
+    y: 24,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: index * 0.08,
+      duration: 0.45,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+});
 
 const ProjectCard = ({
   index,
@@ -46,26 +60,42 @@ const ProjectCard = ({
   const motionProps = isMobile
     ? {}
     : {
-        variants: desktopCardVariant(index),
-        initial: "hidden",
-        whileInView: "show",
-        viewport: { once: true, amount: 0.2 },
-      };
+      variants: desktopCardVariant(index),
+      initial: "hidden",
+      whileInView: "show",
+      viewport: { once: true, amount: 0.2 },
+    };
 
   return (
     <Wrapper {...motionProps}>
       <TiltWrapper isMobile={isMobile}>
-        <div className="bg-tertiary p-5 rounded-2xl w-full sm:w-[360px]">
+        <div
+          className="
+            bg-tertiary p-5 rounded-2xl
+            w-full sm:w-[360px]
+            transition-transform duration-300
+            hover:-translate-y-1
+          "
+        >
+          {/* Image */}
           <div className="relative w-full h-[200px] sm:h-[230px] overflow-hidden rounded-2xl">
             <img
               src={image}
               alt={name}
               loading="lazy"
               decoding="async"
-              className="w-full h-full object-cover rounded-2xl"
+              className="
+                w-full h-full object-cover rounded-2xl
+              "
+              style={{
+                imageRendering: "auto",
+                WebkitBackfaceVisibility: "hidden",
+                transform: "translateZ(0)",
+                filter: "contrast(1.05) saturate(1.05)",
+              }}
             />
 
-            {/* GitHub button stays clickable on mobile */}
+            {/* GitHub button */}
             <div className="absolute inset-0 flex justify-end m-3">
               <button
                 type="button"
@@ -75,13 +105,14 @@ const ProjectCard = ({
               >
                 <img
                   src={github}
-                  alt="source code"
+                  alt="GitHub"
                   className="w-1/2 h-1/2 object-contain"
                 />
               </button>
             </div>
           </div>
 
+          {/* Content */}
           <div className="mt-5">
             <h3 className="text-white font-bold text-[20px] sm:text-[24px]">
               {name}
@@ -92,14 +123,21 @@ const ProjectCard = ({
             </p>
           </div>
 
+          {/* Tech stack tags — white pill + colored text */}
           <div className="mt-4 flex flex-wrap gap-2">
             {tags.map((tag) => (
-              <p
+              <span
                 key={`${name}-${tag.name}`}
-                className={`text-[13px] sm:text-[14px] ${tag.color}`}
+                className={`
+                  text-[12px] sm:text-[13px]
+                  px-2 py-0.5
+                  rounded-md
+                  bg-white
+                  ${tag.color}
+                `}
               >
-                #{tag.name}
-              </p>
+                {tag.name}
+              </span>
             ))}
           </div>
         </div>
@@ -127,7 +165,7 @@ const Works = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects.</h2>
+        <h2 className={styles.sectionHeadText}>Projects</h2>
       </motion.div>
 
       <div className="w-full flex">
@@ -135,8 +173,13 @@ const Works = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="mt-3 text-secondary text-[16px] sm:text-[17px] max-w-3xl leading-[28px] sm:leading-[30px]"
+          transition={{ duration: 0.45, ease: "easeOut" }}
+          className="
+            mt-3 text-secondary
+            text-[16px] sm:text-[17px]
+            max-w-3xl
+            leading-[28px] sm:leading-[30px]
+          "
         >
           These are some of my recent projects that reflect my work in backend
           systems, cloud automation, CI/CD pipelines, and modern web
@@ -145,8 +188,15 @@ const Works = () => {
         </motion.p>
       </div>
 
-      {/* Fixed: Always grid (Mobile visible + clean layout) */}
-      <div className="mt-14 sm:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 w-full">
+      {/* Grid */}
+      <div
+        className="
+          mt-14 sm:mt-20
+          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+          gap-6 sm:gap-7
+          w-full
+        "
+      >
         {projects.map((project, index) => (
           <ProjectCard
             key={`project-${index}`}

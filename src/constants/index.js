@@ -22,6 +22,7 @@ import {
   datadog,
   k8s,
   xoGame,
+  portfolio,
   scribeai,
   jenkinsAws,
   pythonFastapiAws,
@@ -136,11 +137,11 @@ const projects = [
     description:
       "Personal developer portfolio built using React, Three.js (R3F), TailwindCSS and Framer Motion with smooth animations and 3D components.",
     tags: [
-      { name: "react", color: "blue-text-gradient" },
-      { name: "threejs", color: "green-text-gradient" },
-      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "react", color: "text-violet-400" },
+      { name: "threejs", color: "text-emerald-400" },
+      { name: "tailwind", color: "text-rose-400" },
     ],
-    image: scribeai,
+    image: portfolio,
     source_code_link: "https://github.com/Abhi-lash19/3d-portfolio",
   },
   {
@@ -148,9 +149,9 @@ const projects = [
     description:
       "AI-powered chat + content writing assistant built using OpenAI + Stream Chat with real-time collaboration and clean UI.",
     tags: [
-      { name: "typescript", color: "blue-text-gradient" },
-      { name: "openai", color: "green-text-gradient" },
-      { name: "stream-chat", color: "pink-text-gradient" },
+      { name: "typescript", color: "text-violet-400" },
+      { name: "openai", color: "text-emerald-400" },
+      { name: "stream-chat", color: "text-rose-400" },
     ],
     image: scribeai,
     source_code_link: "https://github.com/Abhi-lash19/ScribeAI",
@@ -160,9 +161,9 @@ const projects = [
     description:
       "Backend project using Express.js + TypeScript covering REST APIs, middleware, error handling, static assets, and scalable architecture patterns.",
     tags: [
-      { name: "nodejs", color: "blue-text-gradient" },
-      { name: "express", color: "green-text-gradient" },
-      { name: "typescript", color: "pink-text-gradient" },
+      { name: "nodejs", color: "text-violet-400" },
+      { name: "express", color: "text-emerald-400" },
+      { name: "typescript", color: "text-rose-400" },
     ],
     image: expressTypescript,
     source_code_link: "https://github.com/Abhi-lash19/express-typescript-backend",
@@ -172,35 +173,33 @@ const projects = [
     description:
       "Real-time monitoring dashboard to visualize CPU/memory metrics using Flask-SocketIO and Chart.js, packaged with Docker for deployment.",
     tags: [
-      { name: "python", color: "blue-text-gradient" },
-      { name: "docker", color: "green-text-gradient" },
-      { name: "websockets", color: "pink-text-gradient" },
+      { name: "python", color: "text-violet-400" },
+      { name: "docker", color: "text-emerald-400" },
+      { name: "websockets", color: "text-rose-400" },
     ],
     image: monitorpro,
     source_code_link: "https://github.com/Abhi-lash19/MonitorPro",
   },
-
   {
     name: "XO Game (Tic-Tac-Toe)",
     description:
       "Classic XO (Tic-Tac-Toe) game with interactive UI, turn-based logic, winner detection, and reset functionality.",
     tags: [
-      { name: "javascript", color: "blue-text-gradient" },
-      { name: "html", color: "green-text-gradient" },
-      { name: "css", color: "pink-text-gradient" },
+      { name: "javascript", color: "text-violet-400" },
+      { name: "html", color: "text-emerald-400" },
+      { name: "css", color: "text-rose-400" },
     ],
     image: xoGame,
     source_code_link: "https://github.com/Abhi-lash19/xo-game",
   },
-
   {
     name: "infra-deploy-aws (Terraform CI/CD)",
     description:
       "CI/CD automation using GitHub Actions + Terraform to provision AWS infra and deploy Docker applications with versioned builds.",
     tags: [
-      { name: "terraform", color: "blue-text-gradient" },
-      { name: "github-actions", color: "green-text-gradient" },
-      { name: "aws", color: "pink-text-gradient" },
+      { name: "terraform", color: "text-violet-400" },
+      { name: "github-actions", color: "text-emerald-400" },
+      { name: "aws", color: "text-rose-400" },
     ],
     image: infraDeployAws,
     source_code_link: "https://github.com/Abhi-lash19/infra-deploy-aws",
@@ -210,9 +209,9 @@ const projects = [
     description:
       "Infrastructure automation project focusing on Jenkins pipelines and EKS provisioning workflows for modern DevOps deployments.",
     tags: [
-      { name: "jenkins", color: "blue-text-gradient" },
-      { name: "eks", color: "green-text-gradient" },
-      { name: "devops", color: "pink-text-gradient" },
+      { name: "jenkins", color: "text-violet-400" },
+      { name: "eks", color: "text-emerald-400" },
+      { name: "devops", color: "text-rose-400" },
     ],
     image: jenkinsAws,
     source_code_link: "https://github.com/Abhi-lash19/jenkins-eks-automation",
@@ -222,9 +221,9 @@ const projects = [
     description:
       "FastAPI-based project demonstrating cloud-ready backend services and deployment practices using AWS-friendly patterns.",
     tags: [
-      { name: "fastapi", color: "blue-text-gradient" },
-      { name: "python", color: "green-text-gradient" },
-      { name: "aws", color: "pink-text-gradient" },
+      { name: "fastapi", color: "text-violet-400" },
+      { name: "python", color: "text-emerald-400" },
+      { name: "aws", color: "text-rose-400" },
     ],
     image: pythonFastapiAws,
     source_code_link: "https://github.com/Abhi-lash19/Python-FastApi-AWS",
