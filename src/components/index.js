@@ -1,6 +1,5 @@
 // src/components/index.js
 
-import { EarthCanvas, ComputersCanvas, StarsCanvas } from "./canvas";
 import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
@@ -19,7 +18,4 @@ export {
   Works,
   Contact,
   Footer,
-  EarthCanvas,
-  ComputersCanvas,
-  StarsCanvas,
 };

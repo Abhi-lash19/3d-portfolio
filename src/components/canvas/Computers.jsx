@@ -4,7 +4,6 @@ import { Suspense, useEffect, useMemo, useState, useRef } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import {
   OrbitControls,
-  Preload,
   useGLTF,
   Environment,
   ContactShadows,
@@ -211,8 +210,6 @@ const ComputersCanvas = () => {
 
         <Computers isMobile={isMobile} />
       </Suspense>
-
-      <Preload all />
     </Canvas>
   );
 };
