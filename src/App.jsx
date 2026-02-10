@@ -12,7 +12,9 @@ import Footer from "./components/Footer";
 import { lazy, Suspense } from "react";
 
 const StarsCanvas = lazy(() =>
-  import("./components/canvas/Stars")
+  import("./components/canvas").then((m) => ({
+    default: m.StarsCanvas,
+  }))
 );
 
 
