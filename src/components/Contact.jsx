@@ -8,9 +8,8 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const EarthCanvas = lazy(() =>
-  import("./canvas").then((m) => ({ default: m.EarthCanvas }))
+  import("./canvas/Earth")
 );
-
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
