@@ -32,6 +32,9 @@ import {
   absolutelabs,
   bel,
   arcesium,
+  linkedin,
+  gmail,
+  ig,
 } from "../assets";
 
 export const navLinks = [
@@ -75,6 +78,13 @@ const technologies = [
   { name: "Go", icon: go },
   { name: "DataDog", icon: datadog },
   { name: "k8s", icon: k8s },
+];
+
+const socials = [
+  { href: "https://github.com/Abhi-lash19", icon: github, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/abhilash-giri/", icon: linkedin, label: "LinkedIn" },
+  { href: "https://instagram.com/_abhilash_._._", icon: ig, label: "Instagram" },
+  { href: "mailto:abhilashkumargiri63@gmail.com", icon: gmail, label: "Email" },
 ];
 
 const experiences = [
@@ -231,4 +241,4 @@ const projects = [
 ];
 
 
-export { services, technologies, experiences, projects };
+export { services, technologies, socials, experiences, projects };
