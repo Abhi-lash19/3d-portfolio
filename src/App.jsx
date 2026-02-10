@@ -6,9 +6,15 @@ import {
   Navbar,
   Tech,
   Works,
-  StarsCanvas,
 } from "./components";
 import Footer from "./components/Footer";
+
+import { lazy, Suspense } from "react";
+
+const StarsCanvas = lazy(() =>
+  import("./components/canvas/Stars")
+);
+
 
 const App = () => {
   return (
@@ -23,7 +29,10 @@ const App = () => {
       <Works />
       <div className='relative z-0'>
         <Contact />
-        <StarsCanvas />
+        {/* Lazy-loaded Three.js background */}
+        <Suspense fallback={null}>
+          <StarsCanvas />
+        </Suspense>
         <Footer />
       </div>
     </div>
