@@ -2,32 +2,40 @@ import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 
-import { fadeIn } from "../utils/motion";
-
 const ServiceCard = ({ _index, title, icon }) => {
   return (
-    <Tilt
-      className='xs:w-[250px] w-full'
-      tiltMaxAngleX={12}
-      tiltMaxAngleY={12}
-      scale={1.015}
-      transitionSpeed={600}
-      gyroscope={true}
+    <motion.div
+      variants={{
+        hidden: { y: 40, opacity: 0 },
+        visible: {
+          y: 0,
+          opacity: 1,
+          transition: {
+            type: "spring",
+            duration: 0.45,
+          },
+        },
+      }}
+      className="xs:w-[250px] w-full"
     >
-      <motion.div
-        variants={fadeIn("up", "spring", 0, 0.75)}
-        className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+      <Tilt
+        tiltMaxAngleX={12}
+        tiltMaxAngleY={12}
+        scale={1.015}
+        transitionSpeed={600}
+        gyroscope={true}
+        className="w-full"
       >
-        <div
-          className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-        >
-          <img src={icon} alt={title} className='w-16 h-16 object-contain' />
-          <h3 className='text-white text-[20px] font-bold text-center'>
-            {title}
-          </h3>
+        <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
+          <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
+            <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+            <h3 className="text-white text-[20px] font-bold text-center">
+              {title}
+            </h3>
+          </div>
         </div>
-      </motion.div>
-    </Tilt>
+      </Tilt>
+    </motion.div>
   );
 };
 

@@ -26,14 +26,12 @@ export const fadeIn = (direction, type, delay, duration) => ({
     x: 0,
     y: 0,
     opacity: 1,
-    transition: isInteracting()
-      ? { duration: 0 }
-      : {
-        type: type,
-        delay: delay,
-        duration: duration,
-        ease: [0.22, 1, 0.36, 1],
-      },
+    transition: {
+      type: type,
+      delay: delay,
+      duration: duration,
+      ease: [0.22, 1, 0.36, 1],
+    },
   },
 });
 
@@ -78,11 +76,9 @@ export const slideIn = (direction, type, delay, duration) => ({
 export const staggerContainer = (staggerChildren, delayChildren) => ({
   hidden: {},
   show: {
-    transition: isInteracting()
-      ? {}
-      : {
-        staggerChildren: staggerChildren,
-        delayChildren: delayChildren || 0,
-      },
+    transition: {
+      staggerChildren: staggerChildren,
+      delayChildren: delayChildren || 0,
+    },
   },
 });
