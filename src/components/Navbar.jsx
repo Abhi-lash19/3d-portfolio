@@ -44,11 +44,10 @@ const Navbar = () => {
           <img
             src={logo}
             alt="logo"
-            className="w-9 h-9 object-contain transition-transform duration-200 group-hover:scale-105"
+            className="w-11 h-11 md:w-12 md:h-12 object-contain transition-transform duration-200 group-hover:scale-105"
           />
 
-          <p className="text-white text-[17px] font-semibold cursor-pointer flex transition-opacity duration-200 group-hover:opacity-90">
-            {/* Reduced from 18px → 17px */}
+          <p className="text-white text-[19px] md:text-[21px] font-semibold tracking-wide cursor-pointer flex transition-opacity duration-200 group-hover:opacity-90">
             Abhilash&nbsp;
             <span className="sm:block hidden text-white/70">
               | Portfolio
@@ -78,7 +77,7 @@ const Navbar = () => {
 
               {/* Active underline indicator */}
               {active === nav.title && (
-                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#915EFF] rounded-full" />
+                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#E11D48] rounded-full" />
               )}
             </li>
           ))}
