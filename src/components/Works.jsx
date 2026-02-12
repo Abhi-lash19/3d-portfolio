@@ -17,10 +17,10 @@ const TiltWrapper = ({ isMobile, children }) => {
 
   return (
     <Tilt
-      tiltMaxAngleX={18}
-      tiltMaxAngleY={18}
+      tiltMaxAngleX={10}
+      tiltMaxAngleY={10}
       scale={1.02}
-      transitionSpeed={420}
+      transitionSpeed={300}
       gyroscope
     >
       {children}
@@ -61,9 +61,6 @@ const ProjectCard = ({
     ? {}
     : {
       variants: desktopCardVariant(index),
-      initial: "hidden",
-      whileInView: "show",
-      viewport: { once: true, amount: 0.2 },
     };
 
   return (
@@ -189,13 +186,16 @@ const Works = () => {
       </div>
 
       {/* Grid */}
-      <div
+      <motion.div
         className="
           mt-14 sm:mt-20
           grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
           gap-6 sm:gap-7
           w-full
         "
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.3 }}
       >
         {projects.map((project, index) => (
           <ProjectCard
@@ -205,7 +205,7 @@ const Works = () => {
             {...project}
           />
         ))}
-      </div>
+      </motion.div>
     </>
   );
 };
