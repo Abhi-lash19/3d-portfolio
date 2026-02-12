@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { fadeIn } from "../utils/motion";
 
-const ServiceCard = ({ index, title, icon }) => {
+const ServiceCard = ({ _index, title, icon }) => {
   return (
     <Tilt
       className='xs:w-[250px] w-full'
@@ -15,7 +15,7 @@ const ServiceCard = ({ index, title, icon }) => {
       gyroscope={true}
     >
       <motion.div
-        variants={fadeIn("", "tween", index * 0.12, 0.6)}
+        variants={fadeIn("up", "spring", 0, 0.75)}
         className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
       >
         <div
@@ -32,7 +32,7 @@ const ServiceCard = ({ index, title, icon }) => {
 };
 
 ServiceCard.propTypes = {
-  index: PropTypes.number.isRequired,
+  _index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
 };

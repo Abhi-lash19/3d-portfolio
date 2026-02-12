@@ -66,18 +66,18 @@ const About = () => {
 
       <motion.div
         className='mt-20 flex flex-wrap gap-10'
-        initial='hidden'
-        whileInView='show'
-        viewport={{ once: true, margin: "-100px" }}
         variants={{
           hidden: {},
           show: {
             transition: {
-              staggerChildren: 1.0,
-              delayChildren: 0.8,
+              staggerChildren: 0.25,
+              delayChildren: 0.2,
             },
           },
         }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
       >
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
