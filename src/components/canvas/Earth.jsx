@@ -1,15 +1,18 @@
-import React, { Suspense, useRef } from "react";
+import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
+import { useVisibleFrameloop } from "./useVisibleFrameloop";
+import { useMediaQuery } from "../../utils/useMediaQuery";
+
 import CanvasLoader from "../Loader";
 
-const Earth = () => {
+const Earth = ({ reduceMotion }) => {
   const earth = useGLTF("./planet/scene.gltf");
   const ref = useRef();
 
   useFrame((_, delta) => {
-    if (ref.current) {
+    if (ref.current && !reduceMotion) {
       ref.current.rotation.y += delta * 0.4;
     }
   });
@@ -26,8 +29,15 @@ const Earth = () => {
 };
 
 const EarthCanvas = () => {
+  const [canvasRef, isVisible] = useVisibleFrameloop();
+  const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
+
   return (
     <Canvas
+      ref={canvasRef}
+      // "never" fully stops rendering while off screen; "demand" would stay
+      // alive because OrbitControls(autoRotate) invalidates every frame.
+      frameloop={isVisible ? "always" : "never"}
       shadows
       dpr={[1, 1.5]}
       gl={{ preserveDrawingBuffer: false }}
@@ -42,11 +52,11 @@ const EarthCanvas = () => {
         <OrbitControls
           enableZoom={false}
           enablePan={false}
-          autoRotate
+          autoRotate={!reduceMotion}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Earth />
+        <Earth reduceMotion={reduceMotion} />
       </Suspense>
     </Canvas>
   );

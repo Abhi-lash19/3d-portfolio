@@ -1,5 +1,4 @@
 // src/components/Works.jsx
-import { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -8,6 +7,7 @@ import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { textVariant } from "../utils/motion";
+import { useMediaQuery } from "../utils/useMediaQuery";
 
 /* ----------------------------------------
    Tilt wrapper: desktop only (perf safe)
@@ -144,19 +144,7 @@ const ProjectCard = ({
 };
 
 const Works = () => {
-  // Fix ESLint warning: no setState inside effect body
-  const [isMobile, setIsMobile] = useState(() =>
-    window.matchMedia("(max-width: 640px)").matches
-  );
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 640px)");
-
-    const onChange = (e) => setIsMobile(e.matches);
-    mq.addEventListener("change", onChange);
-
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
+  const isMobile = useMediaQuery("(max-width: 640px)");
 
   return (
     <>
@@ -210,5 +198,5 @@ const Works = () => {
   );
 };
 
-const WrappedWorks = SectionWrapper(Works, "work");
+const WrappedWorks = SectionWrapper(Works, "projects");
 export default WrappedWorks;

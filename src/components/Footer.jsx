@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { socials } from "../constants";
+import { navLinks, socials } from "../constants";
 import { setStarsDim } from "./canvas/starsState";
 import { useMagnetic } from "../utils/useMagnetic";
 
@@ -30,7 +30,7 @@ const SocialIcon = ({ href, icon, label }) => {
         grid place-items-center
         transition-all duration-300
         hover:bg-white/20
-        hover:shadow-[0_0_25px_rgba(145,94,255,0.8)]
+        hover:shadow-glow
         active:scale-95
       "
         >
@@ -55,13 +55,16 @@ const Footer = () => {
 
     const [showTop, setShowTop] = useState(false);
     const [activeLink, setActiveLink] = useState(null);
+    // measured from the hovered link so the dot lines up whatever the list length
+    const [dotTop, setDotTop] = useState(0);
 
-    /* Scroll-based glass */
+    /* Scroll-based glass — interpolate the whole rgba() string, not a number */
     const { scrollY } = useScroll();
-    const glassOpacity = useTransform(scrollY, [0, 600], [0.4, 0.75]);
-
-    /* Footer → Stars parallax sync */
-    const starsParallax = useTransform(scrollY, [0, 800], [1, 0.85]);
+    const glassBackground = useTransform(
+        scrollY,
+        [0, 600],
+        ["rgba(15, 23, 42, 0.4)", "rgba(15, 23, 42, 0.75)"]
+    );
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -79,20 +82,10 @@ const Footer = () => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    /* Push parallax value to stars system */
-    useEffect(() => {
-        const unsubscribe = starsParallax.on("change", (v) => {
-            window.dispatchEvent(
-                new CustomEvent("stars-parallax", { detail: v })
-            );
-        });
-        return () => unsubscribe();
-    }, [starsParallax]);
-
     return (
         <motion.footer
             ref={ref}
-            style={{ backgroundColor: glassOpacity }}
+            style={{ backgroundColor: glassBackground }}
             className="
         relative w-full
         backdrop-blur-md
@@ -139,17 +132,24 @@ const Footer = () => {
                             layout
                             className="absolute right-0 w-2 h-2 rounded-full bg-accent"
                             style={{
-                                top: activeLink !== null ? `${activeLink * 56}px` : "0px",
+                                top: `${dotTop}px`,
                                 opacity: activeLink !== null ? 1 : 0,
                             }}
                             transition={{ type: "spring", stiffness: 300, damping: 25 }}
                         />
 
-                        {["About", "Work", "Contact"].map((item, index) => (
+                        {navLinks.map((nav, index) => (
                             <a
-                                key={item}
-                                href={`#${item.toLowerCase()}`}
-                                onMouseEnter={() => setActiveLink(index)}
+                                key={nav.id}
+                                href={`#${nav.id}`}
+                                onMouseEnter={(e) => {
+                                    setActiveLink(index);
+                                    setDotTop(
+                                        e.currentTarget.offsetTop +
+                                        e.currentTarget.offsetHeight / 2 -
+                                        4
+                                    );
+                                }}
                                 onMouseLeave={() => setActiveLink(null)}
                                 className="
                   caveat-nav
@@ -161,7 +161,7 @@ const Footer = () => {
                 "
                                 style={{ fontFamily: "'Caveat', cursive" }}
                             >
-                                {item}
+                                {nav.title}
                             </a>
                         ))}
                     </nav>
@@ -190,7 +190,7 @@ const Footer = () => {
             grid place-items-center
             transition-all duration-300
             hover:scale-110
-            hover:shadow-[0_0_25px_rgba(145,94,255,0.8)]
+            hover:shadow-glow
             active:scale-95
           "
                 >

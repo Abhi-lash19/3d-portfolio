@@ -5,11 +5,15 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
+import { useMediaQuery } from "../utils/useMediaQuery";
 
 import ServiceCard from "./ServiceCard";
 
 const About = () => {
   const [gradientDone, setGradientDone] = useState(false);
+  // backgroundPosition is not a transform, so neither the CSS media query nor
+  // MotionConfig suppresses it — skip the sweep explicitly
+  const reduceMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
 
   return (
     <>
@@ -22,7 +26,7 @@ const About = () => {
           whileInView={{ backgroundPosition: "200% 50%" }}
           viewport={{ once: true }}
           transition={{
-            duration: 3.2,
+            duration: reduceMotion ? 0 : 3.2,
             ease: "easeInOut",
           }}
           onAnimationComplete={() => setGradientDone(true)}
@@ -44,7 +48,7 @@ const About = () => {
       </motion.div>
 
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        variants={fadeIn("", "tween", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
         I’m a Software Developer with strong experience in building scalable backend
@@ -67,7 +71,8 @@ const About = () => {
       <motion.div
         className='mt-20 flex flex-wrap gap-10'
         variants={{
-          visible: {
+          hidden: {},
+          show: {
             transition: {
               staggerChildren: 0.25,
               delayChildren: 0.2,
@@ -75,7 +80,7 @@ const About = () => {
           },
         }}
         initial="hidden"
-        whileInView="visible"
+        whileInView="show"
         viewport={{ once: true, amount: 0.4 }}
       >
         {services.map((service) => (

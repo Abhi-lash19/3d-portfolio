@@ -2,8 +2,6 @@
 
 import logo from "./logo.jpg";
 import backend from "./backend.png";
-import creator from "./creator.png";
-import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
 import menu from "./menu.svg";
@@ -39,22 +37,20 @@ import arcesium from "./company/arcesium.jpg";
 import bel from "./company/BEL.jpg";
 
 // project images
-import xoGame from "./x-o-game.png";
-import scribeai from "./scribeai.png";
-import jenkinsAws from "./jenkins_aws.png";
-import pythonFastapiAws from "./python_fastapi_aws.png";
-import monitorpro from "./monitorpro.png";
-import infraDeployAws from "./infra-deploy-aws.png";
-import expressTypescript from "./express_typescript.png";
-import portfolio from "./portfolio.png";
+import xoGame from "./x-o-game.webp";
+import scribeai from "./scribeai.webp";
+import jenkinsAws from "./jenkins_aws.webp";
+import pythonFastapiAws from "./python_fastapi_aws.webp";
+import monitorpro from "./monitorpro.webp";
+import infraDeployAws from "./infra-deploy-aws.webp";
+import expressTypescript from "./express_typescript.webp";
+import portfolio from "./portfolio.webp";
 
 
 export {
   // common
   logo,
   backend,
-  creator,
-  mobile,
   web,
   github,
   menu,

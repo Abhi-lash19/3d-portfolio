@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -9,14 +9,76 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
+      // back at the hero: nothing is "current"
+      if (window.scrollY <= 100) setActive("");
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  /* Keep the active link in sync with the section the reader is actually on.
+     The band ignores sections that are only clipping the top/bottom edge. */
+  useEffect(() => {
+    const sections = navLinks
+      .map((nav) => {
+        const anchor = document.getElementById(nav.id);
+        const section = anchor?.closest("section") || anchor;
+        return section ? { title: nav.title, section } : null;
+      })
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const match = sections.find((s) => s.section === entry.target);
+          if (match) setActive(match.title);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+
+    sections.forEach((s) => observer.observe(s.section));
+    return () => observer.disconnect();
+  }, []);
+
+  /* Mobile menu: close on Escape and on a click outside the panel/button */
+  useEffect(() => {
+    if (!toggle) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setToggle(false);
+        buttonRef.current?.focus();
+      }
+    };
+
+    const onPointerDown = (e) => {
+      if (
+        menuRef.current?.contains(e.target) ||
+        buttonRef.current?.contains(e.target)
+      ) {
+        return;
+      }
+      setToggle(false);
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("pointerdown", onPointerDown);
+    };
+  }, [toggle]);
 
   return (
     <nav
@@ -71,13 +133,17 @@ const Navbar = () => {
                 }
                 hover:-translate-y-[1px]
               `}
-            // 15px font for premium UI
             >
-              <a href={`#${nav.id}`}>{nav.title}</a>
+              <a
+                href={`#${nav.id}`}
+                aria-current={active === nav.title ? "true" : undefined}
+              >
+                {nav.title}
+              </a>
 
               {/* Active underline indicator */}
               {active === nav.title && (
-                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-[#E11D48] rounded-full" />
+                <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-highlight rounded-full" />
               )}
             </li>
           ))}
@@ -85,15 +151,28 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[26px] h-[26px] object-contain cursor-pointer transition-transform duration-200 active:scale-95"
-            onClick={() => setToggle(!toggle)}
-          />
+          <button
+            ref={buttonRef}
+            type="button"
+            aria-label={toggle ? "Close menu" : "Open menu"}
+            aria-expanded={toggle}
+            aria-controls="mobile-menu"
+            onClick={() => setToggle((prev) => !prev)}
+            className="p-1 rounded-md transition-transform duration-200 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sapphire"
+          >
+            <img
+              src={toggle ? close : menu}
+              alt=""
+              aria-hidden="true"
+              className="w-[26px] h-[26px] object-contain"
+            />
+          </button>
 
           {/* Premium Mobile Menu (glass + slide) */}
           <div
+            id="mobile-menu"
+            ref={menuRef}
+            aria-hidden={!toggle}
             className={`
               fixed top-20 left-4 right-4 z-50
               rounded-2xl p-6
@@ -118,13 +197,19 @@ const Navbar = () => {
                       : "text-white/70 hover:text-white"
                     }
                   `}
-                  // Slightly larger on mobile for tap comfort
                   onClick={() => {
                     setToggle(false);
                     setActive(nav.title);
                   }}
                 >
-                  <a href={`#${nav.id}`}>{nav.title}</a>
+                  <a
+                    href={`#${nav.id}`}
+                    // not reachable by keyboard while the panel is hidden
+                    tabIndex={toggle ? 0 : -1}
+                    aria-current={active === nav.title ? "true" : undefined}
+                  >
+                    {nav.title}
+                  </a>
                 </li>
               ))}
             </ul>

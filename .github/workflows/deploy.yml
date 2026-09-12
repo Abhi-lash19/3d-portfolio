@@ -3,11 +3,17 @@ name: Build & Deploy (Vite React) to GitHub Pages
 on:
   push:
     branches: ["main"]
+    # must cover everything that affects the built site, otherwise fixes to
+    # index.html, the 3D model or the Tailwind/PostCSS config never deploy
     paths:
       - "src/**"
+      - "public/**"
+      - "index.html"
       - "package.json"
       - "package-lock.json"
+      - "*.config.js"
       - "vite.config.*"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 permissions:

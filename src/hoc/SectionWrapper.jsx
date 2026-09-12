@@ -3,27 +3,16 @@
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { staggerContainer } from "../utils/motion";
-import { useEffect, useState } from "react";
+import { useMediaQuery } from "../utils/useMediaQuery";
 
 const SectionWrapper = (Component, idName) =>
   function HOC() {
-    // lazy init (no setState inside effect body)
-    const [isMobile, setIsMobile] = useState(() =>
-      window.matchMedia("(max-width: 640px)").matches
-    );
-
-    useEffect(() => {
-      const mq = window.matchMedia("(max-width: 640px)");
-
-      const onChange = (e) => setIsMobile(e.matches);
-      mq.addEventListener("change", onChange);
-
-      return () => mq.removeEventListener("change", onChange);
-    }, []);
+    const isMobile = useMediaQuery("(max-width: 640px)");
 
     return (
       <motion.section
-        variants={staggerContainer(0.9, 0.5)}
+        // 0.9s between children left sections blank for over a second
+        variants={staggerContainer(0.1, 0.1)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: isMobile ? 0.2 : 0.3 }}

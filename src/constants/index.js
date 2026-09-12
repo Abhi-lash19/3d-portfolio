@@ -37,6 +37,9 @@ import {
   ig,
 } from "../assets";
 
+export const ownerName = "Abhilash Kumar Giri";
+export const contactEmail = "abhilashkumargiri63@gmail.com";
+
 export const navLinks = [
   {
     id: "about",
@@ -45,6 +48,10 @@ export const navLinks = [
   {
     id: "work",
     title: "Work",
+  },
+  {
+    id: "projects",
+    title: "Projects",
   },
   {
     id: "contact",
@@ -84,7 +91,7 @@ const socials = [
   { href: "https://github.com/Abhi-lash19", icon: github, label: "GitHub" },
   { href: "https://www.linkedin.com/in/abhilash-giri/", icon: linkedin, label: "LinkedIn" },
   { href: "https://instagram.com/_abhilash_._._", icon: ig, label: "Instagram" },
-  { href: "mailto:abhilashkumargiri63@gmail.com", icon: gmail, label: "Email" },
+  { href: `mailto:${contactEmail}`, icon: gmail, label: "Email" },
 ];
 
 const experiences = [

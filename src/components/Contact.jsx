@@ -6,10 +6,16 @@ import toast, { Toaster } from "react-hot-toast";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
+import { contactEmail, ownerName } from "../constants";
 
 const EarthCanvas = lazy(() =>
   import("./canvas/Earth")
 );
+
+// shared field styling — the focus-visible ring restores a keyboard focus cue
+const fieldClasses =
+  "bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium " +
+  "focus-visible:ring-2 focus-visible:ring-sapphire focus-visible:ring-offset-2 focus-visible:ring-offset-black-100";
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -40,9 +46,9 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "Abhilash Kumar Giri",
+          to_name: ownerName,
           from_email: form.email,
-          to_email: "abhilashkumargiri63@gmail",
+          to_email: contactEmail,
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -94,7 +100,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="Your full name"
               required
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={fieldClasses}
             />
           </label>
 
@@ -107,7 +113,7 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="yourname@email.com"
               required
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={fieldClasses}
             />
           </label>
 
@@ -120,14 +126,14 @@ const Contact = () => {
               onChange={handleChange}
               placeholder="I’m always open to discussing new projects, ideas, or opportunities."
               required
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={fieldClasses}
             />
           </label>
 
           <button
             type="submit"
             disabled={loading}
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary disabled:opacity-50 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-sapphire focus-visible:ring-offset-2 focus-visible:ring-offset-black-100"
           >
             {loading ? "Sending..." : "Send Message"}
           </button>

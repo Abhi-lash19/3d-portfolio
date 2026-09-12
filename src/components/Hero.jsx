@@ -4,10 +4,10 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { styles } from "../styles";
 
-// lazy import so 3D loads only when needed
-const LazyComputersCanvas = lazy(() =>
-  import("./canvas").then((m) => ({ default: m.ComputersCanvas }))
-);
+// lazy import so 3D loads only when needed.
+// Imports the module directly (not the ./canvas barrel) so Earth/Stars are
+// not pulled into this chunk.
+const LazyComputersCanvas = lazy(() => import("./canvas/Computers"));
 
 const Hero = () => {
   const [showScrollHint, setShowScrollHint] = useState(true);
@@ -73,14 +73,14 @@ const Hero = () => {
       >
         <div className="flex flex-col justify-center items-center mt-5">
           {/* Ball tip color changed */}
-          <div className="w-5 h-5 rounded-full bg-[#3B82F6]" />
+          <div className="w-5 h-5 rounded-full bg-sapphire" />
           <div className="w-1 sm:h-80 h-40 sapphire-gradient" />
         </div>
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I&apos;m{" "}
-            <span className="text-[#3B82F6]">Abhilash</span>
+            <span className="text-sapphire">Abhilash</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I build backend systems, cloud <br className="sm:block hidden" />

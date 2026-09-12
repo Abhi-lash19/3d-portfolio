@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -11,6 +10,7 @@ import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import { useMediaQuery } from "../utils/useMediaQuery";
 
 const ExperienceCard = ({ experience, index, isMobile }) => {
   const isLeft = index % 2 !== 0;
@@ -72,9 +72,9 @@ const ExperienceCard = ({ experience, index, isMobile }) => {
         </div>
 
         <ul className="mt-5 list-disc ml-5 space-y-2">
-          {(experience.points || []).map((point, index) => (
+          {(experience.points || []).map((point, pointIndex) => (
             <li
-              key={`experience-point-${index}`}
+              key={`experience-point-${pointIndex}`}
               className="text-white-100 text-[14px] pl-1 tracking-wider"
             >
               {point}
@@ -87,18 +87,7 @@ const ExperienceCard = ({ experience, index, isMobile }) => {
 };
 
 const Experience = () => {
-  const [isMobile, setIsMobile] = useState(() =>
-    window.matchMedia("(max-width: 768px)").matches
-  );
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-
-    const handler = (e) => setIsMobile(e.matches);
-    mediaQuery.addEventListener("change", handler);
-
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <>
