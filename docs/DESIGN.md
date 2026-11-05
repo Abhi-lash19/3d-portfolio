@@ -28,3 +28,6 @@ Desktop panel sits beside the scene; mobile uses a large accessible sheet. Openi
 
 ## States
 Poster → loading → exploring; failure/context loss → poster with retry; exiting → regular page. Panels support closed/open/transitioning. Audio supports muted/enabled/unavailable. Contact supports idle/submitting/success/error and an email fallback. Reduced motion skips automatic camera travel and disables cursor following; visitors can still use explicit controls. Fullscreen is optional and never required.
+
+## Latest checkpoint — 2026-11-05 design revision and backup
+Read [design review checkpoint](design/README.md) before acting on earlier design sections. User requested regular-fit jeans, skills/contact destinations and a dog, and exploration of waterfall/fun-zone ideas. Six-destination imagery, page order, dog fetch and the name Abhilash’s Skygarden are proposals awaiting next-request feedback, not approved implementation changes. Resume PDF is now supplied and preserved in docs/content; review still pending. Application implementation has not started.

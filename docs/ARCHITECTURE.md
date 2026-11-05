@@ -27,3 +27,6 @@ Analytics requires service selection before build freeze. Define page_view once 
 
 ## Project update automation
 Maintain an explicit public repo allowlist and a curated content overlay. A manual workflow reads repository metadata without executing source repos, generates a deterministic proposal, validates schema/links/private exclusions and opens an update PR. Preserve manually edited descriptions and images. Private project descriptions stay manually curated. Review/merge content updates; a separate deliberate publish action deploys accepted content. No secret in the browser bundle; use least-privilege workflow credentials. Never make unfinished public repos automatically featured.
+
+## Latest checkpoint — 2026-11-05 design revision and backup
+Read [design review checkpoint](design/README.md) before acting on earlier design sections. User requested regular-fit jeans, skills/contact destinations and a dog, and exploration of waterfall/fun-zone ideas. Six-destination imagery, page order, dog fetch and the name Abhilash’s Skygarden are proposals awaiting next-request feedback, not approved implementation changes. Resume PDF is now supplied and preserved in docs/content; review still pending. Application implementation has not started.

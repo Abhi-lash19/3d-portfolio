@@ -25,3 +25,6 @@ The concept sheets establish the design before coding. They are not runtime 3D m
 Initial page compressed JS excluding lazy 3D: target <=250KB; hero poster <=250KB mobile/500KB desktop; first 3D scene download target <=5MB; textures normally <=1024px with reuse; no automatic audio downloads before opting in. Measure before treating budgets as met. Reduce geometry, draw calls and texture footprint before compromising readability. Budget acceptance accompanies the chosen target device measurements.
 
 User input needed: old approved mockup (if recoverable), resume PDF, book edition. Asset production can supply the other sheets; no need to find every image manually. No image generation was performed in this reconstruction pass.
+
+## Latest checkpoint — 2026-11-05 design revision and backup
+Read [design review checkpoint](design/README.md) before acting on earlier design sections. User requested regular-fit jeans, skills/contact destinations and a dog, and exploration of waterfall/fun-zone ideas. Six-destination imagery, page order, dog fetch and the name Abhilash’s Skygarden are proposals awaiting next-request feedback, not approved implementation changes. Resume PDF is now supplied and preserved in docs/content; review still pending. Application implementation has not started.

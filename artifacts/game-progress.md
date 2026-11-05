@@ -29,3 +29,8 @@ Previous transcript reports 11 Markdown files and an image as local, uncommitted
 Application implementation, browser profiling, live contact verification, analytics setup, project-update workflow, deployment. No measured performance or production-ready claim.
 
 Next action: review reconstructed design with user and produce/approve missing visual assets. Preserve completed work; do not restart planning from scratch.
+
+## Latest handoff — design backup requested
+The user will review the new images in the NEXT request. Preserve context and wait for that feedback. See [design review checkpoint](../docs/design/README.md) for authoritative latest status and links. All five generated images are preserved, including two historical/superseded versions. Resume supplied and saved byte-for-byte at docs/content/Abhilash_Resume.pdf; content extraction is pending. Earlier statements that the resume is awaited are superseded. The original older mockup remains lost. New feature requests are recorded; six destinations, Skygarden name, scroll order and pet/fetch mechanics are proposals. Existing three-destination architecture must be revised only after review; it is not the final build contract. Public GitHub project audit, analytics choice, asset approval and implementation remain pending.
+
+User authorized commit and remote backup on portfolio-v2; do not merge main or deploy. This checkpoint is being committed and pushed; verify remote branch HEAD on resume rather than assuming local commits reached GitHub.
