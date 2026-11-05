@@ -1,6 +1,6 @@
 # My World agent instructions
 
-Read docs/CURRENT_DECISIONS.md, docs/PROJECT_COPY_REVIEW.md , docs/BOOKS_AND_LAYOUT.md docs/ANALYTICS_PLANNING.md and docs/MODELS_AND_ANIMATION.md first, then docs/README.md, docs/DECISIONS.md, docs/IMPLEMENTATION_PLAN.md and artifacts/game-progress.md before work. User instructions override this file and skill defaults.
+Read docs/CURRENT_DECISIONS.md, docs/PROJECT_COPY_REVIEW.md, docs/BOOKS_AND_LAYOUT.md, docs/ANALYTICS_PLANNING.md and docs/MODELS_AND_ANIMATION.md first, then docs/README.md, docs/DECISIONS.md, docs/IMPLEMENTATION_PLAN.md and artifacts/game-progress.md before work. User instructions override this file and skill defaults.
 
 ## Current authorization
 Planning and asset preparation only. Application implementation begins after the outstanding visual/content choices are resolved and the user starts the build. Do all development on portfolio-v2. Preserve the current main release until the complete portfolio is ready and the user authorizes merging. Never trigger Pages deployment from the development branch.
