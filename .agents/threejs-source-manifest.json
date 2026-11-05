@@ -1,0 +1,306 @@
+{
+  "repository": "majidmanzarpour/threejs-game-skills",
+  "revision": "8286774b22a2566bf894dbc825825c16921866af",
+  "files": [
+    {
+      "path": ".agents/THREEJS-LICENSE",
+      "sha": "0e7cfcfa43d5da2dc6a31768afcd95525fd3000c"
+    },
+    {
+      "path": ".agents/skills/threejs-3d-generator/SKILL.md",
+      "sha": "76d23808aef49084555ef3b1f7be95125af5d91f"
+    },
+    {
+      "path": ".agents/skills/threejs-3d-generator/agents/openai.yaml",
+      "sha": "7ebd7518fb4c441abf940e58d59a1d844fb76676"
+    },
+    {
+      "path": ".agents/skills/threejs-3d-generator/references/api-notes.md",
+      "sha": "e05aeb525807f0482a3a1a96c7cfeb8f6a8bdcad"
+    },
+    {
+      "path": ".agents/skills/threejs-3d-generator/references/image-generator-workflows.md",
+      "sha": "24a2ea925d0c74dff055e5e612e7411b271fcf0f"
+    },
+    {
+      "path": ".agents/skills/threejs-3d-generator/references/threejs-integration.md",
+      "sha": "76e65185aa050dc2ca9c0f0ea95d364bbf390380"
+    },
+    {
+      "path": ".agents/skills/threejs-3d-generator/scripts/threejs_3d_asset.py",
+      "sha": "459f325b1382ecf833d66649344ee8a1a455a0f9"
+    },
+    {
+      "path": ".agents/skills/threejs-aaa-graphics-builder/SKILL.md",
+      "sha": "3bca703021c032285441c8ccc4a49d201ce97626"
+    },
+    {
+      "path": ".agents/skills/threejs-aaa-graphics-builder/agents/openai.yaml",
+      "sha": "8b66a9238106715ac1fc386063f6e22f6612fe77"
+    },
+    {
+      "path": ".agents/skills/threejs-aaa-graphics-builder/assets/scorecard-anchors/scene-1.jpg",
+      "sha": "165702a0c2d1380c741a2772ae57326dceb17708"
+    },
+    {
+      "path": ".agents/skills/threejs-aaa-graphics-builder/assets/scorecard-anchors/scene-2.jpg",
+      "sha": "d9ee020c57356cab148376cecfedb9ebeb29aba6"
+    },
+    {
+      "path": ".agents/skills/threejs-aaa-graphics-builder/assets/scorecard-anchors/scene-3.jpg",
+      "sha": "e35368e2f6d30850454da96aa6266a4374bee25f"
+    },
+    {
+      "path": ".agents/skills/threejs-aaa-graphics-builder/references/authoring-recipes.md",
+      "sha": "1e7e08b3772799162df48b650015e18e5f27f7ec"
+    },
+    {
+      "path": ".agents/skills/threejs-aaa-graphics-builder/references/shader-cookbook.md",
+      "sha": "27b0ff25b73318cc68a0bb3f2f984376ac0c7764"
+    },
+    {
+      "path": ".agents/skills/threejs-aaa-graphics-builder/references/technical-art.md",
+      "sha": "00c5dc46dea4add9341fdc2e8f019ac81d6b243b"
+    },
+    {
+      "path": ".agents/skills/threejs-aaa-graphics-builder/references/visual-scorecard.md",
+      "sha": "86060a8db3fea68cd75f82ad8e7870bc169703df"
+    },
+    {
+      "path": ".agents/skills/threejs-audio-generator/SKILL.md",
+      "sha": "d57d28937941bae4fa42744de386b3b41f3ed6df"
+    },
+    {
+      "path": ".agents/skills/threejs-audio-generator/agents/openai.yaml",
+      "sha": "43326d4a072f8cc2f4ca0bd21c8eedfb05f41937"
+    },
+    {
+      "path": ".agents/skills/threejs-audio-generator/references/audio-workflows.md",
+      "sha": "f8eebc96c0bb4c61bccb83f485602b27f6eb4ef8"
+    },
+    {
+      "path": ".agents/skills/threejs-audio-generator/scripts/threejs_audio_asset.py",
+      "sha": "ce830f2049c20ca1613a34e17927c533b1e018a5"
+    },
+    {
+      "path": ".agents/skills/threejs-debug-profiler/SKILL.md",
+      "sha": "0fd2cd6b76f7022825bf922c00866691d6b3edcf"
+    },
+    {
+      "path": ".agents/skills/threejs-debug-profiler/agents/openai.yaml",
+      "sha": "251c53276f914e72b8d6ea85c49f1ae8da88ddea"
+    },
+    {
+      "path": ".agents/skills/threejs-debug-profiler/references/debug-playbook.md",
+      "sha": "370980be2aca0c95abe4217afd6717f67ef5bfa0"
+    },
+    {
+      "path": ".agents/skills/threejs-game-director/SKILL.md",
+      "sha": "b234129b333852e2b57c9e3f60329179229e7c89"
+    },
+    {
+      "path": ".agents/skills/threejs-game-director/agents/openai.yaml",
+      "sha": "f5dce55d6be76a97581f9370fec8aefc209b9f4e"
+    },
+    {
+      "path": ".agents/skills/threejs-game-director/references/asset-recovery.md",
+      "sha": "00b43e3ea1c62ef8050ded2ca5671b249b0ea81d"
+    },
+    {
+      "path": ".agents/skills/threejs-game-director/references/evidence-manifest.md",
+      "sha": "6f39c66c4093149b5616c8165b2d76d759881d50"
+    },
+    {
+      "path": ".agents/skills/threejs-game-director/references/workflow-evaluations.md",
+      "sha": "512bee83f3089b3ad3cd27e1da1a3b015e1fe56c"
+    },
+    {
+      "path": ".agents/skills/threejs-game-director/scripts/check_evidence.py",
+      "sha": "8a4c9a57d1076843abaeb1083a644ccaaab14af7"
+    },
+    {
+      "path": ".agents/skills/threejs-game-director/scripts/probe_asset_credentials.sh",
+      "sha": "af977c516b11e2e9c93f5031ed35d77af7253063"
+    },
+    {
+      "path": ".agents/skills/threejs-game-ui-designer/SKILL.md",
+      "sha": "1ff25aa86cf60383dd2517889fa514d7f4e77d57"
+    },
+    {
+      "path": ".agents/skills/threejs-game-ui-designer/agents/openai.yaml",
+      "sha": "0afafea6a3d8851767265a62fd3a444c88ccda55"
+    },
+    {
+      "path": ".agents/skills/threejs-game-ui-designer/references/ui-patterns.md",
+      "sha": "438aa234e725128bc2a6cbd4503b2b48a1cff9de"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/SKILL.md",
+      "sha": "d3e6e9b956229df5fb75d686827bf4d5464dd357"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/agents/openai.yaml",
+      "sha": "11040a46e93852040e94029076c76a1eca503a48"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/.gitignore",
+      "sha": "f259ac578ce88a9e41f0fdf7b8e1cf5c9a4c2505"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/index.html",
+      "sha": "15b338d2dd6e44f6a1d34ca8d814eaf3346ff1a7"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/package-lock.json",
+      "sha": "334b3816bf9d191f4dbf15153a9e776af72e39e3"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/package.json",
+      "sha": "5bec22ca393e162c8c6539c8abdf289f00a71ed1"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/playwright.config.ts",
+      "sha": "cb6446f781c7a14951aee274c79f796374dc1f93"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/scripts/inspect-threejs-canvas.mjs",
+      "sha": "916f0c92dbe0227860c464eb00ba85948868c8d3"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/core/InputController.ts",
+      "sha": "4808598c3e52cafdfa737a63c34b5de3f1a9dc04"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/core/Loop.ts",
+      "sha": "974d4a8d20d84edddaca354a91d50e2c79970428"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/core/Renderer.ts",
+      "sha": "902b5ddfaf97a73af6c6e4d52e85185d188a48c8"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/entities/Pickup.ts",
+      "sha": "ffb17c262e75e53f252b1e865b6644216ca7aae7"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/entities/Player.ts",
+      "sha": "a13e608f62444fae55cca1b58681a922ea1d2a12"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/game/Game.ts",
+      "sha": "c6900396a861f09b73f766a4f3f91b2273985081"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/main.ts",
+      "sha": "25bbeca3ae828862d2e2c6e2affde797dd90f922"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/styles.css",
+      "sha": "20179d4e11d93e64d0a49b5a934bd869ef177f9a"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/systems/AudioSystem.ts",
+      "sha": "60320f7aaa33ee2b5f18c23149c44f07fc2e3329"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/systems/CameraRig.ts",
+      "sha": "4026bf160d125c650a7c1921919aa8654cbb3960"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/systems/CollisionSystem.ts",
+      "sha": "d58ea41e025b89db3d37c414575925f6d20101fd"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/systems/DebugTools.ts",
+      "sha": "bda716eedda83ada32dc2ef55fc1cd3ee17e0e03"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/systems/Hud.ts",
+      "sha": "2d1d859cff8ae1451a2a043662e5e43a4e6277e7"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/utils/dispose.ts",
+      "sha": "ebefccc2e9f55921c4f372068ead119356f681f8"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/utils/random.ts",
+      "sha": "c584d7a6fe366c126d9923235a86a8ba80a9618c"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/src/vite-env.d.ts",
+      "sha": "08875c8ca1e0c400b6af527fd7db9e0f9d08f5ca"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/tests/bot-playtest.template.ts",
+      "sha": "60ad259fe2af1b30788af7f6790574a41d6e1f01"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/tests/visual-regression.template.ts",
+      "sha": "be0ad0a5697a2522c405ec0451b014316123eb36"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/tests/visual.spec.ts",
+      "sha": "c2ee4442bb8865b2ec78054245ab13fa005342a2"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/tsconfig.json",
+      "sha": "4c5de900a46dd30c80fb4bd6c846f04b1c37e07f"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/assets/threejs-vite-game/vite.config.ts",
+      "sha": "5fa4634f3c6fb370ab31dbd097cc87eecd662e41"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/references/game-feel.md",
+      "sha": "72a5230300f385b92fa0983365024225937eca0a"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/references/genre-design.md",
+      "sha": "138ce6ce65cadae0026c6031f96b698def999c2f"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/references/physics-engine-selection.md",
+      "sha": "ed8ec76721de0a1d4225f988135fe4f4a09d890c"
+    },
+    {
+      "path": ".agents/skills/threejs-gameplay-systems/scripts/create_threejs_game.py",
+      "sha": "498864d9894245d35dd376555a2ad5a66580f389"
+    },
+    {
+      "path": ".agents/skills/threejs-image-generator/SKILL.md",
+      "sha": "59b7fa3d73180dafb808190466d8419a129c43a1"
+    },
+    {
+      "path": ".agents/skills/threejs-image-generator/agents/openai.yaml",
+      "sha": "a1fcfe416d24f8972b311921a32cfbb0f1f6d120"
+    },
+    {
+      "path": ".agents/skills/threejs-image-generator/scripts/generate_image.py",
+      "sha": "b980a1d46b6054b727852faf81d2c315bfc7e739"
+    },
+    {
+      "path": ".agents/skills/threejs-qa-release/SKILL.md",
+      "sha": "c2a6b6a3bd79ba91ed4c345c3a0cb5b57aaf21de"
+    },
+    {
+      "path": ".agents/skills/threejs-qa-release/agents/openai.yaml",
+      "sha": "b57952b1915d02876b5595b3750d14797c670478"
+    },
+    {
+      "path": ".agents/skills/threejs-qa-release/references/playtest-bot.md",
+      "sha": "ee642c66004b7ff1196db689d84b96cbdf2aaac3"
+    },
+    {
+      "path": ".agents/skills/threejs-qa-release/references/release-checks.md",
+      "sha": "13100e6a4a0fcab81fe36c1acbef8e3b90ca80c5"
+    },
+    {
+      "path": ".agents/skills/threejs-qa-release/references/visual-test-harness.md",
+      "sha": "53d7bcaf20c43e82cf3bfa3fc99d623dfda4bc91"
+    },
+    {
+      "path": ".agents/skills/threejs-qa-release/scripts/inspect-threejs-canvas.mjs",
+      "sha": "916f0c92dbe0227860c464eb00ba85948868c8d3"
+    }
+  ]
+}
