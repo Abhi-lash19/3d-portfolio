@@ -1,7 +1,7 @@
 # Approved hosting and analytics
 
 ## Approval and current status
-User approved Cloudflare Pages Free, a new public website address, GoatCounter hosted analytics, and a small public footer counter labelled **Visits**. Other measurements remain private. User revised the earlier request to disable optional breakdowns: retain standard aggregate analytics breakdowns privately. No accounts, integration, visibility change or deployment have been performed. Next discussion: models and animation.
+User approved Cloudflare Pages Free, a new public website address, GoatCounter hosted analytics, and a small public footer counter labelled **Visits**. Other measurements remain private. User revised the earlier request to disable optional breakdowns: retain standard aggregate analytics breakdowns privately. No accounts, integration, visibility change or deployment have been performed. Model/animation planning is now approved; next is asset production under MODELS_AND_ANIMATION.md.
 
 ## Hosting
 Source repository is intended to become private; public website will be hosted on Cloudflare Pages Free, normally at a chosen available pages.dev address. Exact address and account setup remain pending. This supersedes earlier plans to retain the GitHub Pages address. GitHub Pages publishing from private repos requires an eligible paid GitHub plan; Cloudflare permits private GitHub sources.

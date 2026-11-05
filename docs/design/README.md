@@ -5,7 +5,7 @@ Read [current decisions](../CURRENT_DECISIONS.md) first. Earlier review checkpoi
 Latest saved references:
 - [Gate and world](world-v3-gate-reference.png) — substitute My World for Sky Garden.
 - [Mobile project, experience and skills detail](mobile-v3-detail-reference.png) — later Skills design removes related-project link.
-- [Dog and waterfall animation storyboard](animation-v3-storyboard.png) — detailed production model/animation plan is NEXT, not implemented.
+- [Dog and waterfall animation storyboard](animation-v3-storyboard.png) — production plan approved in [MODELS_AND_ANIMATION.md](../MODELS_AND_ANIMATION.md); assets and animation not yet implemented.
 - [Contact Cabin and simplified Skills](contact-skills-v4-reference.png).
 - [Desktop/mobile fetch controls](fetch-v4-controls-reference.png).
 

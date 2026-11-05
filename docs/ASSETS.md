@@ -4,7 +4,8 @@
 | Item | Deliverable | Current status |
 | --- | --- | --- |
 | Desktop composition | Hero plus full page mockup, 1440px wide | Replacement references saved; use latest approved direction |
-| Mobile composition | Scroll view and active exploration view, 390px wide | Needed |
+| Mobile composition | Scroll view and active exploration framing | Concept references saved; production framing review pending; Google Pixel 9 reference device |
+| Dog sheet | Front/side/back, rig and actual pet/fetch motion previews | Golden dog/amber collar direction approved; production pending |
 | Avatar sheet | Front/side/back, palette, hoodie/jeans/sneakers, idle/walk poses | Specified, artwork needed |
 | Island kit sheet | Island silhouette, arrival plaza, launchpad, observatory, reading garden, paths/props | Specified, artwork needed |
 | UI state sheet | Desktop panel, mobile sheet, thumbstick, sound/reset/exit controls, loading/fallback | Specified, artwork needed |
@@ -12,7 +13,7 @@
 | Book imagery | Confirm edition; licensed cover or original typographic book art | Titles/authors confirmed; original illustrated art approved |
 | Resume | Current PDF with working download and accessible file name | Supplied at docs/content/Abhilash_Resume.pdf |
 
-The concept sheets establish the design before coding. They are not runtime 3D models. During the approved build, construct or source actual models and animation, then derive the hero poster from the final scene so the poster and interactive view match. Do not advertise a generated mockup as a screenshot of a working project.
+The concept sheets establish the design before coding. They are not runtime 3D models. Under [approved model/animation plan](MODELS_AND_ANIMATION.md), construct or source the actual models, animations, images and audio before the application build and obtain consolidated asset approval. Derive the hero poster from the produced scene; refresh after integration if needed so poster and interactive view match. Do not advertise a generated mockup as a screenshot of a working project.
 
 ## Runtime deliverables planned
 - Optimized island/landmark kit and avatar with idle/walk/turn behavior; real meshes and authored materials, not a single image mapped on a plane.
@@ -27,4 +28,4 @@ Initial page compressed JS excluding lazy 3D: target <=250KB; hero poster <=250K
 Original mockup unavailable; replacements saved. Resume supplied and book identities confirmed. Production asset preparation remains pending. Asset production can supply the other sheets; no need to find every image manually. No image generation was performed in this reconstruction pass.
 
 
-Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next: production assets and consolidated review per [approved plan](MODELS_AND_ANIMATION.md).

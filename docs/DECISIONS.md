@@ -4,17 +4,17 @@ Current authority: [current decisions](CURRENT_DECISIONS.md) and [approved proje
 
 ## Confirmed by user
 - Display name: Abhilash Giri.
-- Cloud Station; sapphire/amber; soft sculpted buildings; clear mostly solid dark panels with subtle glass; restrained bento project grid.
+- My World on the entrance gate; sapphire/amber; soft sculpted buildings; clear mostly solid dark panels with subtle glass; restrained bento project grid.
 - Instant introduction and island poster; desktop 3D loads when suitable, mobile entry is optional; all information scrollable.
 - Free character movement and camera inspection, plus clickable destinations. Desktop keyboard walking and drag-to-look; mobile thumbstick walking and swipe-to-look. Bounds and reset view required.
 - Click causes camera movement and avatar travel; content opens promptly; motion starts at the actual current position.
 - Fictional hoodie/jeans/Jordan style sneaker character, no backpack or glasses. Same design as cursor companion; native cursor remains usable.
 - No spending. Do not treat a ChatGPT subscription as external asset API credits.
 - Professional focus: backend, AWS cloud, system integration and AI-assisted application development. No unsupported numerical claims.
-- Existing experience and social/email links retained. Email and existing contact form retained. Resume PDF will be provided.
+- Existing experience and social/email links retained. Email and existing contact form retained. Resume PDF is preserved at docs/content/Abhilash_Resume.pdf.
 - Existing projects retained; newer projects reviewed from actual source where accessible.
 - Chitragupta and BountyDesk: public descriptions, In progress labels, no repo links. Mention AI-assisted development without exposing private details.
-- Books: Deep Work by Cal Newport; Chanakya Niti (title confirmed; author/edition confirmation still needed).
+- Books: Deep Work by Cal Newport; Chanakya Neeti by Radhakrishnan Pillai; original illustrated artwork approved.
 - Project update workflow prepares a change for review, with deliberate publication after acceptance.
 - Footsteps and gentle environmental audio desired. Plan default muted with visible toggle and explicit audio activation.
 - Superseded: hosting is Cloudflare Pages Free with a new public address; see ANALYTICS_PLANNING.md.
@@ -28,7 +28,7 @@ Current authority: [current decisions](CURRENT_DECISIONS.md) and [approved proje
 - Use CSS/DOM for readable panels and labels; a 3D-looking panel is not a reason to render body text into the canvas.
 
 ## Remaining before build kickoff
-1. Finalize production models, animation, audio and asset/performance plan using saved visual references.
+1. Produce models, animation, audio and imagery under approved MODELS_AND_ANIMATION.md, then obtain consolidated asset approval. User reference phone is Google Pixel 9. Human walking only; dog may run/hop; Pet action without brush; exterior-only destinations.
 2. Configure Cloudflare Pages and GoatCounter accounts, exact address and private aggregate counter endpoint.
 3. Produce licensed production imagery and verify demos/links. Resume and approved project text are already available.
 4. Obtain two truthful habit/decision examples for the books; identities and reflection wording are confirmed.
@@ -37,4 +37,4 @@ Current authority: [current decisions](CURRENT_DECISIONS.md) and [approved proje
 BountyDesk README currently describes V1 as complete and frozen. Preserve the user's requested In progress portfolio label as an editorial decision; do not claim the repository has no working version.
 
 
-Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next: production assets and consolidated review per [approved plan](MODELS_AND_ANIMATION.md).

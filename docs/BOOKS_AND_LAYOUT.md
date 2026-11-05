@@ -29,4 +29,4 @@ Show title, two-line approved summary excerpt and a few technology labels. Show 
 Use a real button to open details with an accessible name such as “Open VERA project details”. Do not nest source/demo links inside that button; put them in the opened panel. Desktop opens a readable side panel; mobile opens a bottom sheet that can expand and scroll. Include close button, Escape dismissal and focus return. Details contain description, problem addressed, Skills demonstrated and verified links from PROJECT_COPY_REVIEW.md. Never hide essential project meaning until hover.
 
 ## Remaining
-Two truthful personal habit/decision examples; production book illustrations and font assets; responsive/browser validation during implementation. Next planning phase is analytics, then models and animation, per user instruction.
+Two truthful personal habit/decision examples; production book illustrations and font assets; responsive/browser validation during implementation. Analytics and model/animation planning are approved. Next: production assets and consolidated review under MODELS_AND_ANIMATION.md.

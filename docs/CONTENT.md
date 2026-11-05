@@ -27,4 +27,4 @@ Introduction draft: “I build backend systems, cloud integrations and useful to
 Project: id, title, summary, contribution, technologies[], status, featuredOrder|null, image{src,alt,width,height}, repositoryUrl|null, demoUrl|null, visibility, evidenceNotes (build-time only). Private entries must have null repositoryUrl. No dead action placeholders. Experience: id, role, company, dates, bullets[], icon. Book: id,title,author|null,reflection,art. Use stable IDs in DOM anchors, scene destinations and analytics.
 
 
-Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next: production assets and consolidated review under [approved model/animation plan](MODELS_AND_ANIMATION.md).

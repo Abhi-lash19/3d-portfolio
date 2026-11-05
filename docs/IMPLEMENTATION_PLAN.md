@@ -4,14 +4,16 @@ Current authority: [current decisions](CURRENT_DECISIONS.md) and [approved proje
 
 Status: written implementation contract prepared; visual/content preflight still open. This document is intended for a continuous build pass once the user approves kickoff. Milestones are engineering checkpoints within that pass, not repeated product-design sessions.
 
-## 0. Freeze inputs
+## 0. Produce assets and freeze inputs
+Follow the approved MODELS_AND_ANIMATION.md first. Create the production asset collection and isolated preview scene, preserve editable sources/exports/licences, and present one consolidated review with actual 3D motion clips. User approval of those assets and explicit application kickoff are required before step 1. This asset production happens before the application build, not during repeated design/build cycles.
+
 Close DECISIONS.md remaining items. Approve desktop/mobile mockups and avatar/island/UI sheets. Record asset licences and final project catalogue/order. Configure the approved GoatCounter service and Cloudflare Pages account. Resume has been supplied and reviewed. Confirm branch and preserve sources. Lead reads all five production skills and generator references applicable to asset production. Do not begin application implementation while the approved look is unknown.
 
 ## 1. Foundation and complete readable portfolio
 Audit dependency compatibility; retain functioning baseline behavior. Implement content contracts, design tokens, navigation, all DOM sections, contact states and semantic anchors. Replace displayed name only as agreed. Add responsive layouts and accessible focus. Acceptance: all content reachable with 3D disabled; no fake links; existing projects/experience preserved.
 
 ## 2. Final-quality world and movement
-Build the island, three landmarks and approved avatar from agreed sheets; finalize core materials at real camera scale before multiplying props. Implement keyboard, pointer and touch inputs, path graph, collision bounds and cancellation. Lazy loading, poster/retry and performance adaptation are part of this work. Acceptance: free movement and click destinations work, no lost avatar/stuck input; visual captures match approved composition.
+Integrate the approved island, all six destinations, avatar and dog assets; finalize core materials at real camera scale before multiplying props. Implement keyboard, pointer and touch inputs, path graph, collision bounds and cancellation. Lazy loading, poster/retry and performance adaptation are part of this work. Acceptance: free movement and click destinations work, no lost avatar/stuck input; visual captures match approved composition.
 
 ## 3. Integration and polish
 Connect destination selection to shared DOM panels; camera/arrival transitions never delay access. Add cursor companion, controlled audio and reduced motion. Produce final poster from world, social card and favicon. Acceptance: mobile sheets remain readable, scrolling recovers on exit, audio stops on pause and blocked audio fails silently with usable controls.
@@ -29,4 +31,4 @@ Provide branch commit, comparison, evidence and release checklist. User reviews 
 Lead owns shared state/interfaces, dependency changes, integration and final evidence. UI worker owns content/sections/panels; world worker owns world/models/input/camera. Define ownership before starting them. Automation/content tasks follow once schema is stable. Workers receive this plan, DESIGN.md, relevant skill, owned paths, exact inputs/outputs and acceptance criteria. They must not silently change confirmed requirements or overwrite one another's files.
 
 
-Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next: production assets and consolidated review per [approved plan](MODELS_AND_ANIMATION.md).

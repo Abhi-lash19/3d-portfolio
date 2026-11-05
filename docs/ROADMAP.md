@@ -2,7 +2,7 @@
 
 1. Planning recovery and approved project/book/layout specifications: recorded.
 2. Cloudflare Pages Free and GoatCounter selection: approved; account setup pending.
-3. NEXT: production models, animation, audio and performance plan.
+3. NEXT: create production models, animations, images and audio under approved MODELS_AND_ANIMATION.md; obtain consolidated asset approval before application implementation.
 4. Final implementation brief and user build kickoff.
 5. Continuous implementation, integrated browser/device QA and fixes.
 6. User release review, Cloudflare migration and authorized main release.

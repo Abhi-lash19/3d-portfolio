@@ -1,20 +1,17 @@
 # My World — current handoff
 
-Branch: portfolio-v2. Base application: ddd06472b9fce28967d907024d84f5cd15976220. Earlier document recovery and planning history is preserved in Git and docs/design/README.md. Read docs/CURRENT_DECISIONS.md first.
+Branch: portfolio-v2. Base application: ddd06472b9fce28967d907024d84f5cd15976220. Latest detailed handoff: [asset production](../docs/HANDOFF_ASSET_PRODUCTION.md). Read [current decisions](../docs/CURRENT_DECISIONS.md) and [approved model/animation specification](../docs/MODELS_AND_ANIMATION.md) first.
 
-## Approved and preserved
-- My World entrance gate name, six destinations, approved design language, regular-fit avatar, dog/fetch/butterfly and skills-waterfall direction. Ten generated reference images preserved. These are static concepts, not implementation evidence.
-- Resume supplied and read. Selected code files reviewed in 14 repositories. Project descriptions, six-featured order and Skills demonstrated label approved in docs/PROJECT_COPY_REVIEW.md.
-- Book titles/authors confirmed from user screenshots; reflections, original book artwork and Lora/Inter layout approved in docs/BOOKS_AND_LAYOUT.md. Two actual habit/decision examples still need user input; do not invent.
-- Cloudflare Pages Free and new public address approved; intended private GitHub source. Migration not performed. Keep current site available until replacement acceptance.
-- GoatCounter approved; visits, active exploration, project openings, resume-link clicks and contact-link clicks. Owner-only detailed dashboard; standard optional aggregate breakdowns retained privately per latest user revision. Small footer Visits count is public. See docs/ANALYTICS_PLANNING.md for server-side aggregate-only counter and configuration details.
-- Nine Three.js skills preserved at approved revision under .agents/skills.
+## Latest checkpoint — 2026-11-05
+User approved all nine model/animation recommendations and requested documentation, commit, push and a new-chat handoff. This pass records approvals only; no production models, animations or app changes were created.
 
-## Next request
-Discuss production models and animation: asset creation/sourcing, free resources, avatar/dog rigging and motion, waterfall/butterfly effects, audio and performance budgets. Do not repeat resolved name, book, project or provider questions. Full implementation still awaits final build kickoff.
+Approved: Blender/custom sculpted assets with free licensed supplements; exterior-only six destinations; bounded elevated camera; walking-only avatar; golden dog may run/hop; accessible Pet action without brush; fixed blue-hour atmosphere; muted-by-default ambience/effects without music/narration; adaptive quality and reduced motion; Google Pixel 9 reference phone. Full details and animation states are in MODELS_AND_ANIMATION.md.
 
-## Pending setup and evidence
-Cloudflare and GoatCounter accounts/site IDs/configuration, exact public address, authenticated analytics endpoint validation, privacy/release configuration, production assets, two truthful personal habit examples. No app build, browser profiling, analytics installation or deployment in this planning pass. No change to repository visibility.
+## Next work
+Create the complete asset collection and isolated preview scene before the main application build. Preserve editable sources/exports/licences and render actual motion previews. Present one consolidated asset review; user asset approval and explicit application kickoff are still required. Do not repeat approved name, visual direction, book, project, provider or model-planning questions.
 
-## Backup checkpoint
-User explicitly requested committing and pushing all current documents and updates to portfolio-v2. Verify local HEAD equals origin/portfolio-v2 after push. Never merge main or deploy as part of backup. Current documentation and saved-media links/hashes are checked before commit; application and deployment files remain unchanged.
+## Earlier approvals preserved
+Ten generated concept images and resume saved; selected source files reviewed across 14 repositories; approved project descriptions and featured order in PROJECT_COPY_REVIEW.md. Books, reflections, original illustrations and Lora/Inter layout approved. Two truthful book habit examples remain pending. Cloudflare Pages Free and GoatCounter approved; accounts, endpoint validation and migration not performed. Current public site/main preserved. Nine pinned Three.js skills retained.
+
+## Evidence and backup
+Documentation-only checkpoint; no browser/device performance results, generated production assets, application tests or deployment claimed. User authorized commit/push to portfolio-v2. Verify local HEAD matches the remote branch after pushing; report the hash in the user-facing handoff. Do not merge or deploy as part of backup.

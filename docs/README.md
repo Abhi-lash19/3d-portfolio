@@ -17,7 +17,9 @@ Read in order:
 10. [Roadmap](ROADMAP.md)
 11. [Progress tracker](../artifacts/game-progress.md)
 
-Status: project content, book identities/reflections, typography/layout, world direction and hosting/analytics providers approved. Next: production models and animation planning. Account configuration, final assets, personal habit examples and build kickoff remain pending.
+Read [approved model/animation production](MODELS_AND_ANIMATION.md) and the [new-chat handoff](HANDOFF_ASSET_PRODUCTION.md) before starting assets.
+
+Status: project content, book identities/reflections, typography/layout, world direction and hosting/analytics providers approved. Model/animation planning is approved. Next: create all production assets and present a consolidated review before application implementation. Account configuration, final assets, personal habit examples and build kickoff remain pending.
 
 
-Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next: production assets and consolidated review per [approved plan](MODELS_AND_ANIMATION.md).

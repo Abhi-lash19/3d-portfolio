@@ -14,7 +14,7 @@ Written direction is confirmed. The original generated image is absent; its exac
 ## Island layout
 Proposed readable triangle: arrival plaza at front centre; project launchpad left; domed experience observatory back/right; reading garden right/front. Join all landmarks with visible paths. Use restrained clouds, planted edges, books, a telescope and small infrastructure motifs to make each destination distinct. Contact remains in the DOM navigation; no fourth building is required. No detail should hide paths or the avatar at normal zoom.
 
-Start camera at an elevated three-quarter view encompassing all three landmarks. Keep zoom and pitch bounded so the visitor cannot see underneath the island or lose it. Offer Home view. Aim toward the active destination without teleporting the avatar. Camera may finish before walking; the path and avatar remain visible. Opening another destination cancels the previous route and computes a new path from the current position. Manual movement cancels auto-walk.
+Start camera at an elevated three-quarter view showing the island and all six destinations. Keep zoom and pitch bounded so the visitor cannot see underneath the island or lose it. Offer Home view. Aim toward the active destination without teleporting the avatar. Camera may finish before walking; the path and avatar remain visible. Opening another destination cancels the previous route and computes a new path from the current position. Manual movement cancels auto-walk.
 
 ## Proposed visual tokens
 Background #071426; surface #10243D; raised surface #183550; warm text #F6F1E7; muted text #B7C7D8; accent #F5B84B. Validate contrast in rendered contexts. Soft edges, matte materials, warm directional light and subtle ambient fill. No heavy bloom, distortion or layered blur. Local/system sans-serif initially; if selecting a font, package its licence and avoid blocking external requests.
@@ -30,4 +30,4 @@ Desktop panel sits beside the scene; mobile uses a large accessible sheet. Openi
 Poster → loading → exploring; failure/context loss → poster with retry; exiting → regular page. Panels support closed/open/transitioning. Audio supports muted/enabled/unavailable. Contact supports idle/submitting/success/error and an email fallback. Reduced motion skips automatic camera travel and disables cursor following; visitors can still use explicit controls. Fullscreen is optional and never required.
 
 
-Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next: production assets and consolidated review under [approved model/animation plan](MODELS_AND_ANIMATION.md).
