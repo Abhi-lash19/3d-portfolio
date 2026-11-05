@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My World • asset production checkpoint</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;background:#101d3b;color:#eee2ce}
+*{box-sizing:border-box}body{margin:0}main{max-width:1320px;margin:auto;padding:32px 22px 80px}
+h1,h2{font-family:Georgia,serif;font-weight:500}h1{font-size:clamp(2.4rem,6vw,4.5rem);margin:.3em 0}
+h2{font-size:2rem;margin:1.8em 0 .5em}p{max-width:70ch;line-height:1.6;color:#c8d2d6}
+small,.eyebrow{color:#e9b46a;letter-spacing:.12em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
+.wide{grid-column:1/-1}.card{background:#1a3050;border:1px solid #68788a;border-radius:16px;overflow:hidden;padding:14px}
+img,video{display:block;width:100%;height:auto;border-radius:8px}video{background:#496078}
+audio{width:100%}.card p{margin:.65em 0 0}.book img{max-height:560px;object-fit:contain}
+a{color:#ffd38f}ul{line-height:1.7}code{color:#f0c680}
+</style></head><body><main>
+<div class="eyebrow">Production checkpoint • assets not yet approved</div>
+<h1>My World</h1>
+<p>Actual Blender exports and rendered motion from the first asset pass. The accompanying reference boards are a richer visual target; this work still needs foliage, architectural, lighting and interaction polish. Framing images are composition studies, not application screenshots.</p>
+<h2>Island and framing</h2><div class="grid">
+<div class="card wide"><img src="world_desktop.png" alt="Rendered floating island with six exterior destinations, gate, avatar and dog"><p>Rendered island composition.</p></div>
+<div class="card"><img src="framing_desktop.png" alt="Desktop hero composition study"><p>Desktop composition study.</p></div>
+<div class="card"><img src="framing_pixel9.png" alt="Pixel 9 portrait poster composition study"><p>Pixel 9 proportion study, not device testing.</p></div>
+<div class="card"><img src="framing_pixel9_panel.png" alt="Mobile readable panel space study"><p>Mobile panel space study.</p></div></div>
+<h2>Character views</h2><div class="grid">
+<div class="card"><img src="avatar_front.png" alt="Avatar front view"><p>Avatar front.</p></div>
+<div class="card"><img src="avatar_side.png" alt="Avatar side view"><p>Avatar side.</p></div>
+<div class="card"><img src="avatar_back.png" alt="Avatar back view"><p>Avatar back.</p></div>
+<div class="card"><img src="dog_front.png" alt="Golden dog front view"><p>Dog front.</p></div>
+<div class="card"><img src="dog_side.png" alt="Golden dog side view"><p>Dog side.</p></div>
+<div class="card"><img src="dog_back.png" alt="Golden dog back view"><p>Dog back.</p></div></div>
+<h2>Actual 3D motion</h2><div class="grid">
+<div class="card"><video controls muted loop playsinline src="avatar_walk.mp4"></video><p>Avatar walk.</p></div>
+<div class="card"><video controls muted loop playsinline src="pet_together.mp4"></video><p>Pet action and dog reaction; contact needs refinement.</p></div>
+<div class="card"><video controls muted loop playsinline src="fetch_together.mp4"></video><p>Throw, chase and return study; pickup and mouth attachment pending.</p></div>
+<div class="card"><video controls muted loop playsinline src="cascade_motion.mp4"></video><p>Descending skill tiles; water flow motion pending.</p></div>
+<div class="card"><video controls muted loop playsinline src="avatar_read.mp4"></video><p>Seated reading action; bench and book contact pending.</p></div>
+<div class="card"><video controls muted loop playsinline src="dog_hop.mp4"></video><p>Small playful dog hop.</p></div></div>
+<h2>Original book art</h2><div class="grid">
+<div class="card book"><img src="deep-work.png" alt="Original Deep Work illustration"><p>Deep Work — Cal Newport.</p></div>
+<div class="card book"><img src="chanakya-neeti.png" alt="Original Chanakya Neeti illustration"><p>Chanakya Neeti — Radhakrishnan Pillai.</p></div></div>
+<h2>Sound samples</h2><div class="grid">
+<div class="card"><p>Water ambience</p><audio controls preload="none" src="../audio/web/cascade_loop.ogg"></audio></div>
+<div class="card"><p>Garden ambience</p><audio controls preload="none" src="../audio/web/garden_loop.ogg"></audio></div>
+<div class="card"><p>Footstep</p><audio controls preload="none" src="../audio/web/soft_footstep.ogg"></audio></div>
+<div class="card"><p>Dog happy reaction</p><audio controls preload="none" src="../audio/web/dog_happy.ogg"></audio></div>
+<div class="card"><p>Occasional bark</p><audio controls preload="none" src="../audio/web/dog_bark.ogg"></audio></div>
+<div class="card"><p>Gentle selection</p><audio controls preload="none" src="../audio/web/gentle_select.ogg"></audio></div></div>
+<h2>Production records</h2>
+<p><a href="../asset-manifest.json">Measured asset manifest</a> · <a href="../README.md">Source and remaining defects</a> · <a href="../../../docs/ASSET_LICENSES.md">Licence inventory</a>. Original project diagrams and editable SVGs are under <code>illustrations/</code>. No main portfolio build has begun.</p>
+</main></body></html>

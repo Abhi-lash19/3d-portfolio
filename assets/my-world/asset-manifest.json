@@ -1,0 +1,550 @@
+{
+  "project": "My World",
+  "stage": "production checkpoint, not approved",
+  "asset_root": "assets/my-world",
+  "entries": [
+    {
+      "path": "README.md",
+      "bytes": 3510,
+      "sha256": "6bbb4c17317712fb4f45cabc00b75de5c5228c664cd7707915ef2dd95881c8d3"
+    },
+    {
+      "path": "audio/generate_audio.py",
+      "bytes": 3119,
+      "sha256": "75ec991fce3a7ae0a3aa7878f4436cef093419c0acc64479da09fdc8e726d156"
+    },
+    {
+      "path": "audio/source/cascade_loop.wav",
+      "bytes": 352844,
+      "sha256": "613d4f9694a74baa540add6f40f4334bbe51dc74eee335e057906f1c93e27335",
+      "duration_seconds": 8.0
+    },
+    {
+      "path": "audio/source/dog_bark.wav",
+      "bytes": 21212,
+      "sha256": "5b068326a0f260531dda7b7e720986bd5f1b42e1b38b3376756794d65d2ca29c",
+      "duration_seconds": 0.48
+    },
+    {
+      "path": "audio/source/dog_happy.wav",
+      "bytes": 30912,
+      "sha256": "e2fa7fa04e8ba3123f8248746e2eaa1ea1c2f6d0644c0aa5c17879a63784efa8",
+      "duration_seconds": 0.7
+    },
+    {
+      "path": "audio/source/garden_loop.wav",
+      "bytes": 352844,
+      "sha256": "392dd19218dbb7a11444b55878788d1db9e1784360c701a96efb357bc6b9e376",
+      "duration_seconds": 8.0
+    },
+    {
+      "path": "audio/source/gentle_select.wav",
+      "bytes": 13714,
+      "sha256": "4ef8780d704e386a54c0a4833c19acb66368c5029f8c3239467eb788f30e7e2b",
+      "duration_seconds": 0.31
+    },
+    {
+      "path": "audio/source/soft_footstep.wav",
+      "bytes": 16802,
+      "sha256": "d7b5d6aba055ca0449b1bfbd2dd3eefb865777d14418b1fd779bc429a046d2e9",
+      "duration_seconds": 0.38
+    },
+    {
+      "path": "audio/web/cascade_loop.ogg",
+      "bytes": 44569,
+      "sha256": "0423bbe0c1d3fa49739f2a860623ba751944710e41921e722fef1eba0eec4d30",
+      "duration_seconds": 8.0
+    },
+    {
+      "path": "audio/web/dog_bark.ogg",
+      "bytes": 5454,
+      "sha256": "54a80f8093a46c196aed023b0a5b4edfe5fc3f8fdb8d6ed1e6a1311d6ad2c5ad",
+      "duration_seconds": 0.48
+    },
+    {
+      "path": "audio/web/dog_happy.ogg",
+      "bytes": 5949,
+      "sha256": "7aabde31575457aaf2d440cb309ccf9518e7d3bcc3add8662235531fd6a668c3",
+      "duration_seconds": 0.7
+    },
+    {
+      "path": "audio/web/garden_loop.ogg",
+      "bytes": 44482,
+      "sha256": "3109d7a9d5695d9724a26cab0e581c3a5b0e1da8bfc4af09a8a7d1a91684c948",
+      "duration_seconds": 8.0
+    },
+    {
+      "path": "audio/web/gentle_select.ogg",
+      "bytes": 4214,
+      "sha256": "677155b107f0b84dc64c1952804d8b72f572fb4af0b6323f961fb0f79cecf14f",
+      "duration_seconds": 0.31
+    },
+    {
+      "path": "audio/web/soft_footstep.ogg",
+      "bytes": 5050,
+      "sha256": "cbcfe5f174e87960d128451ad8f6aa1ed6039dae8c70f4d533ecd92702285dcb",
+      "duration_seconds": 0.38
+    },
+    {
+      "path": "exports/avatar.glb",
+      "bytes": 519000,
+      "sha256": "c9319f617fb1f366376d57c656e479e102ac32b19c6c9d627233d2b8fec5aa10",
+      "glb": {
+        "meshes": 31,
+        "nodes": 45,
+        "animations": [
+          "avatar__idle",
+          "avatar__pet",
+          "avatar__read",
+          "avatar__stand",
+          "avatar__stop",
+          "avatar__throw",
+          "avatar__turn",
+          "avatar__walk"
+        ]
+      }
+    },
+    {
+      "path": "exports/golden_dog.glb",
+      "bytes": 582084,
+      "sha256": "9570e91f21c824d8fc38e6c14d08ff98d97bf088de05e9f140a7840f825c7734",
+      "glb": {
+        "meshes": 22,
+        "nodes": 35,
+        "animations": [
+          "dog__carry_return",
+          "dog__fetch_pickup",
+          "dog__hop",
+          "dog__idle",
+          "dog__pet_reaction",
+          "dog__run",
+          "dog__sit",
+          "dog__walk"
+        ]
+      }
+    },
+    {
+      "path": "exports/my_world_island.glb",
+      "bytes": 2806852,
+      "sha256": "e9f097181f51875326e4fca6db337dadece5360fec04c8ef705a63084c67bc60",
+      "glb": {
+        "meshes": 23,
+        "nodes": 23,
+        "animations": [
+          "Flowing skill tile JSAction",
+          "Flowing skill tile PYAction",
+          "Flowing skill tile 3DAction"
+        ]
+      }
+    },
+    {
+      "path": "illustrations/chanakya-neeti.svg",
+      "bytes": 3386,
+      "sha256": "2a1ea714cf41749344e5d7017ae284c6737feedb2ed7ba68e193375f94e7c85c"
+    },
+    {
+      "path": "illustrations/contact/email.svg",
+      "bytes": 311,
+      "sha256": "645bb504dbca4b551d5b10c0985d891dd004528815729c0bc920e11b3245d083"
+    },
+    {
+      "path": "illustrations/contact/github.svg",
+      "bytes": 406,
+      "sha256": "a35b6e50851a2acd25e40601defff8f41a16ee1d8af0bc4b1115209f09980fa4"
+    },
+    {
+      "path": "illustrations/contact/instagram.svg",
+      "bytes": 381,
+      "sha256": "e22c8fb8c2be09a4120bee894451cd0ca144d312f5aa87e1cf84272253c26b8f"
+    },
+    {
+      "path": "illustrations/contact/linkedin.svg",
+      "bytes": 381,
+      "sha256": "a8247c79898b9ef46f8a3e6f7f42a0dbb15d51bbd0a080b48b97a6bd1e8e9d8d"
+    },
+    {
+      "path": "illustrations/deep-work.svg",
+      "bytes": 3217,
+      "sha256": "d9eb8f8f61d6fca7c5a7ee7c0c84200f2053cd0bb06035c3d8892d1cab0ac3d6"
+    },
+    {
+      "path": "illustrations/identity-mark.svg",
+      "bytes": 880,
+      "sha256": "473df7091508d7a9d5023f01d17c38cc64a1274a764ddad5f41f078db460b7b3"
+    },
+    {
+      "path": "illustrations/make_contact_icons.py",
+      "bytes": 1138,
+      "sha256": "957b98a85e16ffca4b8bf33248727ec69801a98538f13aaa80f00ca69d29291d"
+    },
+    {
+      "path": "illustrations/make_framing.py",
+      "bytes": 4024,
+      "sha256": "fc6a7a109fcc3b60781a59ae5d27488f645b53c42e3e6f38901e7ea14a2e06ca"
+    },
+    {
+      "path": "illustrations/make_project_diagrams.py",
+      "bytes": 3121,
+      "sha256": "bf3636520e4ec6a6762749041bd435165ffb885b9d7ec8e8fbcf1ef6295848c6"
+    },
+    {
+      "path": "illustrations/projects/aws-deployment.svg",
+      "bytes": 2653,
+      "sha256": "808fb7831afed864f4e227b5936ece041c00d32e403116ea45c64969ae4324a4"
+    },
+    {
+      "path": "illustrations/projects/coregpt.svg",
+      "bytes": 2614,
+      "sha256": "ec126d4ce467ebf08f8e32eda1f6121a10703d7093b5f996860a1f2ef618bef8"
+    },
+    {
+      "path": "illustrations/projects/gitinsight.svg",
+      "bytes": 2618,
+      "sha256": "7ba321d5ad3300412a3239b2e12dcc42c4d50d325b6e007bea8bab6fcedab08d"
+    },
+    {
+      "path": "illustrations/projects/renzo.svg",
+      "bytes": 2610,
+      "sha256": "64bc9f7199b3fe9f3c9cb81c9df5fcbefaced93572dc9ae4e60338a8b160055b"
+    },
+    {
+      "path": "illustrations/projects/scribeai.svg",
+      "bytes": 2607,
+      "sha256": "7d017a1fee61b28220b3cdc1d24fdfd7ff9efb3bb1fb4450f7b7f5e2fd4a91f9"
+    },
+    {
+      "path": "illustrations/projects/vera.svg",
+      "bytes": 2594,
+      "sha256": "200079919b1be2a78afc99241ef6979889b8a737c07c77b943c63769ee2779a3"
+    },
+    {
+      "path": "illustrations/projects/web/aws-deployment.webp",
+      "bytes": 21660,
+      "sha256": "39e0dead98dbb1bbd2afdf432ea532b354beac151502fb3b7885a34d173c428c",
+      "dimensions": [
+        900,
+        506
+      ]
+    },
+    {
+      "path": "illustrations/projects/web/coregpt.webp",
+      "bytes": 15918,
+      "sha256": "2389711adc8fc025bbdc2de38c0b9d61abd11957696c9aba95ff7f86c6a2808c",
+      "dimensions": [
+        900,
+        506
+      ]
+    },
+    {
+      "path": "illustrations/projects/web/gitinsight.webp",
+      "bytes": 17578,
+      "sha256": "24fa0bc16d4565e011d283c61d942a7598f9a4c0307780f38171a5b960801613",
+      "dimensions": [
+        900,
+        506
+      ]
+    },
+    {
+      "path": "illustrations/projects/web/renzo.webp",
+      "bytes": 15382,
+      "sha256": "ae26e0ec8ac0473995babc5b9aa7a277d62398871a811733a1a46d538e4139c6",
+      "dimensions": [
+        900,
+        506
+      ]
+    },
+    {
+      "path": "illustrations/projects/web/scribeai.webp",
+      "bytes": 15898,
+      "sha256": "73211ed7245ba15c839308a1ed55a53dc35cbe3ad4ecf5814392e3d67de62eb7",
+      "dimensions": [
+        900,
+        506
+      ]
+    },
+    {
+      "path": "illustrations/projects/web/vera.webp",
+      "bytes": 14656,
+      "sha256": "f94b0d68dc3c290fd943147461b28ae8f334edbedf63529612f8fdfc13f7cf84",
+      "dimensions": [
+        900,
+        506
+      ]
+    },
+    {
+      "path": "review/asset_review.html",
+      "bytes": 5139,
+      "sha256": "a65b63537ad048a7153cccae71b3eb56d760a6f580b5c67fb2d9209cf82e9402"
+    },
+    {
+      "path": "review/avatar_back.png",
+      "bytes": 201719,
+      "sha256": "638185058fe2311b717afd4ffe08a95a0f27dd98dc0502a311f39624468f7133",
+      "dimensions": [
+        320,
+        480
+      ]
+    },
+    {
+      "path": "review/avatar_front.png",
+      "bytes": 201658,
+      "sha256": "bb13796a2f12475e56c45b28f5f58a74cc2af71b0d5cf2d8a442c48f4460a349",
+      "dimensions": [
+        320,
+        480
+      ]
+    },
+    {
+      "path": "review/avatar_pet.mp4",
+      "bytes": 81224,
+      "sha256": "894d51a754809bf4e273f7efebfbb4d7bf40b36e5c166a4a4b6a350d6698d272",
+      "duration_seconds": 2.5
+    },
+    {
+      "path": "review/avatar_read.mp4",
+      "bytes": 40177,
+      "sha256": "dfbe871c528d15d92f430f287c73d7d732c5e58695c0fb79a3f35ce335e035fe",
+      "duration_seconds": 2.0
+    },
+    {
+      "path": "review/avatar_side.png",
+      "bytes": 181422,
+      "sha256": "c051aa9c2b4f664afa18733f821a14fa5a5447a8ab3c3809b5bbc822613acaef",
+      "dimensions": [
+        320,
+        480
+      ]
+    },
+    {
+      "path": "review/avatar_throw.mp4",
+      "bytes": 44023,
+      "sha256": "4889fab2666af9963a4b6e02bfaf41729ba7f636b0efbf005753b5410ae03081",
+      "duration_seconds": 1.875
+    },
+    {
+      "path": "review/avatar_walk.mp4",
+      "bytes": 33255,
+      "sha256": "18e280294ac71da084c9d0492867ffae132b63bc1ef0bda8b654cbbd0801b101",
+      "duration_seconds": 1.062
+    },
+    {
+      "path": "review/cascade_motion.mp4",
+      "bytes": 157099,
+      "sha256": "e074471484a158c6ae4d2d9bffb256093d1c3defdf06fa648d9565c7525cc224",
+      "duration_seconds": 3.0
+    },
+    {
+      "path": "review/chanakya-neeti.png",
+      "bytes": 77435,
+      "sha256": "e8e975d6679f9fdcacb3ecde1bb9723e8af8eba94d9b19b202423e7d726d437d",
+      "dimensions": [
+        600,
+        900
+      ]
+    },
+    {
+      "path": "review/deep-work.png",
+      "bytes": 261294,
+      "sha256": "eddaf45663c021e52b0a3911005f11073306ccd4a2adefd6a5b55fb368a8efaa",
+      "dimensions": [
+        600,
+        900
+      ]
+    },
+    {
+      "path": "review/dog_back.png",
+      "bytes": 174076,
+      "sha256": "cf057f541a705923a2d9221b28b8cbeba31e73a05f52d0a969b03b7ae0983f45",
+      "dimensions": [
+        320,
+        480
+      ]
+    },
+    {
+      "path": "review/dog_fetch_pickup.mp4",
+      "bytes": 80958,
+      "sha256": "c3af4ea700055578b9830ab863edc5ac4ed4d87586005115a97a529af075191e",
+      "duration_seconds": 2.0
+    },
+    {
+      "path": "review/dog_front.png",
+      "bytes": 177466,
+      "sha256": "3e5110308aa4c0231797cf0d5a615c5274c52f2daba7260167c80c7038102e46",
+      "dimensions": [
+        320,
+        480
+      ]
+    },
+    {
+      "path": "review/dog_hop.mp4",
+      "bytes": 68609,
+      "sha256": "197dbcba8405e4820449902b1d9ea8564f55d6590e7289127e7ec92b366997a6",
+      "duration_seconds": 1.625
+    },
+    {
+      "path": "review/dog_pet_reaction.mp4",
+      "bytes": 54553,
+      "sha256": "a5c8cd2804fe87dda7a0ce144a635747349fceff5407ece0a7aae3cf1adb0454",
+      "duration_seconds": 2.125
+    },
+    {
+      "path": "review/dog_run.mp4",
+      "bytes": 39768,
+      "sha256": "ef9574dce56ff5202f5bbd7f75b7608672277db56befa0a09c650a10dae5fbcc",
+      "duration_seconds": 0.812
+    },
+    {
+      "path": "review/dog_side.png",
+      "bytes": 188967,
+      "sha256": "cf54533543b374acecf3701a488acc554c7b138987deb84fdeabc306f70e1735",
+      "dimensions": [
+        320,
+        480
+      ]
+    },
+    {
+      "path": "review/fetch_together.mp4",
+      "bytes": 287653,
+      "sha256": "e812ef3c7c3ac4487cfdbfc225cbdc5cb493117d9687f1f1ac805f688feea1f0",
+      "duration_seconds": 4.0
+    },
+    {
+      "path": "review/framing_desktop.png",
+      "bytes": 723759,
+      "sha256": "b9f64e1b991e8cc9e69a37726b85ffeaffd16680dbc8b7689b807a59d455927e",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "review/framing_pixel9.png",
+      "bytes": 305147,
+      "sha256": "273d78236ee0f2915149c6b051c0a1bdfcfa7503f3612da22563aee98a2b723c",
+      "dimensions": [
+        412,
+        915
+      ]
+    },
+    {
+      "path": "review/framing_pixel9_panel.png",
+      "bytes": 104414,
+      "sha256": "84d3849b82f798bc52981b7e1e9e024fecb07a949d602198a85cf118b2b2e068",
+      "dimensions": [
+        412,
+        915
+      ]
+    },
+    {
+      "path": "review/pet_together.mp4",
+      "bytes": 212274,
+      "sha256": "23e4c9f81e81b353f89f258cebdc81be128e2ecbf3037c6b13e64279d63d220f",
+      "duration_seconds": 2.5
+    },
+    {
+      "path": "review/social_1200x630.png",
+      "bytes": 562158,
+      "sha256": "06769f0c8fb45813b54f38f663f4029e05b5a69e689c1b1f7347c34d14c0d31e",
+      "dimensions": [
+        1200,
+        630
+      ]
+    },
+    {
+      "path": "review/world_desktop.png",
+      "bytes": 1167840,
+      "sha256": "4a316e44ee9f289d24c8a0cd9e8485b6bddd5355a5bbe09b65d2a0ee6ac3b5ee",
+      "dimensions": [
+        1080,
+        675
+      ]
+    },
+    {
+      "path": "review/world_pixel9_portrait.png",
+      "bytes": 962047,
+      "sha256": "f5ec48c2cb9102d9122b0fa169d47ca03355b2801cc23a685fe2e01dbbc2fb81",
+      "dimensions": [
+        702,
+        936
+      ]
+    },
+    {
+      "path": "source/avatar.blend",
+      "bytes": 1272496,
+      "sha256": "1c547cd779d3811e1393330febacc3b73297d247633b9384d700dc9646f4bb94"
+    },
+    {
+      "path": "source/build_characters.py",
+      "bytes": 14691,
+      "sha256": "543b77def384eb3b74a6067900990943f51f624d69e531d3123bc6a88d5dae1a"
+    },
+    {
+      "path": "source/build_world.py",
+      "bytes": 16560,
+      "sha256": "31b45f5be5fe583ed76b39c603c9cd51458e83255b59dcecc5ee1ccb6f18fe12"
+    },
+    {
+      "path": "source/generate_manifest.py",
+      "bytes": 1840,
+      "sha256": "9ef41ecb040f08235191430c88589411647ce4f44f20d55c53b1424c9a39d632"
+    },
+    {
+      "path": "source/golden_dog.blend",
+      "bytes": 1400796,
+      "sha256": "6500d7733284a1705aba04bc89714b90f1ea00fe4ef11c3d28a8a6568e069f49"
+    },
+    {
+      "path": "source/my_world_island.blend",
+      "bytes": 4161340,
+      "sha256": "eaa992f53d9cf25bf6158174fd49ff1710e583cdb3ae450da914b4f2c11a4f05"
+    },
+    {
+      "path": "source/render_interactions.py",
+      "bytes": 4607,
+      "sha256": "640bc45c25db422d7348903a3e415e2cf2a9c6789d0fa1db1198d924ff216e8f"
+    },
+    {
+      "path": "web/favicon.ico",
+      "bytes": 22382,
+      "sha256": "895fe8d7a9db2888b287ece7b75344b48171ddfc7189a188d94f8cae8b359940"
+    },
+    {
+      "path": "web/favicon.png",
+      "bytes": 13943,
+      "sha256": "18cb1fe3df8975807f501e8189b35fcb969fbfe1738d594178f8ac18639adcd8",
+      "dimensions": [
+        256,
+        256
+      ]
+    },
+    {
+      "path": "web/poster_desktop.webp",
+      "bytes": 40670,
+      "sha256": "5cd3d3a04a0b05faeb026347b5bf4123acf0e969b3023c788151942881088d3c",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "web/poster_pixel9.webp",
+      "bytes": 19804,
+      "sha256": "98542ad2d233359f2bcab49237d349e8b574e8eb4754b1d38535d962be9d6cc3",
+      "dimensions": [
+        412,
+        915
+      ]
+    },
+    {
+      "path": "web/social_1200x630.webp",
+      "bytes": 35216,
+      "sha256": "482d7cfa01b9b1e1c637d8abe3be8c72d7457151da8d195795ba2224d8ed130e",
+      "dimensions": [
+        1200,
+        630
+      ]
+    }
+  ],
+  "runtime_glb_bytes": 3907936,
+  "references": "User ZIP inspected for visual direction; not redistributed."
+}

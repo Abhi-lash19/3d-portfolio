@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-label="Original illustration for Deep Work by Cal Newport">
+<defs>
+  <linearGradient id="night" x2=".8" y2="1"><stop stop-color="#101d45"/><stop offset="1" stop-color="#253b64"/></linearGradient>
+  <linearGradient id="light" x1=".5" y1="0" x2=".5" y2="1"><stop stop-color="#fff4c7" stop-opacity=".86"/><stop offset="1" stop-color="#ffbd5a" stop-opacity="0"/></linearGradient>
+  <linearGradient id="floor" x2="1" y2="1"><stop stop-color="#324f70"/><stop offset="1" stop-color="#142445"/></linearGradient>
+  <clipPath id="arch"><path d="M88 725V312A212 212 0 0 1 512 312V725Z"/></clipPath>
+</defs>
+<rect width="600" height="900" fill="url(#night)"/>
+<rect x="23" y="23" width="554" height="854" rx="10" fill="none" stroke="#b98849" stroke-width="2"/>
+<rect x="35" y="35" width="530" height="830" rx="7" fill="none" stroke="#9a784c" stroke-opacity=".55"/>
+<g fill="#e7bf76" font-family="Georgia,serif" text-anchor="middle">
+  <text x="300" y="106" font-size="17" letter-spacing="7">THE ART OF ATTENTION</text>
+  <text x="300" y="186" font-size="68" letter-spacing="3">DEEP</text>
+  <text x="300" y="258" font-size="68" letter-spacing="3">WORK</text>
+</g>
+<path d="M87 725V312A213 213 0 0 1 513 312V725" fill="none" stroke="#d8ad6a" stroke-width="5"/>
+<path d="M101 725V314A199 199 0 0 1 499 314V725" fill="#182a4d" stroke="#566e7a" stroke-width="2"/>
+<g clip-path="url(#arch)">
+  <path d="M265 278H335L425 723H175Z" fill="url(#light)"/>
+  <path d="M94 672Q300 599 507 672V740H94Z" fill="url(#floor)"/>
+  <path d="M122 693Q300 636 478 693M100 719Q300 671 500 719" fill="none" stroke="#73919c" stroke-opacity=".3" stroke-width="2"/>
+  <circle cx="300" cy="310" r="25" fill="#ffe1a0"/>
+  <circle cx="300" cy="310" r="42" fill="none" stroke="#f4c478" stroke-opacity=".4"/>
+  <path d="M264 615q36-78 72 0l13 85h-98z" fill="#12203d"/>
+  <circle cx="300" cy="568" r="22" fill="#202742"/>
+  <path d="M201 656Q300 637 399 656L386 678H214Z" fill="#bc8750"/>
+  <path d="M221 677H234L225 729H212ZM366 677H379L390 729H377Z" fill="#815637"/>
+  <path d="M277 647Q300 633 323 647l-3 20q-20-8-40 0z" fill="#eee0bf" stroke="#c79a57" stroke-width="2"/>
+  <path d="M300 644v23" stroke="#bd9a66" stroke-width="2"/>
+  <path d="M159 351v249M441 351v249" stroke="#475b6f" stroke-width="6"/>
+  <path d="M148 361h22M430 361h22M148 472h22M430 472h22" stroke="#75909b" stroke-width="4"/>
+</g>
+<path d="M91 728H509" stroke="#d8ad6a" stroke-width="4"/>
+<path d="M60 126H540V273H60Z" fill="#172a4d" opacity=".96"/>
+<text x="300" y="192" fill="#f2d08f" text-anchor="middle" font-family="Georgia,serif" font-size="68" letter-spacing="3">DEEP</text>
+<text x="300" y="262" fill="#f2d08f" text-anchor="middle" font-family="Georgia,serif" font-size="68" letter-spacing="3">WORK</text>
+<path d="M128 762H472" stroke="#b68d5a" stroke-width="1"/>
+<text x="300" y="806" fill="#f4dfb4" text-anchor="middle" font-family="Georgia,serif" font-size="26" letter-spacing="5">CAL NEWPORT</text>
+<text x="300" y="842" fill="#aabcc6" text-anchor="middle" font-family="sans-serif" font-size="13" letter-spacing="2">AN ORIGINAL READING GARDEN ILLUSTRATION</text>
+</svg>

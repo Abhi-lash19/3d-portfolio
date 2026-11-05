@@ -1,5 +1,11 @@
 # My World — current handoff
 
+## Asset production checkpoint — 2026-11-06
+
+Created an isolated, reproducible asset package under `assets/my-world/`: Blender island with six exterior destinations, gate, a skinned avatar and golden dog, named actions, original book illustrations and six project diagrams, contact pictograms, synthesized audio, posters, favicon and rendered PNG/MP4 previews. `assets/my-world/asset-manifest.json` records measured bytes, clip names, dimensions, durations and hashes. The user-supplied ZIP was inspected for visual direction and is not redistributed. `docs/ASSET_LICENSES.md` records original asset provenance. No application files, main branch, deployment or hosting settings were changed.
+
+This is **not yet the approval review**. The rendered island is substantially sparser than the concept references. Pet contact, fetch pickup/ball attachment/return, continuous waterfall flow, character detail and lighting need further polish. Actual browser integration, real phone evidence, audio audition and account setup remain pending. Local production was performed in a worktree reconstructed from base `ddd0647` plus the remote branch's written specifications because Git access through the local proxy was offline; any pushed checkpoint must be committed against the actual remote `portfolio-v2` head and verified there.
+
 Branch: portfolio-v2. Base application: ddd06472b9fce28967d907024d84f5cd15976220. Latest detailed handoff: [asset production](../docs/HANDOFF_ASSET_PRODUCTION.md). Read [current decisions](../docs/CURRENT_DECISIONS.md) and [approved model/animation specification](../docs/MODELS_AND_ANIMATION.md) first.
 
 ## Latest checkpoint — 2026-11-05

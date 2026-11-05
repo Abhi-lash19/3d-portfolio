@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="My World original identity mark">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#14274c"/><stop offset="1" stop-color="#244764"/></linearGradient></defs>
+<rect width="256" height="256" rx="56" fill="url(#bg)"/>
+<path d="M45 192V95Q45 48 128 48T211 95V192" fill="none" stroke="#e8b767" stroke-width="13" stroke-linecap="round"/>
+<path d="M56 191Q128 163 200 191L128 213Z" fill="#92ae8b" stroke="#e8b767" stroke-width="5"/>
+<path d="M80 184V96h18v88M158 184V96h18v88" stroke="#e8b767" stroke-width="5" fill="#263958"/>
+<path d="M91 80h74" stroke="#e8b767" stroke-width="9" stroke-linecap="round"/>
+<circle cx="128" cy="123" r="19" fill="#f3c477"/>
+<path d="M105 162q23-19 46 0" fill="none" stroke="#f3dfad" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-label="Original illustration for Chanakya Neeti by Radhakrishnan Pillai">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#182b4e"/><stop offset=".72" stop-color="#52627a"/><stop offset="1" stop-color="#b99869"/></linearGradient>
+  <linearGradient id="steps" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d8ba82"/><stop offset="1" stop-color="#9a6949"/></linearGradient>
+  <clipPath id="arch"><path d="M87 722V312A213 213 0 0 1 513 312V722Z"/></clipPath>
+</defs>
+<rect width="600" height="900" fill="#1a3151"/>
+<rect x="23" y="23" width="554" height="854" rx="10" fill="none" stroke="#dbbb7b" stroke-width="2"/>
+<rect x="35" y="35" width="530" height="830" rx="7" fill="none" stroke="#a78556" stroke-opacity=".55"/>
+<g fill="#f1d69b" font-family="Georgia,serif" text-anchor="middle">
+  <text x="300" y="104" font-size="17" letter-spacing="5">CHOICES • WISDOM • PURPOSE</text>
+  <text x="300" y="177" font-size="54" letter-spacing="1">CHANAKYA</text>
+  <text x="300" y="244" font-size="66" letter-spacing="3">NEETI</text>
+</g>
+<path d="M87 722V312A213 213 0 0 1 513 312V722" fill="none" stroke="#dfbb78" stroke-width="5"/>
+<path d="M101 722V314A199 199 0 0 1 499 314V722" fill="url(#sky)" stroke="#8e9a9a" stroke-width="2"/>
+<g clip-path="url(#arch)">
+  <circle cx="300" cy="409" r="69" fill="#f5ca7e" opacity=".85"/>
+  <circle cx="300" cy="409" r="93" fill="none" stroke="#eac388" opacity=".28" stroke-width="3"/>
+  <path d="M95 627Q202 533 306 628Q400 535 510 613V733H95Z" fill="#284c55"/>
+  <path d="M96 678Q191 610 301 691Q421 613 508 673V735H96Z" fill="#2d5152"/>
+  <path d="M300 710L267 653L238 611L269 568L297 540L328 568L356 611L331 656Z" fill="url(#steps)" stroke="#f6d397" stroke-width="2"/>
+  <path d="M300 709L300 542M239 611H356M267 653H332M269 568H328" stroke="#8d6249" stroke-width="3" opacity=".7"/>
+  <path d="M298 540C247 508 199 500 161 477M301 540C355 508 399 496 444 478" fill="none" stroke="#edc685" stroke-width="8" stroke-linecap="round"/>
+  <path d="M155 470l-18 8 18 9M450 471l18 8-18 9" fill="none" stroke="#edc685" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M150 447v-66m-17 0h34m-28 0 11-24 11 24M450 447v-66m-17 0h34m-28 0 11-24 11 24" fill="none" stroke="#cfac76" stroke-width="4"/>
+  <path d="M124 450h52M424 450h52" stroke="#cfac76" stroke-width="3"/>
+  <g fill="#132b3d">
+    <path d="M166 694q-14-28-8-65 7-48 22-64-3 50 9 83l-7 46z"/>
+    <path d="M426 685q13-29 9-59-5-40-21-61 3 49-10 82l7 38z"/>
+  </g>
+</g>
+<path d="M91 725H509" stroke="#dfbb78" stroke-width="4"/>
+<path d="M54 120H546V271H54Z" fill="#213854" opacity=".96"/>
+<text x="300" y="183" fill="#f1d69b" text-anchor="middle" font-family="Georgia,serif" font-size="54" letter-spacing="1">CHANAKYA</text>
+<text x="300" y="249" fill="#f1d69b" text-anchor="middle" font-family="Georgia,serif" font-size="66" letter-spacing="3">NEETI</text>
+<path d="M128 760H472" stroke="#b68d5a" stroke-width="1"/>
+<text x="300" y="800" fill="#f5dfb1" text-anchor="middle" font-family="Georgia,serif" font-size="22" letter-spacing="2">RADHAKRISHNAN PILLAI</text>
+<text x="300" y="841" fill="#b8c6ca" text-anchor="middle" font-family="sans-serif" font-size="13" letter-spacing="2">AN ORIGINAL READING GARDEN ILLUSTRATION</text>
+</svg>
