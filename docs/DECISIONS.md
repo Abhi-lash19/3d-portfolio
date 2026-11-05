@@ -1,5 +1,7 @@
 # Decisions
 
+Current authority: [current decisions](CURRENT_DECISIONS.md) and [approved project content](PROJECT_COPY_REVIEW.md). These supersede older unresolved-name, project-copy and source-review notes below.
+
 ## Confirmed by user
 - Display name: Abhilash Giri.
 - Cloud Station; sapphire/amber; soft sculpted buildings; clear mostly solid dark panels with subtle glass; restrained bento project grid.
@@ -15,7 +17,7 @@
 - Books: Deep Work by Cal Newport; Chanakya Niti (title confirmed; author/edition confirmation still needed).
 - Project update workflow prepares a change for review, with deliberate publication after acceptance.
 - Footsteps and gentle environmental audio desired. Plan default muted with visible toggle and explicit audio activation.
-- Existing GitHub Pages address retained.
+- Superseded: hosting is Cloudflare Pages Free with a new public address; see ANALYTICS_PLANNING.md.
 - Aggregate visits and exploration-mode analytics desired, without identifying people.
 - Broad browser support, including mobile Brave and Edge. User's Chrome/Brave usage is a test example, not a support restriction.
 
@@ -26,14 +28,13 @@
 - Use CSS/DOM for readable panels and labels; a 3D-looking panel is not a reason to render body text into the canvas.
 
 ## Remaining before build kickoff
-1. Recover approved concept image or approve replacement desktop/mobile mockups. Current agent has only written descriptions of the old image.
-2. Supply resume PDF. Do not display a dead download button before the file exists.
-3. Confirm Chanakya Niti author/edition from the actual book before printing attribution.
-4. Complete source-based review of newer public projects and select featured ordering/screenshots.
-5. Select a free analytics service and confirm its account/site configuration, event support and current limits. No service is provisioned or selected yet.
-6. Approve the visual asset sheet (avatar, landmarks, controls/panels) and frozen build brief.
+1. Finalize production models, animation, audio and asset/performance plan using saved visual references.
+2. Configure Cloudflare Pages and GoatCounter accounts, exact address and private aggregate counter endpoint.
+3. Produce licensed production imagery and verify demos/links. Resume and approved project text are already available.
+4. Obtain two truthful habit/decision examples for the books; identities and reflection wording are confirmed.
+5. Consolidate final build brief and obtain user's implementation kickoff.
 
 BountyDesk README currently describes V1 as complete and frozen. Preserve the user's requested In progress portfolio label as an editorial decision; do not claim the repository has no working version.
 
-## Latest checkpoint — 2026-11-05 design revision and backup
-Read [design review checkpoint](design/README.md) before acting on earlier design sections. User requested regular-fit jeans, skills/contact destinations and a dog, and exploration of waterfall/fun-zone ideas. Six-destination imagery, page order, dog fetch and the name Abhilash’s Skygarden are proposals awaiting next-request feedback, not approved implementation changes. Resume PDF is now supplied and preserved in docs/content; review still pending. Application implementation has not started.
+
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.

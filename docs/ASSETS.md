@@ -3,14 +3,14 @@
 ## Required before application implementation
 | Item | Deliverable | Current status |
 | --- | --- | --- |
-| Desktop composition | Hero plus full page mockup, 1440px wide | Original missing; recover or replace |
+| Desktop composition | Hero plus full page mockup, 1440px wide | Replacement references saved; use latest approved direction |
 | Mobile composition | Scroll view and active exploration view, 390px wide | Needed |
 | Avatar sheet | Front/side/back, palette, hoodie/jeans/sneakers, idle/walk poses | Specified, artwork needed |
 | Island kit sheet | Island silhouette, arrival plaza, launchpad, observatory, reading garden, paths/props | Specified, artwork needed |
 | UI state sheet | Desktop panel, mobile sheet, thumbstick, sound/reset/exit controls, loading/fallback | Specified, artwork needed |
 | Project imagery | Existing local images reviewed; clean screenshots or accurate diagrams for new featured work | Existing images present; new captures pending |
-| Book imagery | Confirm edition; licensed cover or original typographic book art | Title confirmed; edition pending |
-| Resume | Current PDF with working download and accessible file name | Awaiting user file |
+| Book imagery | Confirm edition; licensed cover or original typographic book art | Titles/authors confirmed; original illustrated art approved |
+| Resume | Current PDF with working download and accessible file name | Supplied at docs/content/Abhilash_Resume.pdf |
 
 The concept sheets establish the design before coding. They are not runtime 3D models. During the approved build, construct or source actual models and animation, then derive the hero poster from the final scene so the poster and interactive view match. Do not advertise a generated mockup as a screenshot of a working project.
 
@@ -24,7 +24,7 @@ The concept sheets establish the design before coding. They are not runtime 3D m
 ## Proposed delivery budgets
 Initial page compressed JS excluding lazy 3D: target <=250KB; hero poster <=250KB mobile/500KB desktop; first 3D scene download target <=5MB; textures normally <=1024px with reuse; no automatic audio downloads before opting in. Measure before treating budgets as met. Reduce geometry, draw calls and texture footprint before compromising readability. Budget acceptance accompanies the chosen target device measurements.
 
-User input needed: old approved mockup (if recoverable), resume PDF, book edition. Asset production can supply the other sheets; no need to find every image manually. No image generation was performed in this reconstruction pass.
+Original mockup unavailable; replacements saved. Resume supplied and book identities confirmed. Production asset preparation remains pending. Asset production can supply the other sheets; no need to find every image manually. No image generation was performed in this reconstruction pass.
 
-## Latest checkpoint — 2026-11-05 design revision and backup
-Read [design review checkpoint](design/README.md) before acting on earlier design sections. User requested regular-fit jeans, skills/contact destinations and a dog, and exploration of waterfall/fun-zone ideas. Six-destination imagery, page order, dog fetch and the name Abhilash’s Skygarden are proposals awaiting next-request feedback, not approved implementation changes. Resume PDF is now supplied and preserved in docs/content; review still pending. Application implementation has not started.
+
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.

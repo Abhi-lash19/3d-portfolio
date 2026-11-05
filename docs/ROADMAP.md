@@ -1,12 +1,10 @@
-# Roadmap
+# My World roadmap
 
-1. Planning recovery: reconstructed documents and pinned skills on portfolio-v2.
-2. Pre-build visual/content finalization: reference mockups, asset sheets, resume, new public projects, analytics choice.
-3. Approved continuous implementation: DOM portfolio, world/movement, integration, content automation.
-4. Integrated QA and fixes: browser/device matrix, visual evidence, performance and release checks.
-5. User release review, merge to main, then publish.
+1. Planning recovery and approved project/book/layout specifications: recorded.
+2. Cloudflare Pages Free and GoatCounter selection: approved; account setup pending.
+3. NEXT: production models, animation, audio and performance plan.
+4. Final implementation brief and user build kickoff.
+5. Continuous implementation, integrated browser/device QA and fixes.
+6. User release review, Cloudflare migration and authorized main release.
 
-Current phase: 2. Application implementation has not started. Existing portfolio remains the release baseline.
-
-## Latest checkpoint — 2026-11-05 design revision and backup
-Read [design review checkpoint](design/README.md) before acting on earlier design sections. User requested regular-fit jeans, skills/contact destinations and a dog, and exploration of waterfall/fun-zone ideas. Six-destination imagery, page order, dog fetch and the name Abhilash’s Skygarden are proposals awaiting next-request feedback, not approved implementation changes. Resume PDF is now supplied and preserved in docs/content; review still pending. Application implementation has not started.
+All work stays on portfolio-v2. Existing site stays available until replacement acceptance. Follow [current decisions](CURRENT_DECISIONS.md), [analytics/hosting](ANALYTICS_PLANNING.md) and [progress](../artifacts/game-progress.md).

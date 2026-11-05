@@ -1,4 +1,19 @@
-# Design review checkpoint
+# Current design reference status
+
+Read [current decisions](../CURRENT_DECISIONS.md) first. Earlier review checkpoints below are historical. User subsequently approved the design language, world features, contact and fetch approach. Final name is **My World**, on the entrance gate. All older Cloud Station/Sky Garden text is superseded. Generated images are reference art, not working implementation or guarantees of production geometry, performance, text or animation.
+
+Latest saved references:
+- [Gate and world](world-v3-gate-reference.png) — substitute My World for Sky Garden.
+- [Mobile project, experience and skills detail](mobile-v3-detail-reference.png) — later Skills design removes related-project link.
+- [Dog and waterfall animation storyboard](animation-v3-storyboard.png) — detailed production model/animation plan is NEXT, not implemented.
+- [Contact Cabin and simplified Skills](contact-skills-v4-reference.png).
+- [Desktop/mobile fetch controls](fetch-v4-controls-reference.png).
+
+Book title is Chanakya Neeti / Radhakrishnan Pillai, superseding older image spelling. Use [approved books/layout](../BOOKS_AND_LAYOUT.md) and [approved project copy](../PROJECT_COPY_REVIEW.md) instead of copying image text. Total of ten generated images preserved for continuity, including historical variants.
+
+---
+
+# Design reference history
 
 All images here are generated design proposals, not approved designs or screenshots of an implemented website. User explicitly requested preservation and push on 2026-11-05, and will provide feedback in the next request. Do not infer approval from that backup request. No application implementation is authorized yet.
 

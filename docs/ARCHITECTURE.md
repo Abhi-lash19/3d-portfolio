@@ -11,7 +11,7 @@ Keep React 18, Vite and React Three Fiber as the baseline. Audit the existing de
 - scripts/: project metadata proposal generation and schema/private-link validation.
 
 ## Shared interface to freeze before delegation
-DestinationId = projects | experience | reading.
+DestinationId = projects | experience | skills | reading | contact | play.
 App state: sceneStatus (poster/loading/ready/failed), explorationEnabled, activeDestination|null, audioEnabled, reducedMotion, qualityTier. DOM content does not depend on sceneStatus.
 Intents: enterWorld, exitWorld, selectDestination(id), closePanel, resetView, setAudio(enabled), move(x,z), look(dx,dy). Continuous movement/look belongs in refs or the simulation, not React state every frame.
 World emits ready, failed(reason), destinationReached(id). Selection opens DOM content immediately; arrival is visual feedback, not permission to read. Audio listens to locomotion/zone events.
@@ -23,10 +23,10 @@ Lazy-load the 3D module. Mobile starts with a poster; desktop attempts loading a
 
 ## Contact and analytics
 Retain EmailJS and existing environment variable names. Ensure loading/errors prevent accidental duplicate sends and offer email fallback. Do not print config values in docs.
-Analytics requires service selection before build freeze. Define page_view once per navigation, explore_enter once per visit, destination_open with fixed ID and standard_content_view. Scrolling and 3D may overlap: derive 3D-engaged visits vs standard-only visits per service session semantics. No names, contact text, private URLs, fingerprinting or user IDs. Counts are approximate because blockers and privacy settings can suppress events. Do not create a homemade public counting endpoint without rate limits and an approved host.
+Analytics provider is GoatCounter; follow ANALYTICS_PLANNING.md for event definitions, private aggregate breakdowns, public footer total and pending account setup. Earlier generic event examples below are subordinate to that contract. Define page_view once per navigation, explore_enter once per visit, destination_open with fixed ID and standard_content_view. Scrolling and 3D may overlap: derive 3D-engaged visits vs standard-only visits per service session semantics. No names, contact text, private URLs, fingerprinting or user IDs. Counts are approximate because blockers and privacy settings can suppress events. Do not create a homemade public counting endpoint without rate limits and an approved host.
 
 ## Project update automation
 Maintain an explicit public repo allowlist and a curated content overlay. A manual workflow reads repository metadata without executing source repos, generates a deterministic proposal, validates schema/links/private exclusions and opens an update PR. Preserve manually edited descriptions and images. Private project descriptions stay manually curated. Review/merge content updates; a separate deliberate publish action deploys accepted content. No secret in the browser bundle; use least-privilege workflow credentials. Never make unfinished public repos automatically featured.
 
-## Latest checkpoint — 2026-11-05 design revision and backup
-Read [design review checkpoint](design/README.md) before acting on earlier design sections. User requested regular-fit jeans, skills/contact destinations and a dog, and exploration of waterfall/fun-zone ideas. Six-destination imagery, page order, dog fetch and the name Abhilash’s Skygarden are proposals awaiting next-request feedback, not approved implementation changes. Resume PDF is now supplied and preserved in docs/content; review still pending. Application implementation has not started.
+
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.

@@ -1,36 +1,20 @@
-# Cloud Station progress
+# My World — current handoff
 
-Updated: 2026-11-05. Branch: portfolio-v2. Base: ddd06472b9fce28967d907024d84f5cd15976220 (confirmed against GitHub main through the connector).
+Branch: portfolio-v2. Base application: ddd06472b9fce28967d907024d84f5cd15976220. Earlier document recovery and planning history is preserved in Git and docs/design/README.md. Read docs/CURRENT_DECISIONS.md first.
 
-## Completed
-- Read handoff and repeated answers; incorporated latest name, controls, contacts, private project and browser decisions.
-- Created portfolio-v2 from available origin/main; source application unchanged.
-- Reconstructed project, design, content, assets, architecture, implementation, validation and roadmap documents.
-- Confirmed private GitHub access; inspected Chitragupta and BountyDesk READMEs and drafted sanitized public descriptions.
-- Recovered approved Three.js skill source revision into repository-local .agents/skills for future agents.
+## Approved and preserved
+- My World entrance gate name, six destinations, approved design language, regular-fit avatar, dog/fetch/butterfly and skills-waterfall direction. Ten generated reference images preserved. These are static concepts, not implementation evidence.
+- Resume supplied and read. Selected code files reviewed in 14 repositories. Project descriptions, six-featured order and Skills demonstrated label approved in docs/PROJECT_COPY_REVIEW.md.
+- Book titles/authors confirmed from user screenshots; reflections, original book artwork and Lora/Inter layout approved in docs/BOOKS_AND_LAYOUT.md. Two actual habit/decision examples still need user input; do not invent.
+- Cloudflare Pages Free and new public address approved; intended private GitHub source. Migration not performed. Keep current site available until replacement acceptance.
+- GoatCounter approved; visits, active exploration, project openings, resume-link clicks and contact-link clicks. Owner-only detailed dashboard; standard optional aggregate breakdowns retained privately per latest user revision. Small footer Visits count is public. See docs/ANALYTICS_PLANNING.md for server-side aggregate-only counter and configuration details.
+- Nine Three.js skills preserved at approved revision under .agents/skills.
 
-## Evidence and recovery limits
-Previous transcript reports 11 Markdown files and an image as local, uncommitted and unpushed. They are absent here; exact loss mechanism unknown. New documents reconstruct decisions, not original file contents. Original concept image is missing and was not visually inspected. Git fetch failed because the shell could not reach its configured proxy; GitHub connector reads work. The GitHub connector confirmed remote main still points to the same base SHA.
+## Next request
+Discuss production models and animation: asset creation/sourcing, free resources, avatar/dog rigging and motion, waterfall/butterfly effects, audio and performance budgets. Do not repeat resolved name, book, project or provider questions. Full implementation still awaits final build kickoff.
 
-## Planning verification
-- All 75 restored skill/licence files match their upstream Git blob hashes.
-- All 13 planning documents passed local-link, newline and whitespace checks.
-- Upstream skill scripts contain three existing whitespace-only lines; preserved verbatim for source integrity.
-- Original application files match the base. No application tests were needed for this documentation-only change.
+## Pending setup and evidence
+Cloudflare and GoatCounter accounts/site IDs/configuration, exact public address, authenticated analytics endpoint validation, privacy/release configuration, production assets, two truthful personal habit examples. No app build, browser profiling, analytics installation or deployment in this planning pass. No change to repository visibility.
 
-## Pending before build
-- Recover/replace and approve desktop/mobile mockups and avatar/island/UI sheets.
-- Receive resume PDF; confirm book edition/author.
-- Audit newer public project code, imagery and featured order.
-- Select/configure free aggregate analytics service.
-- Freeze final brief and obtain user's build kickoff.
-
-## Not started
-Application implementation, browser profiling, live contact verification, analytics setup, project-update workflow, deployment. No measured performance or production-ready claim.
-
-Next action: review reconstructed design with user and produce/approve missing visual assets. Preserve completed work; do not restart planning from scratch.
-
-## Latest handoff — design backup requested
-The user will review the new images in the NEXT request. Preserve context and wait for that feedback. See [design review checkpoint](../docs/design/README.md) for authoritative latest status and links. All five generated images are preserved, including two historical/superseded versions. Resume supplied and saved byte-for-byte at docs/content/Abhilash_Resume.pdf; content extraction is pending. Earlier statements that the resume is awaited are superseded. The original older mockup remains lost. New feature requests are recorded; six destinations, Skygarden name, scroll order and pet/fetch mechanics are proposals. Existing three-destination architecture must be revised only after review; it is not the final build contract. Public GitHub project audit, analytics choice, asset approval and implementation remain pending.
-
-User authorized commit and remote backup on portfolio-v2; do not merge main or deploy. This checkpoint is being committed and pushed; verify remote branch HEAD on resume rather than assuming local commits reached GitHub.
+## Backup checkpoint
+User explicitly requested committing and pushing all current documents and updates to portfolio-v2. Verify local HEAD equals origin/portfolio-v2 after push. Never merge main or deploy as part of backup. Current documentation and saved-media links/hashes are checked before commit; application and deployment files remain unchanged.

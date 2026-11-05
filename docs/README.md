@@ -1,6 +1,8 @@
-# Cloud Station planning index
+# My World planning index
 
 Reconstructed 2026-11-05 from the supplied conversation and current user decisions. This is an updated planning pack, not a byte-for-byte recovery of the missing documents.
+
+Read [current decisions](CURRENT_DECISIONS.md) and [approved project content](PROJECT_COPY_REVIEW.md) first; they supersede historical checkpoints below.
 
 Read in order:
 1. [Project brief](PROJECT_BRIEF.md)
@@ -15,7 +17,7 @@ Read in order:
 10. [Roadmap](ROADMAP.md)
 11. [Progress tracker](../artifacts/game-progress.md)
 
-Status: product direction confirmed; written design specified; exact visual reference, resume, final newer-project inventory and analytics configuration remain open. Do not label this implementation-ready until the pre-build checklist is complete.
+Status: project content, book identities/reflections, typography/layout, world direction and hosting/analytics providers approved. Next: production models and animation planning. Account configuration, final assets, personal habit examples and build kickoff remain pending.
 
-## Latest checkpoint — 2026-11-05 design revision and backup
-Read [design review checkpoint](design/README.md) before acting on earlier design sections. User requested regular-fit jeans, skills/contact destinations and a dog, and exploration of waterfall/fun-zone ideas. Six-destination imagery, page order, dog fetch and the name Abhilash’s Skygarden are proposals awaiting next-request feedback, not approved implementation changes. Resume PDF is now supplied and preserved in docs/content; review still pending. Application implementation has not started.
+
+Current hosting/analytics authority: [approved plan](ANALYTICS_PLANNING.md). Cloudflare Pages Free replaces the prior GitHub Pages hosting decision; GoatCounter is selected. Next discussion: production models and animation.
