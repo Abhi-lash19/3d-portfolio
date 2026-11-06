@@ -15,6 +15,16 @@ def import_rig(filename,rig_name):
 def set_action(rig,prefix):
     a=next(a for a in bpy.data.actions if a.name.startswith(prefix))
     rig.animation_data_create();rig.animation_data.action=a
+def sequence(rig,pieces):
+    data=rig.animation_data_create()
+    for old in list(data.nla_tracks):data.nla_tracks.remove(old)
+    data.action=None
+    track=data.nla_tracks.new();track.name="Authored fetch sequence"
+    for prefix,start,end in pieces:
+        a=next(a for a in bpy.data.actions if a.name.startswith(prefix))
+        strip=track.strips.new(prefix,start,a)
+        strip.scale=(end-start)/max(1,a.frame_range[1]-a.frame_range[0])
+        strip.extrapolation="HOLD_FORWARD"
 def place(rig,name,pos):
     p=bpy.data.objects.new(name,None);bpy.context.collection.objects.link(p)
     rig.parent=p;p.location=pos;return p
@@ -62,22 +72,46 @@ dog=import_rig("golden_dog.glb","Golden dog rig")
 place(avatar,"Avatar position",(-.95,.8,0))
 dog_pos=place(dog,"Dog fetch path",(-.2,.65,0))
 set_action(avatar,"avatar__throw_")
-set_action(dog,"dog__run_")
-for frame,loc in [(1,(-.2,.65,0)),(17,(.5,-1.9,0)),(25,(.7,-2.15,0)),(47,(-.1,.05,0)),(64,(-.55,.45,0))]:
+sequence(dog,[("dog__run_",1,17),("dog__fetch_pickup_",18,33),
+              ("dog__carry_return_",34,51),("dog__idle_",52,64)])
+for frame,loc in [(1,(-.2,.65,0)),(17,(.5,-1.9,0)),(25,(.7,-2.15,0)),
+                  (34,(.7,-2.15,0)),(51,(-.1,.05,0)),(64,(-.55,.45,0))]:
     dog_pos.location=loc;dog_pos.keyframe_insert("location",frame=frame)
+for frame,angle in [(1,0),(33,0),(39,math.pi),(64,math.pi)]:
+    dog_pos.rotation_euler.z=angle;dog_pos.keyframe_insert("rotation_euler",frame=frame)
 bpy.ops.mesh.primitive_uv_sphere_add(segments=16,ring_count=8,radius=.12,location=(-.4,.05,1.05))
 ball=bpy.context.object;ball.name="Fetch ball";ball.data.materials.append(mat("Amber ball",(.9,.5,.15)))
 for frame,loc in [(1,(-.5,.4,.8)),(11,(-.2,-.75,1.48)),(20,(.7,-2.2,.13)),
-                  (29,(.7,-2.2,.15)),(45,(-.1,-.12,.53)),(58,(-.55,.35,.14))]:
+                  (28,(.7,-3.12,.62)),(34,(.7,-3.12,.62)),(39,(.57,-.6,.62)),
+                  (51,(-.1,1.02,.62)),(59,(-.55,1.22,.62)),(64,(-.65,.52,.13))]:
     ball.location=loc;ball.keyframe_insert("location",frame=frame)
 bpy.ops.mesh.primitive_cylinder_add(vertices=40,radius=3,depth=.05,location=(0,-.7,-.045))
 bpy.context.object.data.materials.append(mat("Play meadow",(.18,.31,.29)))
 setup(target=(-.15,-.65,.7),camera=(4,-6,4),scale=5.7)
 render("fetch_together",64)
 
+# Seated reading with the bench and book present in the same 3D view.
+clear()
+avatar=import_rig("avatar.glb","Avatar rig")
+place(avatar,"Reading pose",(0,0,0))
+set_action(avatar,"avatar__read_")
+wood=mat("Garden bench wood",(.41,.24,.16))
+bpy.ops.mesh.primitive_cube_add(size=1,location=(0,.09,.43))
+bpy.context.object.dimensions=(1.5,.52,.14);bpy.context.object.data.materials.append(wood)
+bpy.ops.mesh.primitive_cube_add(size=1,location=(0,.43,.76))
+bpy.context.object.dimensions=(1.5,.15,.66);bpy.context.object.data.materials.append(wood)
+bpy.ops.mesh.primitive_cube_add(size=1,location=(0,-.43,.85))
+book=bpy.context.object;book.name="Open reading book";book.dimensions=(.46,.35,.045)
+book.data.materials.append(mat("Book pages",(.9,.84,.68)))
+for frame,angle in [(1,-.18),(16,-.09),(32,-.18)]:
+    book.rotation_euler.x=angle;book.keyframe_insert("rotation_euler",frame=frame)
+setup(target=(0,0,1.02),camera=(2.6,-4,2.65),scale=3.0)
+render("reading_together",32)
+
 # Waterfall and authored descending skill-tile keys from the actual island export.
 clear()
 bpy.ops.import_scene.gltf(filepath=os.path.join(EXP,"my_world_island.glb"))
-setup(target=(-5.4,1.25,.72),camera=(-2,-5,5),scale=4.2)
+sc=setup(target=(-5.4,1.25,.72),camera=(-2,-5,5),scale=4.2)
+sc.render.resolution_percentage=55;sc.cycles.samples=2
 render("cascade_motion",48)
 print("INTERACTION_PREVIEWS_DONE")

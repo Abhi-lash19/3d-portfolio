@@ -28,6 +28,23 @@ d.text((76,839),"ASSET FRAMING STUDY • NOT A LIVE SCREEN",font=font(sans,13),f
 canvas.save(REV/"framing_desktop.png")
 canvas.save(WEB/"poster_desktop.webp","WEBP",quality=76,method=6)
 
+# Desktop destination selection leaves a readable side panel beside the world.
+details=Image.new("RGB",(1440,900),"#101d3b")
+world_crop=desktop.resize((1000,625),Image.Resampling.LANCZOS)
+details.paste(world_crop,(-75,145))
+dd=ImageDraw.Draw(details)
+rounded(dd,(900,80,1408,822),24,"#1a3152",outline="#9c805c",width=2)
+dd.text((936,113),"PROJECT LAUNCHPAD",font=font(sans,17),fill="#e4b46e")
+dd.text((936,190),"VERA",font=font(serif,53),fill="#f3e6d4")
+for i,line in enumerate(["A knowledge assistant that searches","technical documents and source code","to help answer engineering questions."]):
+    dd.text((936,283+i*39),line,font=font(sans,19),fill="#d2e0e1")
+dd.line((936,448,1371,448),fill="#9d855f",width=2)
+dd.text((936,486),"Skills demonstrated",font=font(sans,20),fill="#e4b46e")
+for i,line in enumerate(["Python • document ingestion","FAISS/BM25 hybrid search","Retrieval-augmented generation"]):
+    dd.text((936,538+i*38),line,font=font(sans,17),fill="#d2e0e1")
+dd.text((936,753),"ASSET STUDY • NOT A LIVE SCREEN",font=font(sans,12),fill="#8ba6b7")
+details.save(REV/"framing_desktop_panel.png")
+
 # Pixel 9 reference proportions, with poster and explicit optional exploration CTA.
 w,h=412,915
 mobile=Image.new("RGB",(w,h),"#10203c")

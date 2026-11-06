@@ -21,16 +21,16 @@ Editable Blender scenes and scripts are in `source/`. GLB files are in `exports/
 
 ## Present asset contract
 
-- `my_world_island.glb`: floating island, My World gate, six exterior destinations, circulation and props. Static meshes are grouped by material in the GLB; the editable scene keeps the separate pieces. Three named skill-tile motion channels are included.
+- `my_world_island.glb`: floating island, My World gate, six exterior destinations, circulation and props. Static meshes are grouped by material in the GLB; the editable scene keeps the separate pieces. Three skill-tile and seven droplet motion channels are included.
 - `avatar.glb`: skinned navy-hoodie/regular-jeans character with eight named actions. Walking only.
 - `golden_dog.glb`: skinned golden dog with amber collar and eight named actions. Running and a small hop included.
-- `pet_together.mp4`, `fetch_together.mp4` and `cascade_motion.mp4` are actual renders of the exported 3D assets. Other MP4s show individual clips.
+- `pet_together.mp4`, `fetch_together.mp4`, `reading_together.mp4` and `cascade_motion.mp4` are actual renders of the exported 3D assets. Other MP4s show individual clips.
 - `framing_desktop.png`, `framing_pixel9.png` and `framing_pixel9_panel.png` are composition studies, **not live application screenshots**. The poster crops derive from the rendered world.
 
 ## Reference comparison and current defects
 
 The user-supplied boards show denser flowers and vegetation, more developed building exteriors, richer material texture, deeper sculpted elevation and more atmospheric lighting than the current rendered island. This checkpoint preserves the agreed placement and palette but does **not yet meet the final visual bar**.
 
-The pet preview has approximate hand-to-dog alignment; it needs a stronger crouch/contact polish pass. The fetch preview shows ball travel and dog movement, but convincing pickup, mouth attachment and return/release choreography are still pending. The waterfall preview proves tile motion; the water surface itself needs visible looping flow. Book art and contact pictograms need final visual approval. Audio is original synthesized sound and must be auditioned in context. Lora/Inter packaging, real Pixel 9 testing and browser performance are pending. No application build or production integration is implied.
+The pet preview has approximate hand-to-dog alignment; it needs a stronger crouch/contact polish pass. The fetch preview stages chase, pickup and return and shows ball travel, but convincing mouth attachment and release choreography are still pending. The waterfall preview proves tile and droplet motion; the water surface itself needs a stronger continuous flow treatment. The reading preview contains bench and book but hand contact is approximate. Book art and contact pictograms need final visual approval. Audio is original synthesized sound and must be auditioned in context. Lora/Inter packaging, real Pixel 9 testing and browser performance are pending. No application build or production integration is implied.
 
 Runtime policy for later integration: audio starts muted and loads only after opt-in, decorative motion stops for reduced-motion/offscreen states, and page content remains complete without exploration. Keep the current public portfolio intact until the separately authorized build is complete.

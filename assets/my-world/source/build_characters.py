@@ -15,6 +15,7 @@ shoe=mat("Slate sneakers",(.1,.16,.23));sole=mat("Ivory sole",(.76,.73,.65))
 cream=mat("Cream",(.86,.77,.58));gold=mat("Golden fur",(.78,.48,.21));lightgold=mat("Chest gold",(.96,.71,.38))
 earmat=mat("Ear amber",(.55,.29,.14));collar=mat("Amber collar",(.95,.43,.12));nose=mat("Dog nose",(.11,.085,.08))
 eye=mat("Eyes",(.055,.045,.052));white=mat("White detail",(.98,.91,.8))
+mouth=mat("Dog tongue",(.75,.28,.29))
 
 def reset():
     bpy.ops.object.select_all(action="SELECT");bpy.ops.object.delete(use_global=False)
@@ -36,6 +37,7 @@ def ball(name,p,s,ma,rig,bone,seg=16,rings=8):
     bpy.ops.mesh.primitive_uv_sphere_add(segments=seg,ring_count=rings,location=p)
     o=bpy.context.object;o.name=name;o.scale=s
     bpy.ops.object.transform_apply(location=False,rotation=False,scale=True)
+    for face in o.data.polygons:face.use_smooth=True
     o.data.materials.append(ma);bind(o,rig,bone);return o
 def box(name,p,s,ma,rig,bone,bev=.03):
     bpy.ops.mesh.primitive_cube_add(size=1,location=p);o=bpy.context.object;o.name=name;o.dimensions=s
@@ -50,6 +52,7 @@ def link(name,a,b,r,ma,rig,bone):
     bpy.ops.mesh.primitive_cone_add(vertices=12,radius1=r*1.05,radius2=r*.82,depth=(b-a).length,location=(a+b)/2)
     o=bpy.context.object;o.name=name;o.rotation_euler=(b-a).to_track_quat("Z","Y").to_euler()
     bpy.ops.object.transform_apply(location=False,rotation=True,scale=True)
+    for face in o.data.polygons:face.use_smooth=True
     o.data.materials.append(ma);bind(o,rig,bone);return o
 def key(rig,frame,rots=None,loc=None):
     for name,pb in rig.pose.bones.items():
@@ -122,9 +125,15 @@ rig=armature("Avatar",avatar_bones)
 ball("Hoodie torso",(0,0,1.33),(.37,.24,.39),navy,rig,"spine")
 ball("Hoodie hem",(0,0,1.05),(.36,.24,.12),navyshade,rig,"spine")
 ball("Hood rim",(0,.12,1.62),(.28,.18,.24),navyshade,rig,"spine")
+box("Hoodie kangaroo pocket",(0,-.239,1.17),(.38,.055,.18),navyshade,rig,"spine",.06)
+box("Hoodie pocket opening",(0,-.27,1.25),(.3,.018,.018),denimshade,rig,"spine",.008)
+ball("Hoodie shoulder fold L",(-.3,0,1.48),(.12,.22,.09),navyshade,rig,"spine")
+ball("Hoodie shoulder fold R",(.3,0,1.48),(.12,.22,.09),navyshade,rig,"spine")
 ball("Pelvis denim",(0,0,.9),(.31,.21,.19),denim,rig,"pelvis")
 ball("Head",(0,-.01,1.9),(.205,.185,.245),skin,rig,"head")
 ball("Hair cap",(0,.01,2.055),(.21,.19,.12),hair,rig,"head")
+for x,y,z in [(-.12,-.11,2.09),(.04,-.15,2.11),(.14,-.08,2.075)]:
+    ball("Soft hair tuft",(x,y,z),(.085,.065,.06),hair,rig,"head",10,5)
 for x in (-.071,.071):
     ball("Eye",(x,-.177,1.92),(.018,.012,.018),eye,rig,"head",8,4)
     ball("Eyebrow",(x,-.183,1.956),(.035,.008,.009),hair,rig,"head",8,4)
@@ -140,6 +149,9 @@ for side in ("L","R"):
     link("Straight jean leg "+side,(sign*.17,0,.48),(sign*.17,0,.16),.177,denim,rig,"shin."+side)
     box("Sneaker "+side,(sign*.17,-.085,.1),(.26,.42,.16),shoe,rig,"shin."+side,.06)
     box("Sneaker sole "+side,(sign*.17,-.085,.035),(.27,.43,.055),sole,rig,"shin."+side,.025)
+    box("Jean outer seam "+side,(sign*.34,-.01,.34),(.012,.025,.5),denimshade,rig,"shin."+side,.005)
+    for lace_y in (-.24,-.15,-.06):
+        box("Sneaker lace "+side,(sign*.17,lace_y,.185),(.15,.015,.012),cream,rig,"shin."+side,.005)
 for x in (-.12,.12):
     link("Hoodie drawcord",(x,-.21,1.57),(x,-.22,1.34),.008,cream,rig,"spine")
 action(rig,"avatar__idle",[(1,{},None),(16,{"spine":(.015,0,0)},None),(32,{},None)])
@@ -179,6 +191,9 @@ ball("Chest ruff",(0,-.39,.54),(.3,.23,.36),lightgold,rig,"neck")
 ball("Dog head",(0,-.66,.79),(.29,.31,.27),gold,rig,"head")
 ball("Muzzle",(0,-.89,.67),(.22,.19,.14),lightgold,rig,"head")
 ball("Nose",(0,-1.04,.72),(.09,.055,.06),nose,rig,"head",12,6)
+ball("Little tongue",(0,-1.038,.585),(.075,.035,.09),mouth,rig,"jaw",10,5)
+for x in (-.22,.22):
+    ball("Cheek fluff",(x,-.73,.62),(.13,.16,.14),lightgold,rig,"head",10,5)
 for side in ("L","R"):
     s=-1 if side=="L" else 1
     ball("Eye "+side,(s*.14,-.899,.85),(.028,.025,.028),eye,rig,"head",8,4)

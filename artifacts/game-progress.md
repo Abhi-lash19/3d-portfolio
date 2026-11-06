@@ -6,6 +6,8 @@ Created an isolated, reproducible asset package under `assets/my-world/`: Blende
 
 This is **not yet the approval review**. The rendered island is substantially sparser than the concept references. Pet contact, fetch pickup/ball attachment/return, continuous waterfall flow, character detail and lighting need further polish. Actual browser integration, real phone evidence, audio audition and account setup remain pending. Local production was performed in a worktree reconstructed from base `ddd0647` plus the remote branch's written specifications because Git access through the local proxy was offline; any pushed checkpoint must be committed against the actual remote `portfolio-v2` head and verified there.
 
+The first checkpoint was pushed to `portfolio-v2` as `d272746ca23b9f3e281fc80c82e4e6d77d228a0d` using the connected GitHub Git API; the branch head and all 80 changed paths were verified. This second checkpoint adds paving, flowers, warmer exteriors, cascade droplets, smoother characters, a reading scene and staged fetch actions. Its measured GLBs are 3,489,764 bytes (island), 335,208 bytes (avatar) and 282,424 bytes (dog), 4,107,396 bytes combined. These are file sizes, not measured network download or frame-rate results. Verify the second checkpoint against the remote branch after publishing; do not confuse it with the verified first commit.
+
 Branch: portfolio-v2. Base application: ddd06472b9fce28967d907024d84f5cd15976220. Latest detailed handoff: [asset production](../docs/HANDOFF_ASSET_PRODUCTION.md). Read [current decisions](../docs/CURRENT_DECISIONS.md) and [approved model/animation specification](../docs/MODELS_AND_ANIMATION.md) first.
 
 ## Latest checkpoint — 2026-11-05

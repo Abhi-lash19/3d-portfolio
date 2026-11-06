@@ -5,8 +5,8 @@
   "entries": [
     {
       "path": "README.md",
-      "bytes": 3510,
-      "sha256": "6bbb4c17317712fb4f45cabc00b75de5c5228c664cd7707915ef2dd95881c8d3"
+      "bytes": 3655,
+      "sha256": "e56d16566ac630f20a0f20fa6a075f4083c709c2b0ee1467fda561ae487a7d6c"
     },
     {
       "path": "audio/generate_audio.py",
@@ -87,11 +87,11 @@
     },
     {
       "path": "exports/avatar.glb",
-      "bytes": 519000,
-      "sha256": "c9319f617fb1f366376d57c656e479e102ac32b19c6c9d627233d2b8fec5aa10",
+      "bytes": 335208,
+      "sha256": "81533ec24f75ea755cfc092c3b43009f778bc55b02f87103024168cde37946a1",
       "glb": {
-        "meshes": 31,
-        "nodes": 45,
+        "meshes": 46,
+        "nodes": 60,
         "animations": [
           "avatar__idle",
           "avatar__pet",
@@ -106,11 +106,11 @@
     },
     {
       "path": "exports/golden_dog.glb",
-      "bytes": 582084,
-      "sha256": "9570e91f21c824d8fc38e6c14d08ff98d97bf088de05e9f140a7840f825c7734",
+      "bytes": 282424,
+      "sha256": "16e56ab78c12e173c5625cc75e041ebcd3d6c404e91cd8c60e8f0076377f40ba",
       "glb": {
-        "meshes": 22,
-        "nodes": 35,
+        "meshes": 25,
+        "nodes": 38,
         "animations": [
           "dog__carry_return",
           "dog__fetch_pickup",
@@ -125,12 +125,19 @@
     },
     {
       "path": "exports/my_world_island.glb",
-      "bytes": 2806852,
-      "sha256": "e9f097181f51875326e4fca6db337dadece5360fec04c8ef705a63084c67bc60",
+      "bytes": 3489764,
+      "sha256": "4f9cbc3c6069a61f143b7dcf3b12fcb155a3e562a28034849b87c277d6820880",
       "glb": {
-        "meshes": 23,
-        "nodes": 23,
+        "meshes": 31,
+        "nodes": 31,
         "animations": [
+          "Animated cascade dropletAction",
+          "Animated cascade droplet.001Action",
+          "Animated cascade droplet.002Action",
+          "Animated cascade droplet.003Action",
+          "Animated cascade droplet.004Action",
+          "Animated cascade droplet.005Action",
+          "Animated cascade droplet.006Action",
           "Flowing skill tile JSAction",
           "Flowing skill tile PYAction",
           "Flowing skill tile 3DAction"
@@ -179,8 +186,8 @@
     },
     {
       "path": "illustrations/make_framing.py",
-      "bytes": 4024,
-      "sha256": "fc6a7a109fcc3b60781a59ae5d27488f645b53c42e3e6f38901e7ea14a2e06ca"
+      "bytes": 5138,
+      "sha256": "81b6cf189b6a76069b832be922c145e0dc0dbeabd2ae5b8fc756e420e6e54bd8"
     },
     {
       "path": "illustrations/make_project_diagrams.py",
@@ -273,13 +280,13 @@
     },
     {
       "path": "review/asset_review.html",
-      "bytes": 5139,
-      "sha256": "a65b63537ad048a7153cccae71b3eb56d760a6f580b5c67fb2d9209cf82e9402"
+      "bytes": 6762,
+      "sha256": "2fca2a7150b91dc7e3c44af335528e6d0f6ff22506a88739599b8b500680bbba"
     },
     {
       "path": "review/avatar_back.png",
-      "bytes": 201719,
-      "sha256": "638185058fe2311b717afd4ffe08a95a0f27dd98dc0502a311f39624468f7133",
+      "bytes": 205272,
+      "sha256": "5507787600d23a6b0fe92213e0c8abab087d3de4b44fc1b01a31f7269f9bbe8b",
       "dimensions": [
         320,
         480
@@ -287,8 +294,8 @@
     },
     {
       "path": "review/avatar_front.png",
-      "bytes": 201658,
-      "sha256": "bb13796a2f12475e56c45b28f5f58a74cc2af71b0d5cf2d8a442c48f4460a349",
+      "bytes": 209679,
+      "sha256": "aae935985882a025df906a63cab69547ba8876b2c7dfe29d5a0f2e2f7c28e17c",
       "dimensions": [
         320,
         480
@@ -296,20 +303,20 @@
     },
     {
       "path": "review/avatar_pet.mp4",
-      "bytes": 81224,
-      "sha256": "894d51a754809bf4e273f7efebfbb4d7bf40b36e5c166a4a4b6a350d6698d272",
+      "bytes": 86443,
+      "sha256": "54e89c67bc2e3629a1d645b37ceef7f347005a1d5e54e8989756e8904d490780",
       "duration_seconds": 2.5
     },
     {
       "path": "review/avatar_read.mp4",
-      "bytes": 40177,
-      "sha256": "dfbe871c528d15d92f430f287c73d7d732c5e58695c0fb79a3f35ce335e035fe",
+      "bytes": 42827,
+      "sha256": "569265dfc60b238bb274e3929661408cfae0fe04431a5bcf819a72fd834777ff",
       "duration_seconds": 2.0
     },
     {
       "path": "review/avatar_side.png",
-      "bytes": 181422,
-      "sha256": "c051aa9c2b4f664afa18733f821a14fa5a5447a8ab3c3809b5bbc822613acaef",
+      "bytes": 185821,
+      "sha256": "381e48cf824f5d9e8dfb1fe8d6ffc5c89f113fc2ad04de7c513d75ada1ea7396",
       "dimensions": [
         320,
         480
@@ -317,20 +324,20 @@
     },
     {
       "path": "review/avatar_throw.mp4",
-      "bytes": 44023,
-      "sha256": "4889fab2666af9963a4b6e02bfaf41729ba7f636b0efbf005753b5410ae03081",
+      "bytes": 46301,
+      "sha256": "e430a87d251974e86382a58e0176228f8ce490ffd76a035003998e32c51cf7f9",
       "duration_seconds": 1.875
     },
     {
       "path": "review/avatar_walk.mp4",
-      "bytes": 33255,
-      "sha256": "18e280294ac71da084c9d0492867ffae132b63bc1ef0bda8b654cbbd0801b101",
+      "bytes": 34586,
+      "sha256": "2b0c7b754e4aa5f775b9218c5a1abf373480585dea6583d4e075d4ae4eff616b",
       "duration_seconds": 1.062
     },
     {
       "path": "review/cascade_motion.mp4",
-      "bytes": 157099,
-      "sha256": "e074471484a158c6ae4d2d9bffb256093d1c3defdf06fa648d9565c7525cc224",
+      "bytes": 103274,
+      "sha256": "df19ff3df4b0a8738ffcaab2d000352d7c763496a8ac4f23c3de4827a9960823",
       "duration_seconds": 3.0
     },
     {
@@ -353,8 +360,8 @@
     },
     {
       "path": "review/dog_back.png",
-      "bytes": 174076,
-      "sha256": "cf057f541a705923a2d9221b28b8cbeba31e73a05f52d0a969b03b7ae0983f45",
+      "bytes": 173592,
+      "sha256": "cbb0a10e6b13789d58f54966e00a63a1cfe9d05de32b9b4ef33c508b950696e0",
       "dimensions": [
         320,
         480
@@ -362,14 +369,14 @@
     },
     {
       "path": "review/dog_fetch_pickup.mp4",
-      "bytes": 80958,
-      "sha256": "c3af4ea700055578b9830ab863edc5ac4ed4d87586005115a97a529af075191e",
+      "bytes": 72561,
+      "sha256": "74fe68783c412a1703c32a95592acc736f69adaabab562d259a3573c50ba9242",
       "duration_seconds": 2.0
     },
     {
       "path": "review/dog_front.png",
-      "bytes": 177466,
-      "sha256": "3e5110308aa4c0231797cf0d5a615c5274c52f2daba7260167c80c7038102e46",
+      "bytes": 175125,
+      "sha256": "66bb4884236370cf694a326e0a7e182a526052473f36d6c1533714a7f47e54fe",
       "dimensions": [
         320,
         480
@@ -377,26 +384,26 @@
     },
     {
       "path": "review/dog_hop.mp4",
-      "bytes": 68609,
-      "sha256": "197dbcba8405e4820449902b1d9ea8564f55d6590e7289127e7ec92b366997a6",
+      "bytes": 65097,
+      "sha256": "dbfe9d023a7dfdb91269bcc43b2cd172b035020f583cb041bd39977c126441fb",
       "duration_seconds": 1.625
     },
     {
       "path": "review/dog_pet_reaction.mp4",
-      "bytes": 54553,
-      "sha256": "a5c8cd2804fe87dda7a0ce144a635747349fceff5407ece0a7aae3cf1adb0454",
+      "bytes": 50880,
+      "sha256": "ca471cc691041e080bca835da55cf49489f217f93f13b1c4ac01d71cd744541e",
       "duration_seconds": 2.125
     },
     {
       "path": "review/dog_run.mp4",
-      "bytes": 39768,
-      "sha256": "ef9574dce56ff5202f5bbd7f75b7608672277db56befa0a09c650a10dae5fbcc",
+      "bytes": 36163,
+      "sha256": "c7af5be5ea650b104a722c672746134df656b4652a1c40ce4e8a875777afcd5c",
       "duration_seconds": 0.812
     },
     {
       "path": "review/dog_side.png",
-      "bytes": 188967,
-      "sha256": "cf54533543b374acecf3701a488acc554c7b138987deb84fdeabc306f70e1735",
+      "bytes": 187180,
+      "sha256": "8097113ba369db184c37891c29c2e094b4c835707c068c0c82db6a9159f52f79",
       "dimensions": [
         320,
         480
@@ -404,14 +411,23 @@
     },
     {
       "path": "review/fetch_together.mp4",
-      "bytes": 287653,
-      "sha256": "e812ef3c7c3ac4487cfdbfc225cbdc5cb493117d9687f1f1ac805f688feea1f0",
+      "bytes": 289470,
+      "sha256": "23f8fcee191c6ac7c19d9d2294b16539ae64485fd74184bb5292933ee99a12d5",
       "duration_seconds": 4.0
     },
     {
       "path": "review/framing_desktop.png",
-      "bytes": 723759,
-      "sha256": "b9f64e1b991e8cc9e69a37726b85ffeaffd16680dbc8b7689b807a59d455927e",
+      "bytes": 723956,
+      "sha256": "fbd2e2fea7b9e4792bb560feede3e51db780c5c887c0ecee1620a0e06caf8c05",
+      "dimensions": [
+        1440,
+        900
+      ]
+    },
+    {
+      "path": "review/framing_desktop_panel.png",
+      "bytes": 781812,
+      "sha256": "5873601fc226e692d3fe974a9ec55053bb9752dad87c090cb2a3654e85d7392c",
       "dimensions": [
         1440,
         900
@@ -419,8 +435,8 @@
     },
     {
       "path": "review/framing_pixel9.png",
-      "bytes": 305147,
-      "sha256": "273d78236ee0f2915149c6b051c0a1bdfcfa7503f3612da22563aee98a2b723c",
+      "bytes": 322753,
+      "sha256": "7b04cf4cee1e57f095aa814b5bf773818398a9f31029c238b153b4823f844026",
       "dimensions": [
         412,
         915
@@ -428,8 +444,8 @@
     },
     {
       "path": "review/framing_pixel9_panel.png",
-      "bytes": 104414,
-      "sha256": "84d3849b82f798bc52981b7e1e9e024fecb07a949d602198a85cf118b2b2e068",
+      "bytes": 111339,
+      "sha256": "743d417da224f9f49c9f777a55c2efe0ea6c1b9aae559e9bbe71e985272f4c44",
       "dimensions": [
         412,
         915
@@ -437,14 +453,20 @@
     },
     {
       "path": "review/pet_together.mp4",
-      "bytes": 212274,
-      "sha256": "23e4c9f81e81b353f89f258cebdc81be128e2ecbf3037c6b13e64279d63d220f",
+      "bytes": 216097,
+      "sha256": "f861c519ee68facbac1fb22fcfa329cd96bc87ae22d911f0e138b0539fbdef9d",
       "duration_seconds": 2.5
     },
     {
+      "path": "review/reading_together.mp4",
+      "bytes": 106950,
+      "sha256": "d7edcf1ce02746b0c3eb0245097bae58f92347ab8e8b60f7f6a2be0d9de0fea8",
+      "duration_seconds": 2.0
+    },
+    {
       "path": "review/social_1200x630.png",
-      "bytes": 562158,
-      "sha256": "06769f0c8fb45813b54f38f663f4029e05b5a69e689c1b1f7347c34d14c0d31e",
+      "bytes": 559609,
+      "sha256": "4ea126bd9c45309e8a56da75b84b2d81ef12ec709bc857e7c3a5c64225368902",
       "dimensions": [
         1200,
         630
@@ -452,8 +474,8 @@
     },
     {
       "path": "review/world_desktop.png",
-      "bytes": 1167840,
-      "sha256": "4a316e44ee9f289d24c8a0cd9e8485b6bddd5355a5bbe09b65d2a0ee6ac3b5ee",
+      "bytes": 1174620,
+      "sha256": "3c87e52e48b8ee2baa436c90e812bbca6362d75db463bf3cfb072e9505553f7d",
       "dimensions": [
         1080,
         675
@@ -461,8 +483,8 @@
     },
     {
       "path": "review/world_pixel9_portrait.png",
-      "bytes": 962047,
-      "sha256": "f5ec48c2cb9102d9122b0fa169d47ca03355b2801cc23a685fe2e01dbbc2fb81",
+      "bytes": 1010768,
+      "sha256": "ca4d5d99d0bfe9079516bb470aca89bfacb25dc680859fbb2b8a2e9a0de5aaf9",
       "dimensions": [
         702,
         936
@@ -470,18 +492,18 @@
     },
     {
       "path": "source/avatar.blend",
-      "bytes": 1272496,
-      "sha256": "1c547cd779d3811e1393330febacc3b73297d247633b9384d700dc9646f4bb94"
+      "bytes": 1444472,
+      "sha256": "b96e47b1f82a5fb478093037177ee11f91eb958ee87571a63456a5e01548a012"
     },
     {
       "path": "source/build_characters.py",
-      "bytes": 14691,
-      "sha256": "543b77def384eb3b74a6067900990943f51f624d69e531d3123bc6a88d5dae1a"
+      "bytes": 15715,
+      "sha256": "a7ac288b65f29ebb5fc6df69dfb6b53c15112281b55a0e167be978abfd97443c"
     },
     {
       "path": "source/build_world.py",
-      "bytes": 16560,
-      "sha256": "31b45f5be5fe583ed76b39c603c9cd51458e83255b59dcecc5ee1ccb6f18fe12"
+      "bytes": 19961,
+      "sha256": "7de5f384427f70b74824f0e3647600997c6e0b217ff1d8da7b0e1d9226c3cb20"
     },
     {
       "path": "source/generate_manifest.py",
@@ -490,18 +512,18 @@
     },
     {
       "path": "source/golden_dog.blend",
-      "bytes": 1400796,
-      "sha256": "6500d7733284a1705aba04bc89714b90f1ea00fe4ef11c3d28a8a6568e069f49"
+      "bytes": 1481956,
+      "sha256": "db971b72647065d1ca3d0aa6ba2627bf10b156e8052831b13c42a009467403a0"
     },
     {
       "path": "source/my_world_island.blend",
-      "bytes": 4161340,
-      "sha256": "eaa992f53d9cf25bf6158174fd49ff1710e583cdb3ae450da914b4f2c11a4f05"
+      "bytes": 8110392,
+      "sha256": "f55bb7d07e4afec90cf9e7a16b395b3ac981ccaa7f5b493e9c5851a757aa9e27"
     },
     {
       "path": "source/render_interactions.py",
-      "bytes": 4607,
-      "sha256": "640bc45c25db422d7348903a3e415e2cf2a9c6789d0fa1db1198d924ff216e8f"
+      "bytes": 6493,
+      "sha256": "c0d00f7301c14fb79a886b8cb188ad07964c01095f0bd4d53ca781b14d4008d5"
     },
     {
       "path": "web/favicon.ico",
@@ -519,8 +541,8 @@
     },
     {
       "path": "web/poster_desktop.webp",
-      "bytes": 40670,
-      "sha256": "5cd3d3a04a0b05faeb026347b5bf4123acf0e969b3023c788151942881088d3c",
+      "bytes": 44490,
+      "sha256": "3375045d6ee04d03baf4effe5ebc0ead11922fc2b41a89e328b5368242d331f2",
       "dimensions": [
         1440,
         900
@@ -528,8 +550,8 @@
     },
     {
       "path": "web/poster_pixel9.webp",
-      "bytes": 19804,
-      "sha256": "98542ad2d233359f2bcab49237d349e8b574e8eb4754b1d38535d962be9d6cc3",
+      "bytes": 22734,
+      "sha256": "00acf4074aab4a30acf7f9cc86f8aa44389edf805ab8843fd99a8bd116f43e59",
       "dimensions": [
         412,
         915
@@ -537,14 +559,14 @@
     },
     {
       "path": "web/social_1200x630.webp",
-      "bytes": 35216,
-      "sha256": "482d7cfa01b9b1e1c637d8abe3be8c72d7457151da8d195795ba2224d8ed130e",
+      "bytes": 38558,
+      "sha256": "46e5820005ac2837d63993ac1346dcd82e8962d00979eeab37ba59efd2c62f61",
       "dimensions": [
         1200,
         630
       ]
     }
   ],
-  "runtime_glb_bytes": 3907936,
+  "runtime_glb_bytes": 4107396,
   "references": "User ZIP inspected for visual direction; not redistributed."
 }

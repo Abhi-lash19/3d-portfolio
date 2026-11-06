@@ -27,10 +27,11 @@ deep=mat("Deep indigo",(.024,.044,.112))
 blue=mat("Slate blue",(.17,.27,.39))
 cream=mat("Ivory stone",(.8,.75,.63))
 pathmat=mat("Warm flagstone",(.55,.51,.47))
-grass=mat("Blue hour grass",(.16,.29,.25))
-grass_light=mat("Moss green",(.28,.4,.29))
-leaf=mat("Sage foliage",(.3,.47,.38))
+grass=mat("Blue hour grass",(.11,.28,.19))
+grass_light=mat("Moss green",(.23,.42,.23))
+leaf=mat("Sage foliage",(.28,.51,.3))
 leaf_dark=mat("Deep foliage",(.12,.27,.25))
+leaf_gold=mat("Lantern-lit foliage",(.45,.49,.25))
 flower=mat("Buttercup",(.95,.68,.29))
 pink=mat("Dusky pink",(.72,.41,.52))
 wood=mat("Warm cedar",(.39,.22,.15))
@@ -42,7 +43,9 @@ glass=mat("Telescope glass",(.09,.19,.29),.12,.25)
 
 def uv(name,loc,scale,material,seg=16,rings=8):
     bpy.ops.mesh.primitive_uv_sphere_add(segments=seg,ring_count=rings,location=loc)
-    o=bpy.context.object; o.name=name; o.scale=scale; o.data.materials.append(material); return o
+    o=bpy.context.object; o.name=name; o.scale=scale; o.data.materials.append(material)
+    for face in o.data.polygons:face.use_smooth=True
+    return o
 def cube(name,loc,scale,material,bevel=0):
     bpy.ops.mesh.primitive_cube_add(size=1,location=loc)
     o=bpy.context.object; o.name=name; o.dimensions=scale; bpy.ops.object.transform_apply(location=False,rotation=False,scale=True)
@@ -113,6 +116,12 @@ routes=[
 ]
 for i,pts in enumerate(routes):
     path("Flagstone route %d"%i,pts,.27,pathmat,4)
+    for a,b in zip(pts,pts[1:]):
+        v=Vector(b)-Vector(a);steps=max(2,round(v.length/.32))
+        for j in range(steps):
+            p=Vector(a)+v*((j+.5)/steps)
+            slab=cube("Individual flagstone",(p.x,p.y,.115),(.46,.31,.075),cream,.035)
+            slab.rotation_euler[2]=math.atan2(v.y,v.x)-math.pi/2
     for p in pts[1:-1]: uv("Path junction stone",(p[0],p[1],.075),(.31,.28,.045),cream,12,5)
 
 def lantern(x,y,h=.65):
@@ -122,13 +131,18 @@ def lantern(x,y,h=.65):
     cone("Lantern crown",(x,y,h+.29),.18,.02,.16,roof,8)
 def tree(x,y,s=1):
     beam("Tree trunk",(x,y,0),(x,y,1.2*s),.12*s,wood,8)
-    for dx,dy,dz,k,ma in [(-.33,0,1.37,.55,leaf),(0,.15,1.68,.67,leaf_dark),(.36,.08,1.32,.54,leaf)]:
+    for side in (-1,1):
+        beam("Tree branch",(x,y,1.04*s),(x+side*.44*s,y+.12*s,1.39*s),.055*s,wood,8)
+    for dx,dy,dz,k,ma in [(-.45,-.08,1.38,.55,leaf),(-.16,.16,1.69,.58,leaf_dark),
+                          (.26,.18,1.67,.61,leaf),(.48,-.04,1.33,.52,leaf_gold),(0,-.18,1.29,.48,leaf_dark)]:
         uv("Sculpted canopy",(x+dx*s,y+dy*s,dz*s),(.52*k/.55*s,.48*k/.55*s,.53*k/.55*s),ma,12,6)
+    for dx,dy in [(-.34,-.27),(.32,-.28),(.02,-.31)]:
+        uv("Canopy blossom",(x+dx*s,y+dy*s,1.4*s),(.06*s,.045*s,.052*s),flower,8,4)
 def flowers(x,y,n=5):
     for j in range(n):
         dx=random.uniform(-.3,.3);dy=random.uniform(-.25,.25);h=random.uniform(.13,.24)
         beam("Flower stem",(x+dx,y+dy,.04),(x+dx,y+dy,h),.012,leaf_dark,6)
-        uv("Flower head",(x+dx,y+dy,h),(.055,.055,.045),random.choice([flower,pink,cream]),8,4)
+        uv("Flower head",(x+dx,y+dy,h),(.07,.07,.052),random.choice([flower,pink,cream]),8,4)
 
 # Arrival arch. The outward face is the canonical world title.
 for x in (-.98,.98):
@@ -138,6 +152,11 @@ for x in (-.98,.98):
 cube("Gate lintel",(0,-5.05,2.23),(2.45,.46,.47),sapphire,.13)
 cube("Gate title inlay",(0,-5.305,2.23),(1.85,.055,.36),deep,.055)
 text("My World gate letters","MY WORLD",(0,-5.34,2.125),.29,glow)
+for j in range(9):
+    t=math.pi*j/8
+    o=cube("Gate carved arch stone",(1.08*math.cos(t),-5.04,2.44+.37*math.sin(t)),(.29,.48,.22),cream,.035)
+    o.rotation_euler[1]=-t+math.pi/2
+uv("Gate keystone",(0,-5.05,2.84),(.18,.27,.18),gold,10,5)
 for x in (-1.38,1.38): lantern(x,-5.15,.76)
 
 # Project Launchpad: radial dais, layered platform and slender signal tower.
@@ -155,6 +174,18 @@ for j in range(3):
 beam("Launch mast",(px,py+.75,.48),(px,py+.75,2.25),.07,gold)
 uv("Launch signal",(px,py+.75,2.37),(.17,.17,.22),glow,12,6)
 text("Launchpad label","PROJECTS",(px,py-1.08,.58),.22,cream,(0,0,0))
+cube("Launch workshop walls",(px,py+.83,1.06),(1.48,.94,.94),cream,.12)
+uv("Launch workshop curved roof",(px,py+.83,1.62),(.86,.62,.46),roof,16,8)
+cube("Launch workshop doorway",(px,py+.32,.95),(.43,.07,.73),wood,.055)
+for x in (px-.52,px+.52):
+    cube("Launch workshop amber window",(x,py+.32,1.16),(.25,.04,.25),glow,.035)
+    cube("Launch workshop window frame",(x,py+.29,1.16),(.31,.035,.03),gold,.01)
+for z in (.83,1.04,1.25):
+    cube("Launch workshop masonry band",(px,py+1.32,z),(1.35,.05,.025),pathmat,.01)
+cyl("Launch rocket body",(px+.97,py+.89,1.13),.14,1.0,cream,12)
+cone("Launch rocket nose",(px+.97,py+.89,1.83),.21,.015,.45,gold,12)
+for sign in (-1,1):
+    cube("Launch rocket fin",(px+.97+sign*.17,py+.89,.73),(.2,.07,.35),sapphire,.025)
 
 # Experience Observatory: layered circular tower and warm telescope.
 ox,oy=.15,3.47
@@ -162,12 +193,18 @@ cyl("Observatory base",(ox,oy,.22),1.05,.42,sapphire,16)
 cyl("Observatory body",(ox,oy,1.08),.73,1.38,cream,16)
 for a in range(8):
     t=a*math.tau/8
-    cube("Observatory window",(ox+.73*math.cos(t),oy+.73*math.sin(t),1.22),(.13,.07,.52),glass,.02).rotation_euler[2]=t
+    cube("Observatory window",(ox+.73*math.cos(t),oy+.73*math.sin(t),1.22),(.13,.07,.52),glow,.02).rotation_euler[2]=t
+for z in (.48,1.68):
+    cyl("Observatory brass ring",(ox,oy,z),.78,.055,gold,20)
 uv("Observatory dome",(ox,oy,1.91),(.85,.85,.5),roof,16,8)
 cyl("Dome cap",(ox,oy,2.36),.14,.15,gold)
 beam("Telescope barrel",(ox-.27,oy-.1,2.07),(ox-.96,oy-.6,2.5),.16,gold)
 cyl("Telescope eye",(ox-.96,oy-.6,2.5),.21,.08,glass)
 for x in (-.85,.85): lantern(ox+x,oy-1.05,.62)
+cube("Observatory entrance",(ox,oy-.74,.78),(.42,.07,.68),wood,.05)
+for j in range(5):
+    t=j*math.tau/5
+    uv("Observatory terrace flower",(ox+1.08*math.cos(t),oy+1.08*math.sin(t),.24),(.11,.1,.1),pink,8,4)
 
 # Skills Cascade: elevated rocks, visible turquoise course, sparse skill tiles.
 sx,sy=-5.75,1.48
@@ -176,6 +213,13 @@ for x,y,z,s in [(-.7,.3,.2,.85),(.35,.3,.4,1.0),(-.18,.6,.8,.85),(.1,.76,1.22,.7
 path("Water lip",[(sx-.2,sy+.9,1.56),(sx-.13,sy+.6,1.19),(sx+.2,sy+.3,.7),(sx+.32,sy-.08,.12)],.24,water,4)
 uv("Cascade pool",(sx+.45,sy-.38,.09),(.92,.59,.11),water,16,6)
 path("Watercourse",[(sx+.5,sy-.48,.08),(sx+1.8,sy-.68,.07),(px-.75,py+.7,.07)],.13,water,3)
+for j in range(7):
+    d=uv("Animated cascade droplet",(sx+.02+(j%3)*.13,sy+.25,1.55-j*.12),(.055,.05,.11),water,8,4)
+    d.keyframe_insert("location",frame=1+j*5)
+    d.location.y-=.65;d.location.z-=1.22
+    d.keyframe_insert("location",frame=34+j*5)
+for j in range(5):
+    uv("Cascade foam",(sx+.12+j*.15,sy-.24,.15),(.16,.1,.055),cream,10,4)
 for j,label in enumerate(("JS","PY","3D")):
     o=cube("Flowing skill tile "+label,(sx+.27+j*.05,sy+.5,1.78-j*.28),(.44,.09,.26),sapphire,.045)
     o.keyframe_insert("location",frame=1+j*12)
@@ -198,6 +242,10 @@ for x in (rx-.54,rx+.54):cube("Bench leg",(x,ry-.57,.25),(.11,.23,.5),sapphire,.
 for j,(ma,angle) in enumerate([(deep,-.1),(pink,.12)]):
     o=cube("Original book prop",(rx-.28+j*.24,ry+.2,.31+j*.07),(.36,.49,.07),ma,.015);o.rotation_euler[2]=angle
 for x,y in [(3.45,2.1),(5.4,2.95),(5.9,1.22),(3.8,.7)]: flowers(x,y,8)
+tree(rx+1.28,ry+.83,1.18)
+cube("Garden low bookshelf",(rx-.93,ry+.35,.46),(.3,.58,.72),wood,.055)
+for j,ma in enumerate((deep,pink,roof,gold)):
+    cube("Garden book spine",(rx-.93,ry+.13+j*.14,.54),(.24,.12,.45),ma,.012)
 for j in range(2):
     cx,cy=3.55+j*2.2,2.55-j*.45
     beam("Butterfly body",(cx,cy,.95),(cx,cy,1.08),.017,wood,6)
@@ -215,10 +263,14 @@ cube("Cabin ridge",(cx,cy,2.44),(.24,2.15,.18),gold,.04)
 cube("Cabin door",(cx,cy- .845,.91),(.66,.07,1.18),wood,.06)
 uv("Cabin door handle",(cx+.22,cy-.9,.9),(.05,.04,.05),gold,8,4)
 for x in (cx-.77,cx+.77):
-    cube("Cabin window",(x,cy-.855,1.32),(.38,.04,.48),water,.04)
+    cube("Cabin window",(x,cy-.855,1.32),(.38,.04,.48),glow,.04)
     beam("Window mullion",(x,cy-.88,1.09),(x,cy-.88,1.55),.018,gold,6)
 lantern(cx-1.36,cy-.75,.76); lantern(cx+1.36,cy-.75,.76)
 cube("Cabin chimney",(cx+.65,cy+.25,2.5),(.28,.29,.7),sapphire,.05)
+cube("Cabin porch",(cx,cy-1.03,.34),(2.1,.6,.16),wood,.045)
+for x in (cx-1.0,cx+1.0):
+    beam("Porch post",(x,cy-1.18,.4),(x,cy-1.18,1.72),.055,wood,8)
+for x in (cx-1.36,cx+1.36): flowers(x,cy-1.4,10)
 
 # Play Meadow: open circular patch, ball, low stones, no obstacles in fetch area.
 mx,my=-4.35,-3.1
@@ -240,6 +292,16 @@ for x,y in [(-7,1),(-6,-4.1),(-4.7,4.4),(-1.7,4.9),(1.9,4.5),(7.2,1.1),(6.3,-4.4
     flowers(x,y,6)
 for x,y in [(-.8,-4.1),(-2.65,-1.17),(-4.55,-1.8),(-3.75,.2),(-1.25,1.7),(2.85,.85),(3.1,-1.9)]:
     lantern(x,y,.52)
+for x,y in [(-7.25,-2.15),(-6.65,-4.05),(-5.55,-4.45),(-4.3,-4.25),
+            (-2.8,-3.95),(-1.8,-3.05),(-.15,-2.75),(1.7,-3.6),
+            (3.15,-3.55),(5.8,-3.7),(7.1,-2.4),(7.25,-.4),
+            (6.5,.6),(5.9,3.45),(4.4,3.75),(2.65,3.2),
+            (1.75,4.4),(-1.6,3.65),(-3.1,2.55),(-4.45,2.9),
+            (-6.8,2.65),(-5.4,.35)]:
+    uv("Flowerbed foliage",(x,y,.075),(.36,.3,.16),leaf_dark,10,5)
+    flowers(x,y,6)
+for x,y in [(-7.1,-1.55),(-5.2,-4.6),(-3.0,3.95),(-1.1,4.75),(3.1,4.2),(6.75,3.05),(7.2,-1.55)]:
+    uv("Edge boulder",(x,y,.14),(.32,.25,.2),blue,10,5)
 
 # Export geometry and authored waterfall tile motion before adding review-only cameras/lights.
 bpy.context.scene.frame_start=1;bpy.context.scene.frame_end=72
@@ -288,13 +350,13 @@ def area(name,loc,power,color,size):
     d=bpy.data.lights.new(name,"AREA");d.energy=power;d.color=color;d.shape="DISK";d.size=size
     o=bpy.data.objects.new(name,d);bpy.context.collection.objects.link(o);o.location=loc
     o.rotation_euler=(Vector((0,0,0))-o.location).to_track_quat("-Z","Y").to_euler()
-area("Soft dusk key",(-3,-4,10),1700,(.65,.77,1),9)
-area("Amber rim",(5,3,9),1000,(1,.68,.38),8)
+area("Soft dusk key",(-3,-4,10),1700,(1,.82,.65),9)
+area("Amber rim",(5,3,9),1200,(1,.68,.38),8)
 area("Sky fill",(0,6,7),650,(.4,.6,1),9)
-bpy.ops.object.camera_add(location=(15,-20,17))
+bpy.ops.object.camera_add(location=(15,-21,13))
 cam=bpy.context.object;cam.name="Desktop composition camera"
 cam.rotation_euler=(Vector((0,0,.1))-cam.location).to_track_quat("-Z","Y").to_euler()
-cam.data.type="ORTHO";cam.data.ortho_scale=22
+cam.data.type="ORTHO";cam.data.ortho_scale=21
 bpy.context.scene.camera=cam
 sc=bpy.context.scene;sc.render.engine="CYCLES";sc.cycles.device="CPU";sc.cycles.samples=12
 bpy.context.view_layer.cycles.use_denoising=False
@@ -304,8 +366,8 @@ sc.view_settings.view_transform="AgX"
 sc.render.film_transparent=False
 sc.frame_set(1)
 bpy.ops.render.render(write_still=True)
-cam.location=(13,-18,18);cam.rotation_euler=(Vector((0,0,.35))-cam.location).to_track_quat("-Z","Y").to_euler()
-cam.data.ortho_scale=23
+cam.location=(13,-18,15);cam.rotation_euler=(Vector((0,0,.35))-cam.location).to_track_quat("-Z","Y").to_euler()
+cam.data.ortho_scale=21
 sc.render.resolution_x=1080;sc.render.resolution_y=1440;sc.render.resolution_percentage=65
 sc.render.filepath=os.path.join(REVIEW,"world_pixel9_portrait.png")
 bpy.ops.render.render(write_still=True)
